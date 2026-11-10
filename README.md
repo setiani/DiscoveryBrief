@@ -35,21 +35,18 @@ and improvements in meeting outcomes have not yet been independently measured.
 
 ## Watch the three-minute demo
 
-[![Watch the DiscoveryBrief three-minute English demo](submission/video/DiscoveryBrief-demo-poster.png)](submission/video/DiscoveryBrief-demo-3min-en.mp4)
+[![Watch the DiscoveryBrief three-minute English demo](submission/video/DiscoveryBrief-demo-poster.png)](https://www.youtube.com/watch?v=lTUKSxRqjq4)
 
 **Click the preview to open the video.**
-[Video / download](submission/video/DiscoveryBrief-demo-3min-en.mp4) ·
-[English subtitles](submission/video/DiscoveryBrief-demo-en.srt) ·
-[Narration script](submission/video/DiscoveryBrief-demo-script-en.md)
+[Watch on YouTube](https://www.youtube.com/watch?v=lTUKSxRqjq4)
 
 The 3:00 Full HD video uses English synthetic narration and captions. It shows an actual
 public-company live result with fictional meeting/RFP context; the research wait is edited
 out and labelled. A separate, labelled synthetic replay demonstrates missing public evidence.
 Its original Indonesian report text is retained. See [video provenance](submission/video/README.md).
 
-This README uses a linked poster and a repository MP4. For GitHub-hosted inline video,
-maintainers can upload the MP4 as a GitHub attachment and place its generated asset URL here;
-see [GitHub's attachment documentation](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/attaching-files).
+The preview and video link open the demo on YouTube. The original MP4 remains available
+in [the repository](submission/video/DiscoveryBrief-demo-3min-en.mp4).
 
 ## Features
 
@@ -258,7 +255,7 @@ stays null. Fixture dataset validation does not measure model quality.
 
 ## Verification and current limits
 
-The local workflow is implemented. Recorded checks on 10 November 2026 include **85 Python
+The local workflow is implemented. Recorded checks on 10 November 2026 include **87 Python
 tests**, **four frontend tests**, TypeScript/Vite build, and Ruff checks passing. A clean source
 copy/new venv/npm install passed without `.env`; that check reused the host Chromium cache.
 Separate container tests installed Chromium inside the Linux image.

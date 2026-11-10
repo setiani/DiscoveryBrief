@@ -1,205 +1,338 @@
-# DiscoveryBrief — gap analysis implementasi
+# DiscoveryBrief implementation gap analysis
 
-Tanggal audit: 9 November 2026, Asia/Jakarta. Audit terhadap snapshot lokal, bukan sertifikasi release.
+Audit date: 9 November 2026, Asia/Jakarta. This describes the local snapshot at that time,
+not release certification. This English translation preserves the historical findings;
+see [repair status](remediation-status.md) and [progress](progress.md) for subsequent fixes.
 
-## Kesimpulan
+## Conclusion
 
-DiscoveryBrief sudah memiliki fondasi aplikasi yang berjalan offline dan jalur integrasi live eksperimental. Implementasi **belum memenuhi implementation plan**, terutama pada kontrak keluaran, kelengkapan evidence ledger, aturan waktu, kualitas hasil, evaluasi independen, dan reproduksi paket submission. Melanjutkan kode yang ada lebih tepat daripada membangun ulang.
+DiscoveryBrief had a working offline application foundation and an experimental live integration
+path. It **did not yet meet the implementation specification**, particularly output contracts,
+evidence-ledger completeness, temporal rules, result quality, independent evaluation, and
+submission-package reproduction. Continuing the existing code was preferable to rebuilding.
 
-Tidak ada persentase penyelesaian yang dapat dipertanggungjawabkan hanya dari jumlah file atau tes. Tidak ada milestone yang dinyatakan diterima oleh progress note. M0/M4/M5 sudah memiliki banyak implementasi; M2/M3 masih mengandung gap inti, sedangkan M6–M8 belum memiliki bukti acceptance lengkap.
+File/test counts did not support a defensible completion percentage. No milestone had been
+accepted by the progress record. M0/M4/M5 contained substantial implementation; M2/M3 still
+had core gaps, while M6-M8 lacked complete acceptance evidence.
 
-## Ruang lingkup dan batas bukti
+## Scope and evidence limits
 
-- Membaca AGENTS.md, MEMORY.md, README.md, spesifikasi 00–15 beserta contoh, progress/spike/evaluation notes, dan menelusuri modul backend, frontend, pengujian, runner evaluasi serta artefak hasil yang relevan.
-- Menginventarisasi workspace dan memeriksa salinan plan: seluruh file pada `discoverybrief-plan/` identik secara byte dengan `discoverybrief/docs/plan/` pada audit ini. Perbedaan perilaku berasal dari implementasi, bukan dua versi plan yang berbeda.
-- Dependency terpasang, cache, bytecode, database gateway, dan kredensial bukan dokumen rancangan yang perlu dibaca seluruh isinya. Tidak melakukan audit isi `.env` atau membongkar log privat gateway. Profil/proyek hackathon lama yang dirujuk memory tidak tersedia pada workspace ini; bukan dependency implementasi DiscoveryBrief.
-- Tidak mengubah kode aplikasi atau menyalakan live mode. Tidak menjalankan panggilan Tavily/Bifrost berbayar. Bukti live dan frozen-research merupakan artefak tersimpan, bukan hasil panggilan baru atau pemeriksaan kebenaran web terkini.
-- Audit ini membandingkan terhadap spesifikasi lokal; aturan kompetisi/deadline/harga eksternal tidak diverifikasi ulang dan tidak dinyatakan mutakhir.
+- Read workspace instructions/context, the numbered specifications and examples, progress,
+  spike/evaluation notes, and relevant backend, frontend, tests, runners, and result artifacts.
+- Inventoried the workspace and compared the original and application-local specification
+  copies: they were byte-identical during this audit. Behavioral differences came from code.
+- Installed dependencies, caches, bytecode, gateway databases, and credentials were not design
+  documents requiring exhaustive reading. The audit did not inspect `.env` contents or private
+  gateway logs. Prior projects referenced in memory were unavailable and were not dependencies.
+- Did not change application code, enable live mode, or make paid Tavily/Bifrost calls. Stored
+  live/frozen-research artifacts were historical observations, not new calls or fresh web checks.
+- Compared implementation with the local specification. Competition rules, deadlines, external
+  pricing, and provider behavior were not revalidated or asserted current by this audit.
 
-## Verifikasi yang dijalankan ulang
+## Checks rerun during the audit
 
-Direktori kerja: `discoverybrief/`.
+Working directory: the application repository root.
 
-| Pemeriksaan | Hasil aktual |
+| Check | Actual result |
 |---|---|
-| `.\.venv\Scripts\python.exe -m pytest -q` | **63 passed**, 1 warning deprecation FastAPI/Starlette TestClient; 22,27 detik. Termasuk browser/PDF yang tersedia, tanpa skipped test pada run ini. |
-| `npm --prefix web run build` | **Lulus**: pemeriksaan TypeScript dan Vite build. |
-| `.\.venv\Scripts\ruff.exe check .` | **Lulus**. |
-| `.\.venv\Scripts\ruff.exe format --check .` | **Gagal**: satu Python code block di `docs/plan/06-integrations-and-spikes.md`; 100 file lain sudah formatted. Ini gap housekeeping, bukan cacat runtime. |
-| `npm --prefix web run test` | **Gagal**: Vitest tidak menemukan test file. Browser test Python tetap ada dan lulus; kegagalan ini tidak berarti seluruh frontend tidak diuji. |
-| Fixture API, clock disimulasikan `2026-11-15T03:00:00Z` | **422 VALIDATION_ERROR**, meeting di luar horizon. |
-| Registrasi route evidence | `/api/runs/{run_id}/evidence` **tidak ada**. |
-| Missing Tavily usage, model usage tersedia | `tavily_credits_reported=null`, tetapi `usage_complete=true`; flag hanya mencakup model saat ini. |
-| Planner memilih partnership + leadership dengan domain terisi | Kedua query tidak memiliki filter domain dan tidak ada official-news query. |
+| `.\.venv\Scripts\python.exe -m pytest -q` | **63 passed**, one FastAPI/Starlette TestClient deprecation warning; 22.27 seconds. Available browser/PDF checks ran, with no skipped tests. |
+| `npm --prefix web run build` | **Passed** TypeScript checking and Vite build. |
+| `.\.venv\Scripts\ruff.exe check .` | **Passed**. |
+| `.\.venv\Scripts\ruff.exe format --check .` | **Failed** one Python block in integration-specification documentation; 100 other files formatted. Housekeeping issue, not a runtime defect. |
+| `npm --prefix web run test` | **Failed** because Vitest found no test files. Python browser tests still passed; this did not mean all frontend behavior was untested. |
+| Fixture API with clock `2026-11-15T03:00:00Z` | **422 VALIDATION_ERROR**, meeting outside the accepted horizon. |
+| Evidence route registration | `/api/runs/{run_id}/evidence` was **absent**. |
+| Missing Tavily usage, model usage present | `tavily_credits_reported=null` but `usage_complete=true`; coverage only considered model usage. |
+| Planner selected partnership and leadership with domain supplied | Neither query had an official-domain filter; no official-news query was added. |
+
+Initial `uv run` was blocked by global-cache access outside the sandbox. Checks used the
+existing `.venv` tools directly; this did not prove that fresh installation or ordinary-user
+`uv sync` was broken. No workspace-root Git metadata was present; external public-repository
+existence was not checked.
+
+## Existing implementation worth preserving
+
+- Pydantic input limits, aware datetimes, offset/IANA checks, Unicode/newline normalization,
+  and public-context allowlisting.
+- Tavily Search/Extract adapters with bounded calls/retries, URL normalization, and URL-based
+  matching of extraction results.
+- Gateway-only Bifrost client, structured submissions, and one schema repair; no hidden direct
+  provider fallback.
+- Five role contexts, literal quote/hash checks, requirement entailment through the Verifier,
+  premise filtering through the Auditor, and neutral-question fallback.
+- Deterministic ranking, event clustering, and bounded selection.
+- FastAPI, SQLite WAL, backend idempotency, bounded queue, cancellation, and interruption
+  recovery without automatic paid resume.
+- Artifact manifests, path/hash checks, escaped HTML, Markdown/JSON/PDF exports, page-count
+  checks, and pruning.
+- Input/progress/evidence/download UI, fixture/replay paths, and a 390-pixel browser smoke.
+- Ten synthetic cases, twenty stored baseline/candidate outputs, and a human-review worksheet.
+- An eight-slide PPTX draft and demo script; file existence did not establish final acceptance.
+
+## Prioritized findings
 
-Perintah `uv run` awal tertahan akses cache global di luar sandbox. Pemeriksaan dilakukan menggunakan interpreter/tool pada `.venv` yang sudah ada. Ini tidak membuktikan fresh install atau `uv sync` gagal di lingkungan pengguna biasa. Tidak ada metadata Git pada root workspace; keberadaan repository publik di layanan eksternal tidak diperiksa.
+### GAP-01 - High: fixture API depended on the execution date
 
-## Yang sudah ada dan layak dipertahankan
+**Expected:** deterministic fixtures without keys; replay retains original dates. R13/G4,
+TC40-TC41, M8.
 
-- RunRequest Pydantic: batas input, aware datetime, offset versus IANA timezone, normalisasi Unicode/newline, public-context allowlist.
-- Tavily Search/Extract adapter: pembatas panggilan, retry terbatas, normalisasi URL, pencocokan hasil Extract berdasarkan URL.
-- Gateway-only Bifrost client dan structured submissions dengan satu schema repair; tidak ada direct-provider fallback tersembunyi.
-- Lima konteks peran, pemeriksaan hash/quote literal, entailment requirement melalui Verifier, filtering premise melalui Auditor, neutral-question fallback.
-- Ranking dan event clustering deterministik serta bounded selection.
-- FastAPI, SQLite WAL, idempotency backend, bounded queue, cancel dan restart interruption tanpa paid auto-resume.
-- Artifact manifest, validasi path/hash, HTML escaping, Markdown/JSON/PDF, PDF page-count check dan pruning.
-- UI formulir, progress polling, evidence quotes, unduhan, fixture serta replay; browser smoke 390 px.
-- Sepuluh kasus sintetis dan 20 output baseline/candidate frozen-research tersimpan; worksheet human review tersedia.
-- Draft PPTX delapan slide dan demo script. Keberadaan file bukan acceptance presentasi final.
+**Observed:** the API injected the fixed 8 November clock only after job start, while
+`RunStore.create()` still called `request.validate_horizon(now)` for fixtures. The canonical
+meeting was 12 November; a simulated 15 November request failed before the workflow began.
+CLI fixture, sample display, and replay were separate paths and did not necessarily fail alike.
 
-## Temuan terprioritas
+**Impact:** offline-example execution could fail after the sample meeting horizon even though
+8 November FrozenClock tests passed.
 
-### GAP-01 — Tinggi: fixture API bergantung pada tanggal kalender eksekusi
+**Recommended repair:** separate live horizon validation from the repository-controlled fixture
+clock, preserve original-date labels, and add a fixture API regression far beyond that date.
 
-**Rencana:** fixture deterministik dapat direproduksi tanpa keys; replay mempertahankan tanggal asal. R13/G4, TC40–TC41, M8.
+### GAP-02 - High: the pipeline could not produce ready quality
 
-**Aktual:** `api/main.py` memberikan clock tetap 8 November hanya setelah job mulai; sebelumnya `RunStore.create()` tetap menjalankan `request.validate_horizon(now)` untuk fixture. Request kanonik memiliki meeting 12 November. Pada simulasi 15 November, POST fixture ditolak 422 sebelum workflow dimulai. CLI fixture/display sample/replay merupakan jalur berbeda dan tidak otomatis mengalami penolakan yang sama.
+**Expected:** at least three eligible distinct event clusters, without material conflict or
+fallback limits, can be `ready`; TC05 and E01.
 
-**Dampak:** tombol “Jalankan contoh offline” pada konfigurasi fixture dapat gagal saat demo/reproduksi setelah horizon meeting contoh berlalu, walaupun tes dengan FrozenClock 8 November lulus.
+**Observed:** pipeline line 494 returned `context_only` for zero clusters and otherwise always
+`limited`. Comments acknowledged incomplete date/conflict/release gates. Stored E01 contained
+one claim and `limited`, rather than the expected `ready` outcome.
 
-**Perbaikan:** pisahkan horizon live dari clock fixture yang repository-controlled; pertahankan label tanggal fixture. Tambahkan regression test API fixture pada tanggal jauh setelah tanggal contoh.
+**Impact:** both quality derivation and three-event coverage were incomplete. Merely permitting
+the string `ready` would not fix recall or correctness.
 
-### GAP-02 — Tinggi: jalur pipeline tidak dapat menghasilkan ready
+**Recommended repair:** finish eligibility/uncertainty/conflict/fallback gates before deriving
+quality. Test three valid events and boundary/conflict/auditor variants. Inspect the full ledger
+to explain E01's missing atoms.
 
-**Rencana:** >=3 event cluster eligible tanpa konflik/fallback material dapat `ready`; TC05 dan E01.
+### GAP-03 - High: temporal policy implemented only part of the contract
 
-**Aktual:** `pipeline.py` baris 494 menetapkan `context_only` jika nol cluster, selain itu selalu `limited`. Komentar kode menyebut date precision/conflict/release gates belum lengkap. E01 tersimpan menghasilkan satu claim dan `limited`, sementara target `ready`.
+**Expected:** explicit event, original publication, provider-estimated basis, instant precision,
+partial boundary days, old-event/update precedence, unknown/conflict; specifications 03/04,
+TC06-TC09.
 
-**Dampak:** ada dua gap terpisah: quality derivation belum lengkap, dan E01 belum menghasilkan cakupan tiga event. Mengizinkan string `ready` saja tidak menyelesaikan recall atau correctness.
+**Observed:** `approve_claim()` required an exact parseable event-date quotation, and
+`recent_date()` compared local dates only. Original-publication/provider-estimate paths were
+missing; publication instants/precision and boundary warnings were not retained. Approved
+claims were marked `explicit_event`. Conflicting claims were rejected without becoming
+inspectable unknowns.
 
-**Perbaikan:** selesaikan eligibility/uncertainty/conflict/fallback gates terlebih dahulu, lalu quality derivation. Uji tiga event valid serta tiga event dengan boundary ambiguity/konflik/auditor failure. Periksa alasan dua atom E01 tidak tampil melalui ledger lengkap.
+**Impact:** eligible evidence could be over-rejected and partial-day limits hidden. Date-only
+logic did not prove instant filtering; conservative quality did not replace the required policy.
 
-### GAP-03 — Tinggi: temporal policy baru subset dari kontrak
+**Recommended repair:** typed date evidence/basis/precision, deterministic instant/day
+predicates, boundary warnings, gated publication/estimate fallbacks, and durable conflict/
+coverage reasons. Keep exact-quote gates intact rather than relaxing them for more findings.
 
-**Rencana:** explicit event, original publication, provider-estimated basis, timestamp instan, partial boundary day, old-updated precedence, unknown/conflict; 03/04, TC06–TC09.
+### GAP-04 - High: evidence ledger and rejection explanations were incomplete
 
-**Aktual:** `approve_claim()` memerlukan exact `date_quote` yang parse ke event date; `recent_date()` hanya membandingkan tanggal lokal. Belum ada jalur original-publication/provider-estimate sesuai kontrak, `published_at`/precision tidak dipertahankan, dan boundary warning tidak dibuat. Semua approved claim diberi `temporal_basis=explicit_event` oleh pipeline. Konflik membuat claim ditolak tetapi belum otomatis diubah menjadi unknown yang dapat diperiksa.
+**Expected:** immutable sources; candidates, reviews, approvals, rejections; evidence endpoint;
+excluded findings; and preservation after later-stage failure. R10, M2/M3/M4.
 
-**Dampak:** bukti yang sebenarnya layak bisa terlalu banyak ditolak, sementara batas pengetahuan pada hari parsial belum diungkap. Tidak dapat membuktikan exact-instant filtering dari date-only implementation. Pembatasan quality saat ini konservatif, tetapi tidak menggantikan policy tersebut.
+**Observed:** no evidence route. The pipeline returned approved claims and aggregate rejection
+counts, rather than full item-level records. `publish.py` exported evidence from the bundle
+already selected for one page. Sources held selected metadata/quotes; full text existed only
+inside a successful local result. Analyst/provider failure lost in-memory research/evidence
+without stage checkpoints.
 
-**Perbaikan:** typed date evidence/basis dan precision; deterministic predicate untuk instant/day; warning boundary; fallback publication/estimate sesuai plan; persist alasan konflik dan coverage notes. Jangan melonggarkan exact-quote gate untuk mengejar lebih banyak hasil.
+**Impact:** users could not explain missing findings; PDF-pruned accepted material was absent
+from detail exports despite overflow guidance. Paid calls could precede an incomplete failure
+record.
 
-### GAP-04 — Tinggi: evidence ledger dan penjelasan penolakan tidak lengkap
+**Recommended repair:** persist stage ledgers independently of page selection, expose evidence
+and excluded findings, sanitize downloads, and retain checkpoints on failed/cancelled runs.
 
-**Rencana:** R10, M2/M3/M4: sumber immutable, candidates/reviews/evidence/rejections, endpoint evidence, excluded findings, dan bukti yang sudah terkumpul tetap tersedia saat tahap berikut gagal.
+### GAP-05 - High: output contracts diverged from the normative specification
 
-**Aktual:** route evidence tidak terdaftar. Pipeline mengembalikan approved claims dan aggregate rejection counters, bukan seluruh candidates/reviews/item-level rejection reasons. `publish.py` membentuk `evidence.json` dari **bundle yang telah dipilih untuk satu halaman**; sources hanya metadata dan quotes dari item terpilih. Source text lengkap hanya ada dalam result sukses lokal, bukan ledger terstruktur yang dapat diinspeksi. Pada Analyst/provider failure, runner menyimpan safe error tetapi research/evidence in-memory tidak dicatat sebagai stage checkpoint.
+**Expected:** canonical records for runs, sources, claims, briefs/bundles, events, warnings,
+errors, and metrics; specifications 03/07.
 
-**Dampak:** pengguna tidak dapat menjelaskan mengapa finding hilang atau memastikan hasil penolakan. Isi yang dipangkas PDF tidak tersedia lengkap pada evidence export walaupun overflow note mengarahkan pengguna ke detail lengkap. Pada run gagal, panggilan berbayar bisa terjadi tanpa evidence/usage record lengkap.
+**Observed:** `schemas.py` mainly defined inputs; many outputs were dictionaries.
+`build_bundle()` produced a flat structure, missing canonical brief/ledger separation and run,
+domain, timezone, window, and claim temporal fields. Questions/hypotheses/unknowns lacked IDs.
+Requirements lost category/unspecified fields. RunView, errors, warnings, and events omitted
+contracted structures and metadata.
 
-**Perbaikan:** persist source/candidate/review/approval/rejection per tahap, terpisah dari selected brief; endpoint evidence dan excluded findings; sanitasi download; checkpoint pada failed/cancelled runs. Detail lengkap tidak perlu dimasukkan ke halaman utama.
+**Impact:** internal UI/API agreement did not establish specification compliance. Consumers
+lost attribution, temporal, and grounding information; tests accepted the implementation shape.
 
-### GAP-05 — Tinggi: output contract berbeda dari spesifikasi normatif
+**Recommended repair:** implement and validate canonical output models across API/pipeline/
+exports. Any intentional simplification needs an explicit decision and synchronized contracts.
+Folder-layout differences alone are not defects; missing fields/invariants are the issue.
 
-**Rencana:** canonical Pydantic models `RunRecord`, `SourceRecord`, `ApprovedClaim`, `Brief`, `BriefBundle`, `RunEvent`, `Warning`, `RunError`, `RunMetrics`; kontrak 03 dan API 07.
+### GAP-06 - High: the Verifier still received Analyst reasoning
 
-**Aktual:** `schemas.py` terutama mendefinisikan input; banyak keluaran internal berupa dict. `build_bundle()` mengembalikan struktur datar, bukan `brief: Brief` plus ledger. Field seperti run_id, company_domain, meeting_timezone, window_start/end serta event date/basis/eligibility claim tidak terdapat pada bundle. Question/hypothesis/unknown IDs belum ditetapkan. Requirements kehilangan category/unspecified pada bundle. RunView hanya subset field dan `error_code`, warnings berupa string. Events tidak memiliki event_id/stage/metadata sesuai kontrak.
+**Expected:** fresh-context Verifier without Analyst reasoning; specifications 03/05, M3.
 
-**Dampak:** UI dan API dapat saling cocok secara internal tetapi tetap tidak memenuhi rancangan; consumers/export kehilangan informasi attribution/time/grounding penting. Tes saat ini menerima struktur implementasi, sehingga tidak mendeteksi seluruh penyimpangan kontrak.
+**Observed:** the pipeline passed full candidates, including `relevance_reason`. That field
+was Analyst justification rather than source evidence. Message-context separation existed,
+but reasoning-input separation did not.
 
-**Perbaikan:** implementasikan canonical output models dan validasi hasil lintas pipeline/API/export; jika kontrak memang ingin disederhanakan, perlukan keputusan eksplisit dan pembaruan semua dokumen terkait. Jangan menganggap struktur folder yang berbeda sebagai bug; masalahnya ialah field/invariant yang hilang.
+**Impact:** possible bias and reduced independence; a boundary violation, not proof that any
+specific claim was false.
 
-### GAP-06 — Tinggi: Verifier masih menerima reasoning dari Analyst
+**Recommended repair:** explicit Verifier input allowlist for statement/ID/evidence/necessary
+date metadata, excluding reasoning or desired answers; assert this boundary in payload tests.
 
-**Rencana:** Verifier fresh-context tidak menerima Analyst reasoning; 03/05 dan M3.
+### GAP-07 - Medium-high: research coverage did not follow the strategy
 
-**Aktual:** pipeline mengirim kandidat penuh melalui `"claims": candidates`; ClaimCandidate memuat `relevance_reason`. Field itu merupakan alasan dari Analyst, bukan bukti sumber. Pemisahan message context sudah ada, pemisahan input reasoning belum tuntas.
+**Expected:** official-domain query when a domain exists; supplemental queries if fewer than
+three usable extracted sources remain after deduplication; URL/content deduplication before
+selection. Specification 04, M2.
 
-**Dampak:** berpotensi membias penilaian Verifier dan mengurangi independensi yang menjadi diferensiasi produk. Ini pelanggaran input boundary; bukan bukti bahwa suatu claim tertentu pasti salah.
+**Observed:** Planner could omit `official_news`; code did not add it. No supplemental pass.
+Content duplicates were marked after extraction but retained in prompts. Extraction selected
+the first ten URLs without an explained usable-source strategy. Early 12,000-character sources
+could consume the entire 24,000-character evidence prompt after only two pages.
 
-**Perbaikan:** verifier-input allowlist berisi statement/ID/proposed evidence/date metadata yang diperlukan, tanpa relevance_reason atau desired answer. Assert boundary pada test payload.
+**Impact:** narrow coverage and wasted budget/context on duplicates or early pages. Consistent
+with low-recall risk, but not proven as E01's sole cause.
 
-### GAP-07 — Sedang–tinggi: research coverage belum sesuai strategi
+**Recommended repair:** enforce official search, deduplicated extraction selection, a bounded
+supplemental pass, distributed source passages, and retained selection/truncation reasons.
+Respect existing hard caps.
 
-**Rencana:** wajib satu official-domain query ketika domain diisi; supplemental query jika <3 usable extracted sources setelah dedup; dedup URL/content sebelum pemilihan; 04, M2.
+### GAP-08 - High: quality evaluation was incomplete
 
-**Aktual:** Planner dapat memilih dua enum tanpa `official_news`, dan kode tidak menambahkannya. Hanya query awal yang dijalankan; tidak ada supplemental pass. URL didedup, tetapi content duplicate baru ditandai sesudah ekstraksi dan tetap masuk daftar/prompt. Pemilihan ekstraksi mengambil sepuluh URL pertama, bukan hasil seleksi usable-source yang terjelaskan. Evidence prompt mengisi sumber awal sampai 24.000 karakter; dengan sumber 12.000 karakter, dua sumber panjang dapat menghabiskan seluruh konteks.
+**Expected:** human-supported precision, entity/time/reference validity, RFP grounding, recall,
+question ratings, and baseline overhead; R14/G2/M7.
 
-**Dampak:** coverage sempit dan budget/context dapat habis pada halaman duplikat atau sumber awal. Mekanisme ini konsisten dengan risiko recall rendah, tetapi belum terbukti sebagai satu-satunya penyebab E01 gagal.
+**Observed:** twenty `data/eval-v2/evaluation/` records shared one implementation fingerprint.
+Ten baselines parsed; candidate status/quality matched labels in 9/10 cases. The worksheet
+was blank. **9/10 was not semantic accuracy.** Neither independent judgments nor aggregate
+quality comparison existed. Raw outputs were ignored local data, not a sanitized public set.
 
-**Perbaikan:** enforce official query di code; dedup/extract selection; bounded supplemental pass; pembagian evidence passages yang menjaga cakupan source; persist alasan seleksi/truncation. Tetap patuhi hard caps.
+**Impact:** no evidence that the pipeline was more useful/accurate than one summarization call;
+more roles could add cost/latency. Four live claims from one source were not four independent
+sources or a quality validation.
 
-### GAP-08 — Tinggi: quality evaluation belum selesai
+**Recommended repair:** judge both systems against prepared labels, record denominators/N/A,
+and calculate usefulness/recall/precision/overhead. Check temporal fairness: candidate received
+an explicit historical cutoff/window, while baseline lacked an equivalent explicit clock.
+Correct and version the experiment if material. Do not relabel E01 to manufacture a pass.
 
-**Rencana:** R14/G2/M7: human-supported precision, entity/time/reference validity, RFP grounding, recall, question ratings, baseline overhead.
+### GAP-09 - Medium-high: observability, usage, and failure taxonomy were incomplete
 
-**Aktual:** 20 record `data/eval-v2/evaluation/` ada dengan satu implementation fingerprint. Sepuluh baseline parsed; candidate sesuai status/quality pada 9/10 kasus. Worksheet masih kosong. **9/10 bukan semantic accuracy.** Baseline/candidate belum memiliki independent judgments atau aggregate comparison. Raw outputs berada di ignored data, belum menjadi paket evaluasi publik yang sanitized.
+**Expected:** durable per-call usage/correlation, prompt/schema/model versions, durations,
+stable errors, and unknown-coverage semantics; specifications 03/05/06/07/12.
 
-**Dampak:** belum ada bukti pipeline lebih berguna/akurat dibanding satu summarization call; lebih banyak role juga berpotensi lebih mahal/lambat. Artefak live empat claims dari satu source bukan empat sumber independen dan bukan validasi kualitas.
+**Observed:** mostly in-memory aggregates; no durable role request IDs, prompt hashes, resolved
+models, latency, or usage. Failure results lost the ledger. `usage_complete` considered model
+tokens only, so missing Tavily usage could coexist with true. Normal responses lacked duration/
+fallback observations. Budget/timeouts and other exceptions became generic `PIPELINE_FAILED`.
+Correlation headers and queue Retry-After were absent.
 
-**Perbaikan:** review kedua sistem terhadap labels yang telah disiapkan, catat denominator dan N/A; hitung usefulness/recall/precision dan overhead. Periksa fairness temporal: candidate menerima explicit historical cutoff/window, sedangkan baseline menerima request/evidence tanpa explicit clock_at/cutoff yang setara. Koreksi dan versioning sebelum perbandingan final bila berdampak. Jangan mengubah label agar E01 terlihat lulus.
+**Impact:** difficult diagnosis and operational comparisons; misleading completeness flags.
+Unknown model cost being null was already correct, not a gap to fill with a guess.
 
-### GAP-09 — Sedang–tinggi: observability, usage dan failure taxonomy belum lengkap
+**Recommended repair:** durable per-call/failure records, separate model/Tavily coverage,
+measured duration, typed stable errors, and nulls for genuinely unknown values.
 
-**Rencana:** per-call usage/correlation, prompt/schema/model versions, duration, error codes stabil, unknown coverage, ledgers; 03/05/06/07/12.
+### GAP-10 - Medium: lifecycle/storage and deadlines did not meet the whole contract
 
-**Aktual:** ledger usage terutama in-memory aggregate; belum menyimpan per-role request ID, prompt hash, resolved model, latency dan usage durable. Failed pipeline tidak menyimpan ledger ke result. `usage_complete` hanya memeriksa model tokens: missing Tavily usage dapat tetap true. Normal API result belum mengisi duration_ms/fallbacks_observed. Banyak ValueError/RuntimeError termasuk budget/timeout dipetakan menjadi `PIPELINE_FAILED`, bukan error spesifik. Correlation header dan Retry-After antrean belum ada.
+**Observed:** WAL, foreign keys, locking, state/event transactions, cancellation, restart, and
+idempotency existed. Schema versioning/newer-schema rejection, start/finish timestamps, and
+ledger/checkpoint equivalents were absent. Files were manifested before a terminal transaction,
+rather than published as one complete unit. The 300-second timeout covered `run_live()`, while
+rendering/PDF publication happened afterwards.
 
-**Dampak:** sulit mendiagnosis kegagalan dan membandingkan operational cost; flag “complete” dapat disalahartikan. `estimated_model_cost=null` saat harga tidak tersedia **sudah benar**, bukan gap yang harus diisi angka tebakan.
+**Impact:** contract-level recovery/schema compatibility and end-to-end timing were unproven.
+This did not establish exposure of partial artifacts: downloads still required completion.
 
-**Perbaikan:** durable per-call ledger dan failure snapshot, pisahkan model/Tavily coverage, ukur duration, stable typed error mapping; null tetap dipertahankan untuk data yang tidak diketahui.
+**Recommended repair:** schema versions, lifecycle timestamps, checkpoints/publication
+semantics, and a worker deadline including rendering while preserving safe alternate exports.
 
-### GAP-10 — Sedang: lifecycle/storage dan deadline belum memenuhi kontrak penuh
+### GAP-11 - Medium-high: core UX was incomplete
 
-**Aktual:** store sudah WAL/foreign keys/lock, transaksi state-event, cancel/restart/idempotency. Namun belum ada `PRAGMA user_version`, penolakan schema DB lebih baru, started_at/finished_at, dan ledger tables/ekuivalen checkpoint. Artifact manifest ditulis per file sebelum terminal transaction, bukan satu publication unit lengkap. Timeout 300 detik berada di `run_live()`, sedangkan rendering/PDF di `publish_artifacts()` berjalan setelah fungsi itu selesai; belum ada deadline yang meliputi keseluruhan worker run.
+**Observed:** report language selection existed, but interface text and timezone were hardcoded
+to Indonesian and Asia/Jakarta/+07:00. Identity ambiguity showed a generic error rather than
+API candidates. Evidence lacked event/basis/entity/conflict/exclusion detail. No elapsed time.
+Public demo retained a disabled creation form. Every submission generated a new UUID without
+same-ID network retry. Complete state/keyboard/error-association browser evidence was missing.
 
-**Dampak:** recovery/schema compatibility dan batas waktu end-to-end belum terjamin sesuai 03/07/12. Tidak menyatakan artefak parsial saat ini terbuka: download tetap memeriksa completed status.
+**Impact:** R12/G3 incomplete; backend idempotency alone did not protect frontend retries.
+Demo playback needed explicit explanation.
 
-**Perbaikan:** schema versioning, lifecycle timestamps, stage checkpoints dan publication semantics; timeout mencakup rendering tanpa menghilangkan JSON/HTML fallback yang aman.
+**Recommended repair:** static ID/EN dictionary/switch, timezone input or agreed scope,
+actionable identity choices, richer evidence details, retained submission ID, and keyboard/
+error-state checks.
 
-### GAP-11 — Sedang–tinggi: UX P0 masih belum lengkap
+### GAP-12 - Medium: exports/layout needed wider acceptance evidence
 
-**Aktual:** UI memiliki pilihan bahasa laporan tetapi seluruh interface hardcoded Indonesia; timezone hardcoded Asia/Jakarta/+07:00. `needs_input` hanya generic error, tidak menampilkan candidate companies dari API. Evidence drawer tidak menampilkan tanggal event/basis, entity assessment, conflicts atau excluded findings. Tidak ada elapsed run time. Public-demo tetap menampilkan form pembuatan yang disabled, belum diganti sample-only view. Setiap submit menghasilkan UUID baru, tanpa mekanisme retry jaringan menggunakan ID yang sama. Tidak ada browser test yang membuktikan semua state/keyboard/error associations.
+**Observed:** JSON/Markdown/HTML/PDF existed and three synthetic PDF tests passed. The matrix
+did not cover maximum-length ID/EN text, long names/roles, no news, long URLs/titles, and
+Chromium failure. Pruning could remove all claims without a retained accepted-detail ledger
+(GAP-04). Window/date-precision/coverage metadata was incomplete. Browser/report renderers
+differed despite shared selected bundles.
 
-**Dampak:** R12 serta G3 belum lengkap. Backend idempotency yang benar belum otomatis melindungi retry pengguna pada frontend. Mode demo perlu penjelasan rekaman yang lebih eksplisit.
+**Recommended repair:** TC27-TC30 regressions, independent accepted ledgers, consistent selected
+content across exports, and preserved evidence details. Safe renderers need not be replaced
+merely to unify file organization.
 
-**Perbaikan:** static ID/EN dictionary dan UI language switch; timezone input atau scope yang disepakati; actionable ambiguity state; drawer berisi metadata lengkap; retained submission ID untuk retry; keyboard/error-state checks.
+### GAP-13 - Medium: CLI and clean setup did not match the planned deliverable
 
-### GAP-12 — Sedang: ekspor dan layout perlu acceptance lebih luas
+**Observed:** CLI only had offline doctor and fixture `sample()` printing, without API-shared
+persisted workflow. Live run, evaluate, sanitized build-demo, and live doctor were absent.
+Separate evaluation scripts did not satisfy the whole CLI contract. Compose only ran Bifrost;
+app Dockerfile/service and `scripts/dev.ps1` were missing. Fresh setup was untested. Quickstart
+used dev extras while Playwright/pypdf were in PDF extras, with incomplete Chromium guidance.
+Npm wrapper and transport version numbers differed legitimately and needed explanation.
 
-**Aktual:** JSON/MD/HTML/PDF ada dan tes tiga PDF sintetis lulus. Namun belum mencakup maximum-length ID+EN, nama/peran panjang, zero-news, long source URL/title dan error Chromium sebagai satu matrix acceptance. Pruning dapat membuang semua claims bila perlu; retained ledger lengkap pada detail export belum ada (GAP-04). Output HTML/MD/PDF belum membawa semua window/date precision/coverage metadata. Browser dan report menggunakan renderer berbeda, meskipun selected bundle dipakai bersama.
+**Recommended repair:** shared API/CLI workflow, documented equivalent commands/deviations,
+no-key fixture setup with complete optional PDF installation, app+Bifrost packaging, and fresh
+setup smoke. Public deployment is not a substitute for reproducible local behavior.
 
-**Perbaikan:** regression matrix TC27–TC30; persist full accepted ledger terpisah; pastikan PDF/HTML/JSON selected content konsisten dan tidak kehilangan evidence detail. Tidak perlu mengganti renderer yang sudah aman hanya untuk menyeragamkan organisasi file.
+### GAP-14 - Medium: 63 tests did not establish acceptance traceability
 
-### GAP-13 — Sedang: CLI dan clean setup belum sesuai paket rencana
+**Observed:** no executed TC01-TC54 mapping. Several helpers/happy paths were well tested, but
+ready quality, instant boundaries, wrong entity/domain, Auditor omissions, outage paths, maximum
+input, cross-boundary queue, keyboard/i18n, and offline socket enforcement lacked full evidence.
+Vitest had no tests; one code-block format check failed. Intercepted browser HTTP was not a
+real live API-to-browser acceptance run.
 
-**Aktual:** CLI hanya doctor offline dan run fixture yang mencetak `sample()`; bukan workflow terpersistensi yang sama dengan API. Belum ada run live, evaluate, build-demo sanitizer atau doctor --live. Script evaluasi terpisah sudah ada, tetapi tidak menggantikan seluruh kontrak CLI. Compose hanya service Bifrost dan mengandalkan config generated; Dockerfile/app service dan `scripts/dev.ps1` belum ada. Fresh environment belum diuji. README quickstart memakai extra dev, sementara Playwright/pypdf berada di extra pdf dan petunjuk install Chromium belum menjadi jalur lengkap reproduksi ekspor. Bifrost wrapper npm dan gateway transport memiliki nomor versi berbeda; hubungan versi perlu dijelaskan, bukan diasumsikan salah.
+**Recommended repair:** actual pass/partial/missing matrix and meaningful behavior/boundary
+regressions, followed by core release checks. Do not equate 63 cases with 54 accepted scenarios
+or write tests that merely preserve hardcoded limited quality.
 
-**Perbaikan:** satu service workflow untuk API/CLI, CLI equivalents atau documented deviation; fixture no-key setup dan optional PDF install yang lengkap; Compose app+Bifrost bila tetap bagian deliverable; fresh environment smoke. Docker/deployment publik bukan pengganti bukti aplikasi lokal yang benar.
+### GAP-15 - High for submission: final package was not ready for release review
 
-### GAP-14 — Sedang: coverage acceptance belum dapat ditelusuri dari 63 tests
+**Observed:** readable eight-slide draft, without final/native visual review. One saved sample
+rather than ready/context-only/failure examples. Missing final license/attribution. README lacked
+complete architecture/setup/mode/retention/removal/limits. Root index still said no application
+existed; historical specification/progress snapshots were easy to misread. No workspace evidence
+of Git metadata, verified public repo, clean checkout, final deck/screenshots, or submission receipt.
 
-**Aktual:** tidak ada mapping eksekusi TC01–TC54 ke tes/assertion/artifact. Sejumlah helper dan happy path diuji baik, tetapi TC05, instant boundary, wrong-name/domain, auditor omissions, all outage paths, max input, queue across boundary, keyboard/i18n dan global offline socket enforcement belum memiliki bukti lengkap. Vitest tidak punya test files. Satu code-block formatting check gagal. Test browser menggunakan intercepted HTTP, sehingga bukan real API-to-browser live acceptance.
+**Recommended repair:** complete correctness/evaluation first; curate sanitized samples/results,
+license/README/final deck and fresh setup evidence. Publication/submission requires applicable
+authorization. Deployment/video were optional in the local plan; absence alone did not invalidate
+an otherwise functioning MVP.
 
-**Perbaikan:** traceability matrix actual pass/partial/missing; tambah tes untuk gap perilaku yang nyata dan boundary penting, lalu jalankan P0 release checks. Jangan menyamakan 63 pytest cases dengan 54 scenario acceptance atau menulis tes yang hanya mengabadikan hardcoded `limited`.
+## Milestone assessment at the audit date
 
-### GAP-15 — Tinggi untuk submission: paket final belum siap ditinjau sebagai release
-
-**Aktual:** draft PPTX delapan slide ada dan struktur paket dapat dibaca; visual/final review belum terbukti. Demo hanya satu saved synthetic case, belum tiga ready/context_only/failure samples. LICENSE dan dependency attribution final belum ada. README belum mencakup seluruh architecture/setup/mode/retention/removal/limitations sesuai 13. Root README masih berkata aplikasi belum ada; plan/progress berisi snapshot historis sehingga mudah disalahbaca. Tidak ada bukti local Git metadata, URL public repo terverifikasi, clean checkout, final deck/screenshots, atau submission receipt pada workspace.
-
-**Perbaikan:** selesaikan correctness dan evaluation lebih dahulu, lalu curate sanitized outputs/demo samples, license/attribution, README dan deck final. Verifikasi fresh checkout. Publication/submission dilakukan pada scope otorisasi yang sesuai; deployment/video bersifat opsional menurut plan lokal, sehingga ketiadaannya sendiri bukan alasan menyebut MVP gagal.
-
-## Pemetaan milestone saat audit
-
-| Milestone | Penilaian dari bukti |
+| Milestone | Evidence-based assessment |
 |---|---|
-| M0 Bootstrap/contracts | Scaffold dan input ada; canonical output contract belum lengkap. |
-| M1 Spikes | Banyak limited live checks tersimpan; fallback disabled secara jujur; logging/usage dan target environment masih memiliki batas verifikasi. |
-| M2 Research/evidence | Partial: official/supplemental/temporal/full ledger belum selesai. |
-| M3 Role pipeline | Lima role terhubung; verifier input boundary, output schemas, quality/coverage belum memenuhi acceptance. |
-| M4 API/storage/CLI | Banyak jalur dasar lulus; evidence endpoint/checkpoints/schema versioning/CLI equivalents belum lengkap. |
-| M5 UI/exports | Form/brief/download/PDF berfungsi; i18n, ambiguity/evidence states, full layout acceptance belum selesai. |
-| M6 Live/freeze | Live completed/limited tersimpan; semantic inspection dan release evidence belum lengkap. |
-| M7 Evaluation/presentation | 20 outputs dan deck draft ada; human judging, baseline comparison dan presentasi final belum selesai. |
-| M8 Reproduction/submission | Belum diterima; fixture-date regression menjadi blocker reproduksi nyata. |
+| M0 Bootstrap/contracts | Scaffold/input existed; canonical output contracts incomplete. |
+| M1 Spikes | Limited live checks stored; fallback honestly disabled; logging/usage/environment limits remained. |
+| M2 Research/evidence | Partial official/supplemental/temporal/full-ledger behavior. |
+| M3 Role pipeline | Five roles connected; Verifier boundary, schemas, quality/coverage incomplete. |
+| M4 API/storage/CLI | Many basic paths passed; evidence/checkpoints/schema/CLI gaps remained. |
+| M5 UI/exports | Form/brief/download/PDF worked; language/identity/evidence/layout acceptance incomplete. |
+| M6 Live/freeze | Stored live completed/limited result; semantic inspection/release evidence incomplete. |
+| M7 Evaluation/presentation | Twenty outputs and draft deck; human judging/comparison/final presentation pending. |
+| M8 Reproduction/submission | Not accepted; fixture-date regression blocked real reproduction. |
 
-## Urutan penyelesaian yang disarankan
+## Recommended completion order
 
-1. **Reproduksi offline dan kontrak:** perbaiki fixture clock; tetapkan output models/invariants; buat acceptance traceability yang menyebut actual evidence.
-2. **Evidence dan correctness:** durable stage ledger/detail endpoint, temporal policy, verifier input allowlist, identity/failure paths. Selesaikan uncertainty/conflict sebelum mengizinkan ready.
-3. **Coverage dan quality:** official query/supplemental/dedup/passage allocation, periksa E01 recall, lalu quality derivation dengan regression tests.
-4. **Product workflow:** i18n/timezone/ambiguity/evidence UX, usage/error trace, end-to-end deadline, konsistensi ekspor serta full-layout matrix.
-5. **Evaluation:** review output yang ada; setelah perubahan perilaku material, gunakan dataset/version/fingerprint dan run terpisah yang tidak menimpa artefak lama. Laporkan hasil buruk sekalipun; jangan klaim target tercapai tanpa denominator.
-6. **Release package:** fresh setup, sanitized samples/results, license/README, final PPT dan tindakan publikasi/submission yang memang diotorisasi.
+1. **Offline reproduction/contracts:** fixture clock, canonical models/invariants, actual-evidence
+   acceptance traceability.
+2. **Evidence/correctness:** durable detail ledgers, temporal policy, Verifier allowlist, identity/
+   failure paths; finish uncertainty/conflict behavior before allowing ready.
+3. **Coverage/quality:** official/supplemental queries, deduplication/passage allocation, E01 recall
+   analysis, and quality derivation with regressions.
+4. **Product workflow:** language/timezone/identity/evidence UX, usage/errors, whole-run deadline,
+   export consistency, and full layout matrix.
+5. **Evaluation:** review existing outputs; after material behavior changes use separately versioned
+   datasets/fingerprints/runs, preserve previous artifacts, and disclose failures/denominators.
+6. **Release package:** clean setup, sanitized samples/results, license/README, final presentation,
+   and authorized publication/submission.
 
-Fallback provider yang belum terbukti boleh tetap disabled dan diungkap sebagai keterbatasan. CRM, calendar, PDF upload parser, benchmark platform tambahan dan deployment live publik tidak diperlukan untuk menutup gap MVP ini.
+Unverified fallback could remain disabled with an explicit limitation. CRM, calendar, PDF upload
+parsing, another benchmark platform, and public live hosting were not needed to close MVP gaps.

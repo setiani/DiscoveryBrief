@@ -129,3 +129,47 @@ replay demonstrates missing public evidence and retains its original Indonesian 
 The closing preview is the actual one-page PDF. All demo meeting context is fictional.
 See submission/video/README.md for provenance and retained capture/editing scripts under
 ignored data/demo-video-20261110. No app dependencies changed. No publication/submission done.
+
+
+## Public documentation, privacy and language - 10 November 2026
+
+The owner requested English public documentation and removal of the development-machine path.
+The Windows runbook now uses the placeholder `C:\Projects\DiscoveryBrief`, explains first-time
+setup, and is entirely English. The original gap analysis was translated while retaining its
+historical findings and measurements; current repairs remain documented separately.
+
+The owner explicitly chose to preserve bilingual functionality and historical data. Translation
+dictionaries, parsing vocabulary, synthetic RFP/test inputs, original model/evaluation outputs,
+quotes, screenshots and previously recorded replay footage retain their original languages.
+See [publication policy](publication-checklist.md). No historical hashes/offsets or evaluation
+outcomes were rewritten to translate data.
+
+Fixed untranslated English-mode sample controls, evidence/date/download labels, operational
+usage labels, and fallback error/loading text. New API requests now default to English while
+explicit Indonesian requests remain unchanged. Added request-default and browser regressions;
+the browser test verifies that switching UI language leaves historical RFP quotations intact.
+The existing browser test now selects Indonesian explicitly before its original bilingual flow.
+
+Verification: 87 Python tests passed (one upstream TestClient deprecation warning), four Vitest
+tests passed, TypeScript/Vite build passed, Ruff lint/format and git diff --check passed.
+The public-file audit checked 224 tracked/addable files without finding the current machine's
+workspace/home paths or likely Indonesian prose in documentation/comments. Manual Office-XML
+and three-PDF text/metadata inspection found no personal paths. Audit language detection is
+heuristic; retained multilingual data is intentional, not a claim that every byte is English.
+
+The live GitHub main ref still points at the earlier commit containing the old runbook path.
+This change removes it from the working tree/latest content only. No history rewrite, commit,
+push, force-push, paid API call or container restart was performed. The owner's separate slide
+rename/replacement was preserved. Run `uv run python scripts/audit_public_files.py` before
+staging public changes. The compiled frontend is ready for the next application image rebuild.
+
+
+## Approved presentation updates - 10 November 2026
+
+Updated submission/DiscoveryBrief-slides.pptx after the owner's authorization: latest live
+observations on slide 6, corrected fallback scope on slide 8, enlarged English actual-PDF detail
+on slide 9 and active repository/video/documentation links on slide 10. Native PowerPoint render,
+visual inspection, package integrity and six hyperlink relationships passed. Slides 1-5 and 7
+remain canonically unchanged. Public preview image/provenance added under submission/demo.
+Historical evaluation evidence remains original. See docs/slides-review-2026-11-10.md.
+The deleted draft remains absent; no commit, push, submission or paid API use occurred.

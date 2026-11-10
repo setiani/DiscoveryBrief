@@ -36,7 +36,7 @@ class RunRequest(StrictModel):
     participants: list[Participant] = Field(default_factory=list, max_length=6)
     rfp_text: str = Field(default="", max_length=12000)
     notes: str = Field(default="", max_length=4000)
-    language: Literal["id", "en"] = "id"
+    language: Literal["id", "en"] = "en"
 
     @field_validator("rfp_text", "notes", mode="before")
     @classmethod

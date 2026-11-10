@@ -24,6 +24,14 @@ def test_sample_request_and_public_boundary():
     assert public["window_start"].startswith("2026-10-13")
 
 
+def test_english_default_preserves_explicit_indonesian_requests():
+    data = fixture()
+    assert data["language"] == "id"
+    assert RunRequest.model_validate(data).language == "id"
+    data.pop("language")
+    assert RunRequest.model_validate(data).language == "en"
+
+
 @pytest.mark.parametrize(
     "field,value",
     [

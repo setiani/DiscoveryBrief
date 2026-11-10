@@ -44,6 +44,7 @@ if (form && formCard) {
       'Pencarian':uiLanguage==='en'?'Search':'Pencarian',
       'opsional · teks saja':uiLanguage==='en'?'optional · plain text':'opsional · teks saja',
     };
+    app.querySelectorAll<HTMLElement>('[data-i18n]').forEach(element => { element.textContent=t(element.dataset.i18n as Key); });
     const walk = document.createTreeWalker(app, NodeFilter.SHOW_TEXT);
     const nodes: Text[] = []; while (walk.nextNode()) nodes.push(walk.currentNode as Text);
     for (const node of nodes) {
@@ -103,7 +104,7 @@ if (form && formCard) {
     if (config.mode === 'public_demo') { formCard.hidden=true; const notice=document.createElement('p'); notice.className='notice'; notice.textContent=t('demo'); formCard.before(notice); }
     if (config.mode === 'local' && config.live_enabled === true) {
       submit.disabled = false;
-      statusText.textContent = uiLanguage==='en'?'Live research uses Tavily and inference through Bifrost':'Riset live menggunakan Tavily dan model melalui Bifrost';
+      statusText.textContent = t('live');
     }
   }).catch(() => { submit.disabled = true; });
   form.addEventListener('submit', async event => {
@@ -118,7 +119,7 @@ if (form && formCard) {
     });
     if (topics.length > 3 || people.length > 6) {
       resultView.hidden = false;
-      resultView.textContent = 'Pilih maksimal tiga topik dan masukkan maksimal enam peserta.';
+      resultView.textContent = t('limit');
       return;
     }
     let meetingAt: string;
@@ -132,17 +133,17 @@ if (form && formCard) {
       participants: people, public_topics: topics});
     submit.disabled = true;
     resultView.hidden = false;
-    resultView.textContent = 'Menyiapkan riset…';
+    resultView.textContent = t('loading');
     let cancel: HTMLButtonElement | null = null;
     try {
       const response = await fetch('/api/runs', {method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(payload)});
       const created = await response.json();
-      if (!response.ok) throw new Error(created.error?.message || 'Run tidak dapat dimulai');
+      if (!response.ok) throw new Error(created.error?.message || t('failure'));
       const runId = encodeURIComponent(created.run_id);
       const started=performance.now();
       resultView.replaceChildren();
       const progress = document.createElement('p');
-      progress.textContent = 'Run masuk antrean…';
+      progress.textContent = t('queued');
       cancel = document.createElement('button');
       cancel.type = 'button'; cancel.className = 'secondary'; cancel.textContent = t('cancel');
       cancel.addEventListener('click', async () => {
@@ -154,10 +155,9 @@ if (form && formCard) {
       let artifactNames: string[] = [];
       for (let attempt = 0; attempt < 240; attempt++) {
         const statusResponse = await fetch(`/api/runs/${runId}`);
-        if (!statusResponse.ok) throw new Error('Status run tidak dapat dibaca');
+        if (!statusResponse.ok) throw new Error(t('failure'));
         const status = await statusResponse.json();
-        const stages: Record<string,string> = {queued:'Dalam antrean', planning:'Merencanakan riset', researching:'Mencari sumber', analyzing:'Membaca bukti', verifying:'Memeriksa klaim', composing:'Menyusun pertanyaan', auditing:'Memeriksa asumsi', rendering:'Menyiapkan brief', finished:'Selesai'};
-        progress.textContent = `${dictionary[uiLanguage][status.stage as Key] || stages[status.stage] || t('loading')} · ${t('elapsed')}: ${Math.round((performance.now()-started)/1000)}s`;
+        progress.textContent = `${dictionary[uiLanguage][status.stage as Key] || t('loading')} · ${t('elapsed')}: ${Math.round((performance.now()-started)/1000)}s`;
         if (status.status === 'completed') { completed = true; artifactNames = status.artifacts || []; break; }
         if (status.status === 'needs_input') {
           submission.complete();
@@ -175,7 +175,7 @@ if (form && formCard) {
       }
       if (!completed) throw new Error(t('timeout'));
       const briefResponse = await fetch(`/api/runs/${runId}/brief`);
-      if (!briefResponse.ok) throw new Error('Brief belum dapat ditampilkan.');
+      if (!briefResponse.ok) throw new Error(t('failure'));
       const brief = reportView(await briefResponse.json());
       submission.complete();
       const ledger: any = await fetch(`/api/runs/${runId}/evidence`).then(r=>r.ok?r.json():{}).catch(()=>({}));
@@ -216,7 +216,7 @@ if (form && formCard) {
         if (source) {
           try { const url = new URL(source.url); if (['http:', 'https:'].includes(url.protocol)) {
             const link = document.createElement('a'); link.href = url.href; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.textContent = source.title || url.hostname; details.append(link);
-            const dates = document.createElement('p'); dates.textContent = `Diterbitkan: ${source.published_on || 'tidak diketahui'} · Diambil: ${source.retrieved_at || 'tidak diketahui'}`; details.append(dates);
+            const dates = document.createElement('p'); dates.textContent = `${t('published')}: ${source.published_on || t('unknown')} · ${t('retrieved')}: ${source.retrieved_at || t('unknown')}`; details.append(dates);
           }} catch { /* Invalid links are never rendered. */ }
         }
       }
@@ -232,11 +232,11 @@ if (form && formCard) {
       const traceTitle = document.createElement('summary'); traceTitle.textContent = t('usage'); trace.append(traceTitle);
       const usage = document.createElement('p');
       const metrics = brief.metrics || {};
-      usage.textContent = `Panggilan pencarian: ${metrics.search_requests ?? 'tidak diketahui'} · Ekstraksi: ${metrics.extract_requests ?? 'tidak diketahui'} · Model: ${metrics.llm_requests ?? 'tidak diketahui'} · Token masuk: ${metrics.llm_input_tokens ?? 'tidak diketahui'} · Token keluar: ${metrics.llm_output_tokens ?? 'tidak diketahui'} · Kredit Tavily dilaporkan: ${metrics.tavily_credits_reported ?? 'tidak diketahui'} · Reservasi kredit: ${metrics.tavily_credits_reserved ?? 'tidak diketahui'}`;
+      usage.textContent = `${t('searchCalls')}: ${metrics.search_requests ?? t('unknown')} · ${t('extractCalls')}: ${metrics.extract_requests ?? t('unknown')} · ${t('modelCalls')}: ${metrics.llm_requests ?? t('unknown')} · ${t('inputTokens')}: ${metrics.llm_input_tokens ?? t('unknown')} · ${t('outputTokens')}: ${metrics.llm_output_tokens ?? t('unknown')} · ${t('reportedCredits')}: ${metrics.tavily_credits_reported ?? t('unknown')} · ${t('reservedCredits')}: ${metrics.tavily_credits_reserved ?? t('unknown')}`;
       trace.append(usage); resultView.append(trace);
       const downloads = document.createElement('p');
       downloads.className = 'downloads';
-      for (const [name, label] of [['brief.pdf', 'PDF'], ['brief.html', 'HTML'], ['brief.md', 'Markdown'], ['brief.json', 'JSON'], ['evidence.json', 'Bukti JSON'], ['trace.json', 'Jejak JSON']]) {
+      for (const [name, label] of [['brief.pdf', 'PDF'], ['brief.html', 'HTML'], ['brief.md', 'Markdown'], ['brief.json', 'JSON'], ['evidence.json', t('evidenceJson')], ['trace.json', t('traceJson')]]) {
         if (!artifactNames.includes(name)) continue;
         const link = document.createElement('a'); link.href = `/api/runs/${runId}/artifacts/${name}`; link.textContent = label; downloads.append(link);
       }
@@ -264,20 +264,21 @@ if (card) {
   const sampleButton = document.createElement('button');
   sampleButton.type = 'button';
   sampleButton.className = 'secondary';
-  sampleButton.textContent = 'Lihat contoh sintetis';
+  sampleButton.textContent = t('sample');
+  sampleButton.dataset.i18n = 'sample';
   const output = document.createElement('div');
   output.dataset.generated='true';
   output.setAttribute('aria-live', 'polite');
   sampleButton.addEventListener('click', async () => {
     sampleButton.disabled = true;
-    output.textContent = 'Memuat contoh…';
+    output.textContent = t('sampleLoading');
     try {
       const response = await fetch(`/api/samples/${encodeURIComponent(selectedSample)}`);
       if (!response.ok) throw new Error('sample unavailable');
       const data = await response.json();
       output.replaceChildren();
       const title = document.createElement('h2');
-      title.textContent = `${data.company_name} · Contoh sintetis`;
+      title.textContent = `${data.company_name} · ${t('sampleTitle')}`;
       output.append(title);
       const disclaimer = document.createElement('p');
       disclaimer.textContent = `${t('synthetic')} · ${t('mode')}: ${data.research_mode}`;
@@ -295,11 +296,11 @@ if (card) {
         output.append(list);
       }
       const detail = document.createElement('p');
-      detail.textContent = `Contoh ini berasal dari fixture lokal. Sumber dan tanggalnya fiktif; cut-off: ${data.knowledge_cutoff}.`;
+      detail.textContent = `${t('sampleOrigin')} ${t('cutoff')}: ${data.knowledge_cutoff}.`;
       output.append(detail);
       const evidence = document.createElement('details');
       const heading = document.createElement('summary');
-      heading.textContent = 'Lihat kutipan bukti';
+      heading.textContent = t('evidence');
       evidence.append(heading);
       for (const finding of data.findings) {
         for (const item of finding.evidence || []) {
@@ -308,13 +309,13 @@ if (card) {
           evidence.append(quote);
           const source = data.sources.find((s: {source_id: string}) => s.source_id === item.source_id);
           const caption = document.createElement('p');
-          caption.textContent = source ? `Sumber fiktif: ${source.title}` : 'Sumber tidak ditemukan';
+          caption.textContent = source ? `${t('fictionalSource')}: ${source.title}` : t('missingSource');
           evidence.append(caption);
         }
       }
       for (const requirement of data.requirements) {
         const quote = document.createElement('blockquote');
-        quote.textContent = `Kutipan RFP contoh: ${requirement.quote}`;
+        quote.textContent = `${t('sampleRfp')}: ${requirement.quote}`;
         evidence.append(quote);
       }
       output.append(evidence);
@@ -322,16 +323,17 @@ if (card) {
       print.href = '/api/samples/sagara/brief.html';
       print.target = '_blank';
       print.rel = 'noopener noreferrer';
-      print.textContent = 'Buka laporan contoh untuk dicetak ↗';
+      print.textContent = `${t('sampleReport')} ↗`;
       output.append(print);
     } catch {
-      output.textContent = 'Contoh belum dapat dimuat. Pastikan backend DiscoveryBrief berjalan.';
+      output.textContent = t('sampleFailure');
     } finally { sampleButton.disabled = false; }
   });
   const runButton = document.createElement('button');
   runButton.type = 'button';
   runButton.className = 'secondary run-sample';
-  runButton.textContent = 'Jalankan contoh offline';
+  runButton.textContent = t('runSample');
+  runButton.dataset.i18n = 'runSample';
   runButton.disabled = true;
   const runOutput = document.createElement('div');
   runOutput.dataset.generated='true';
@@ -343,7 +345,7 @@ if (card) {
   }).catch(() => { runButton.disabled = true; });
   runButton.addEventListener('click', async () => {
     runButton.disabled = true;
-    runOutput.textContent = 'Menyiapkan contoh sintetis…';
+    runOutput.textContent = t('sampleLoading');
     try {
       let create: Response;
       if (sampleMode === 'replay' || selectedSample !== 'sagara') {
@@ -363,7 +365,7 @@ if (card) {
         const statusResponse = await fetch(`/api/runs/${encodeURIComponent(run.run_id)}`);
         if (!statusResponse.ok) throw new Error('status unavailable');
         const status = await statusResponse.json();
-        runOutput.textContent = `Contoh sintetis · status: ${status.status}`;
+        runOutput.textContent = `${t('sampleTitle')} · ${status.status}`;
         if (status.status === 'completed') { done = true; artifactNames = status.artifacts || []; break; }
         if (['failed', 'cancelled', 'needs_input'].includes(status.status)) throw new Error('run failed');
         await new Promise(resolve => window.setTimeout(resolve, 1500));
@@ -377,7 +379,7 @@ if (card) {
       title.textContent = `${brief.company_name} · ${uiLanguage==='en'?'Synthetic example':'Contoh sintetis'}`;
       runOutput.append(title);
       const state = document.createElement('p');
-      state.textContent = `Mode ${brief.research_mode} · kualitas ${brief.quality} · batas pengetahuan ${brief.knowledge_cutoff}`;
+      state.textContent = `${t('mode')}: ${brief.research_mode} · ${t('quality')}: ${brief.quality} · ${t('cutoff')}: ${brief.knowledge_cutoff}`;
       runOutput.append(state);
       if (brief.original_metrics) {
         const provenance=document.createElement('p'); provenance.textContent=`${t('demo')} Original: ${brief.original_research_mode}; model requests: ${brief.original_metrics.llm_requests ?? t('unknown')}`; runOutput.append(provenance);
@@ -399,7 +401,7 @@ if (card) {
       runOutput.append(sources);
       const evidence = document.createElement('details');
       const evidenceTitle = document.createElement('summary');
-      evidenceTitle.textContent = 'Periksa bukti dan kutipan RFP';
+      evidenceTitle.textContent = t('evidenceRfp');
       evidence.append(evidenceTitle);
       for (const claim of brief.claims) {
         for (const item of claim.evidence || []) {
@@ -408,25 +410,25 @@ if (card) {
           evidence.append(quote);
           const source = brief.sources.find((s: {source_id: string}) => s.source_id === item.source_id);
           const caption = document.createElement('p');
-          caption.textContent = source ? `Sumber fiktif: ${source.title}` : 'Sumber tidak ditemukan';
+          caption.textContent = source ? `${t('fictionalSource')}: ${source.title}` : t('missingSource');
           evidence.append(caption);
         }
       }
       for (const requirement of brief.requirements) {
         const quote = document.createElement('blockquote');
-        quote.textContent = `Kutipan RFP contoh: ${requirement.quote}`;
+        quote.textContent = `${t('sampleRfp')}: ${requirement.quote}`;
         evidence.append(quote);
       }
       runOutput.append(evidence);
       const downloads = document.createElement('p');
       downloads.className = 'downloads';
-      for (const [name, label] of [['brief.pdf', 'PDF'], ['brief.html', 'HTML'], ['brief.md', 'Markdown'], ['brief.json', 'JSON'], ['evidence.json', 'Bukti JSON'], ['trace.json', 'Jejak JSON']]) {
+      for (const [name, label] of [['brief.pdf', 'PDF'], ['brief.html', 'HTML'], ['brief.md', 'Markdown'], ['brief.json', 'JSON'], ['evidence.json', t('evidenceJson')], ['trace.json', t('traceJson')]]) {
         if (!artifactNames.includes(name)) continue;
         const link = document.createElement('a'); link.href = `/api/runs/${encodeURIComponent(run.run_id)}/artifacts/${name}`; link.textContent = label; downloads.append(link);
       }
       runOutput.append(downloads);
     } catch {
-      runOutput.textContent = 'Contoh gagal dijalankan. Pastikan backend lokal tersedia dan periksa status run.';
+      runOutput.textContent = t('sampleFailure');
     } finally { runButton.disabled = false; }
   });
   sampleSection.append(sampleSelect, sampleButton, runButton, output, runOutput);

@@ -67,6 +67,8 @@ def test_live_form_serialization_and_brief_rendering():
         page = browser.new_page(viewport={"width": 390, "height": 844})
         page.route("http://localhost/**", route_handler)
         page.goto("http://localhost/", wait_until="domcontentloaded")
+        assert page.locator("html").get_attribute("lang") == "en"
+        page.locator("header select").select_option("id")
         page.locator("[name=company_name]").fill("Synthetic Co")
         page.locator("[name=company_domain]").fill("synthetic.example.com")
         page.locator("[name=date]").fill("2026-11-12")

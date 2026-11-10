@@ -70,7 +70,7 @@ with (
             page.route("**/*", route_handler)
             page.goto("http://discoverybrief.local/", wait_until="domcontentloaded")
             page.locator('select[aria-label="Synthetic sample"]').select_option("ready")
-            page.get_by_role("button", name="Jalankan contoh offline").click()
+            page.get_by_role("button", name="Run offline example").click()
             page.get_by_text("Mode replay", exact=False).wait_for(timeout=20000)
             if page.evaluate(
                 "document.documentElement.scrollWidth > window.innerWidth"

@@ -1,0 +1,109 @@
+{
+  "mode": "frozen_research",
+  "synthetic": true,
+  "records": 20,
+  "candidate_outcomes": [
+    {
+      "case_id": "E01",
+      "status": "completed",
+      "quality": "ready",
+      "expected_status": "completed",
+      "expected_quality": "ready",
+      "outcome_match": true
+    },
+    {
+      "case_id": "E02",
+      "status": "needs_input",
+      "quality": null,
+      "expected_status": "needs_input",
+      "expected_quality": null,
+      "outcome_match": true
+    },
+    {
+      "case_id": "E03",
+      "status": "completed",
+      "quality": "context_only",
+      "expected_status": "completed",
+      "expected_quality": "context_only",
+      "outcome_match": true
+    },
+    {
+      "case_id": "E04",
+      "status": "completed",
+      "quality": "limited",
+      "expected_status": "completed",
+      "expected_quality": "limited",
+      "outcome_match": true
+    },
+    {
+      "case_id": "E05",
+      "status": "completed",
+      "quality": "context_only",
+      "expected_status": "completed",
+      "expected_quality": "context_only",
+      "outcome_match": true
+    },
+    {
+      "case_id": "E06",
+      "status": "completed",
+      "quality": "limited",
+      "expected_status": "completed",
+      "expected_quality": "limited",
+      "outcome_match": true
+    },
+    {
+      "case_id": "E07",
+      "status": "completed",
+      "quality": "context_only",
+      "expected_status": "completed",
+      "expected_quality": "context_only",
+      "outcome_match": true
+    },
+    {
+      "case_id": "E08",
+      "status": "completed",
+      "quality": "limited",
+      "expected_status": "completed",
+      "expected_quality": "limited",
+      "outcome_match": true
+    },
+    {
+      "case_id": "E09",
+      "status": "completed",
+      "quality": "context_only",
+      "expected_status": "completed",
+      "expected_quality": "context_only",
+      "outcome_match": true
+    },
+    {
+      "case_id": "E10",
+      "status": "completed",
+      "quality": "limited",
+      "expected_status": "completed",
+      "expected_quality": "limited",
+      "outcome_match": true
+    }
+  ],
+  "mechanical_outcome_matches": 10,
+  "case_count": 10,
+  "semantic_accuracy": null,
+  "independent_human_review": "pending",
+  "input_tokens": 52239,
+  "output_tokens": 14968,
+  "reported_model_cost": null,
+  "tavily_requests": 0,
+  "implementation_sha256": [
+    "a6aee3051661453c9b2558df438fa839a3cbaf0842eb47dd61d87f88d3dcccee"
+  ],
+  "dataset_sha256": [
+    "5f76ff54f8716953c10f0906885751973a69edef8ee3d6b18f16ac7d90b9ded5"
+  ],
+  "latency_median_seconds": {
+    "baseline": 8.6875,
+    "candidate": 36.914
+  },
+  "model_calls": {
+    "baseline": 10,
+    "candidate": 48
+  }
+}

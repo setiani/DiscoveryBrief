@@ -1,0 +1,56 @@
+{
+  "case_id": "E05",
+  "system": "baseline",
+  "mode": "frozen_research",
+  "human_review": "pending",
+  "model": "gpt-6-luna",
+  "implementation_sha256": "a6aee3051661453c9b2558df438fa839a3cbaf0842eb47dd61d87f88d3dcccee",
+  "dataset_sha256": "5f76ff54f8716953c10f0906885751973a69edef8ee3d6b18f16ac7d90b9ded5",
+  "calls": [
+    {
+      "call_id": "call0001",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 502,
+        "output_tokens": 380
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "baseline",
+      "schema_version": "1.0",
+      "prompt_sha256": "04bd16b787dadaced42217fb1340dd02ad19690e461d4fec2aab8f42022f66c1",
+      "schema_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "duration_ms": 9672,
+      "status": "received"
+    }
+  ],
+  "elapsed_seconds": 9.687,
+  "usage": {
+    "llm_input_tokens": 502,
+    "llm_output_tokens": 380,
+    "tavily_credits_reported": null,
+    "usage_complete": true,
+    "model_usage_complete": true,
+    "tavily_usage_complete": true,
+    "estimated_model_cost_microusd": null
+  },
+  "result": {
+    "status": "completed",
+    "raw_output": "{\n  \"findings\": [\n    \"Sumber menyebut pilot Sagara Insurance dimulai pada 20 September 2026; tanggal tersebut mendahului rentang riset yang dimulai 13 Oktober 2026, dan sumber tidak menjelaskan cakupan atau hasil pilot. https://news.sagara.example/old-pilot-recap\"\n  ],\n  \"requirements\": [\n    \"Portal agen harus mendukung SSO.\",\n    \"Portal agen harus terintegrasi dengan sistem existing; sistem dan cakupan integrasi belum dirinci.\"\n  ],\n  \"questions\": [\n    \"Apa alur dan jenis pengguna portal agen yang termasuk dalam scope?\",\n    \"Penyedia atau standar SSO apa yang digunakan, dan bagaimana kebutuhan autentikasi serta otorisasi?\",\n    \"Sistem existing apa yang perlu diintegrasikan, dan data atau proses apa yang dipertukarkan?\",\n    \"Apakah pilot yang disebut sumber terkait dengan portal ini, dan adakah temuan atau batasan yang perlu diperhitungkan dalam estimasi?\"\n  ]\n}",
+    "parsed": {
+      "findings": [
+        "Sumber menyebut pilot Sagara Insurance dimulai pada 20 September 2026; tanggal tersebut mendahului rentang riset yang dimulai 13 Oktober 2026, dan sumber tidak menjelaskan cakupan atau hasil pilot. https://news.sagara.example/old-pilot-recap"
+      ],
+      "requirements": [
+        "Portal agen harus mendukung SSO.",
+        "Portal agen harus terintegrasi dengan sistem existing; sistem dan cakupan integrasi belum dirinci."
+      ],
+      "questions": [
+        "Apa alur dan jenis pengguna portal agen yang termasuk dalam scope?",
+        "Penyedia atau standar SSO apa yang digunakan, dan bagaimana kebutuhan autentikasi serta otorisasi?",
+        "Sistem existing apa yang perlu diintegrasikan, dan data atau proses apa yang dipertukarkan?",
+        "Apakah pilot yang disebut sumber terkait dengan portal ini, dan adakah temuan atau batasan yang perlu diperhitungkan dalam estimasi?"
+      ]
+    }
+  }
+}

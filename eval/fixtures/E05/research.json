@@ -1,0 +1,30 @@
+{
+  "fixture_version": "1.0",
+  "synthetic": true,
+  "clock_at": "2026-11-08T03:00:00Z",
+  "sources": [
+    {
+      "source_id": "s0003",
+      "original_url": "https://news.sagara.example/old-pilot-recap",
+      "canonical_url": "https://news.sagara.example/old-pilot-recap",
+      "host": "news.sagara.example",
+      "title": "September pilot recap, updated in November",
+      "text": "Updated 6 November 2026. The Sagara Insurance pilot began on 20 September 2026.",
+      "text_origin": "extract",
+      "retrieved_at": "2026-11-08T03:00:00Z",
+      "published_on": "2026-11-06",
+      "event_on": "2026-09-20",
+      "date_basis": "last_updated",
+      "date_precision": "day",
+      "published_at": null,
+      "date_quote": "20 September 2026",
+      "raw_provider_date": "2026-11-06",
+      "source_kind": "official",
+      "entity_match": "unreviewed",
+      "extraction_status": "ok",
+      "truncated": false,
+      "content_sha256": "5a76b8af3f3fcfa65cc79d08b1fc4b18006ec82cbe14c56711fbd2aaee15b5ec",
+      "duplicate_of_source_id": null
+    }
+  ]
+}

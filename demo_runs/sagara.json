@@ -1,0 +1,227 @@
+{
+  "status": "completed",
+  "research_mode": "fixture",
+  "quality": "limited",
+  "knowledge_cutoff": "2026-11-08T03:00:00+00:00",
+  "window_start": "2026-10-13T10:00:00+07:00",
+  "claims": [
+    {
+      "candidate_id": "a0001",
+      "statement": "Sagara Insurance mengumumkan pilot portal agen pada 5 November 2026.",
+      "event_on": "2026-11-05",
+      "evidence": [
+        {
+          "source_id": "s0001",
+          "quote": "On 5 November 2026, Sagara Insurance announced an agent portal pilot for 200 agents.",
+          "start": 0,
+          "end": 84,
+          "quote_sha256": "ed9344d57a1f2a789f2e65852f03b7ad198f02230b7c3c8fe132e20b2244e3da",
+          "evidence_id": "e0001"
+        }
+      ],
+      "claim_id": "c0001",
+      "category": "launch",
+      "source_kind": "official",
+      "temporal_basis": "explicit_event",
+      "relevance": {
+        "topic_match": true,
+        "meeting_type_match": true,
+        "rfp_link": true
+      },
+      "event_cluster_id": "event0001",
+      "rank_score": 10
+    }
+  ],
+  "requirements": [
+    {
+      "requirement_id": "r0001",
+      "summary": "Portal mendukung SSO dan integrasi dengan sistem existing.",
+      "quote": "Portal harus mendukung SSO dan integrasi dengan sistem existing.",
+      "start": 0,
+      "end": 64,
+      "category": "integration",
+      "unspecified": [
+        "Sistem identitas",
+        "Sistem tujuan dan protokol integrasi"
+      ]
+    }
+  ],
+  "composition": {
+    "question": [
+      {
+        "text": "Sistem identitas apa yang harus terhubung dengan SSO portal?",
+        "grounding": {
+          "claim_ids": [],
+          "requirement_ids": [
+            "r0001"
+          ],
+          "context_fields": []
+        },
+        "priority": "high"
+      },
+      {
+        "text": "Kriteria keberhasilan pilot portal agen apa yang perlu dikonfirmasi?",
+        "grounding": {
+          "claim_ids": [
+            "c0001"
+          ],
+          "requirement_ids": [],
+          "context_fields": []
+        },
+        "priority": "high"
+      },
+      {
+        "text": "Siapa pemilik keputusan integrasi dan penerimaan hasil proyek?",
+        "grounding": {
+          "claim_ids": [],
+          "requirement_ids": [
+            "r0001"
+          ],
+          "context_fields": [
+            "participants"
+          ]
+        },
+        "priority": "medium"
+      }
+    ],
+    "hypothesis": [
+      {
+        "text": "Integrasi identitas mungkin perlu diklarifikasi sebelum estimasi.",
+        "grounding": {
+          "claim_ids": [],
+          "requirement_ids": [
+            "r0001"
+          ],
+          "context_fields": []
+        }
+      }
+    ],
+    "unknown": [
+      {
+        "text": "Sistem identitas dan protokol integrasi belum disebutkan.",
+        "related_claim_ids": [],
+        "related_requirement_ids": [
+          "r0001"
+        ]
+      }
+    ]
+  },
+  "brief_selection": {
+    "finding_ids": [
+      "c0001"
+    ],
+    "requirement_ids": [
+      "r0001"
+    ],
+    "questions": [
+      {
+        "text": "Sistem identitas apa yang harus terhubung dengan SSO portal?",
+        "grounding": {
+          "claim_ids": [],
+          "requirement_ids": [
+            "r0001"
+          ],
+          "context_fields": []
+        },
+        "priority": "high"
+      },
+      {
+        "text": "Kriteria keberhasilan pilot portal agen apa yang perlu dikonfirmasi?",
+        "grounding": {
+          "claim_ids": [
+            "c0001"
+          ],
+          "requirement_ids": [],
+          "context_fields": []
+        },
+        "priority": "high"
+      },
+      {
+        "text": "Siapa pemilik keputusan integrasi dan penerimaan hasil proyek?",
+        "grounding": {
+          "claim_ids": [],
+          "requirement_ids": [
+            "r0001"
+          ],
+          "context_fields": [
+            "participants"
+          ]
+        },
+        "priority": "medium"
+      }
+    ],
+    "hypotheses": [
+      {
+        "text": "Integrasi identitas mungkin perlu diklarifikasi sebelum estimasi.",
+        "grounding": {
+          "claim_ids": [],
+          "requirement_ids": [
+            "r0001"
+          ],
+          "context_fields": []
+        }
+      }
+    ],
+    "unknowns": [
+      {
+        "text": "Sistem identitas dan protokol integrasi belum disebutkan.",
+        "related_claim_ids": [],
+        "related_requirement_ids": [
+          "r0001"
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "source_id": "s0001",
+      "original_url": "https://news.sagara.example/2026/11/05/agent-portal-pilot",
+      "canonical_url": "https://news.sagara.example/2026/11/05/agent-portal-pilot",
+      "title": "Sagara Insurance agent portal pilot",
+      "text": "On 5 November 2026, Sagara Insurance announced an agent portal pilot for 200 agents.",
+      "text_origin": "extract",
+      "extraction_status": "ok",
+      "retrieved_at": "2026-11-08T03:00:00+00:00",
+      "published_on": "2026-11-05",
+      "event_on": null,
+      "date_basis": "provider_estimate",
+      "raw_provider_date": "2026-11-05",
+      "content_sha256": "ed9344d57a1f2a789f2e65852f03b7ad198f02230b7c3c8fe132e20b2244e3da",
+      "truncated": false,
+      "duplicate_of_source_id": null
+    }
+  ],
+  "warnings": [
+    "experimental_pipeline"
+  ],
+  "metrics": {
+    "llm_input_tokens": null,
+    "llm_output_tokens": null,
+    "tavily_credits_reported": null,
+    "usage_complete": false,
+    "estimated_model_cost_microusd": null,
+    "search_requests": 0,
+    "extract_requests": 0,
+    "extract_url_attempts": 0,
+    "llm_requests": 0,
+    "tavily_credits_reserved": 0
+  },
+  "diagnostics": {
+    "candidate_count": 6,
+    "claim_rejections": {
+      "not_recent_or_conflicted": 2,
+      "unsupported_or_wrong_entity": 1,
+      "outside_window": 1
+    },
+    "review_temporal": {
+      "recent_development": 4,
+      "historical": 1,
+      "uncertain": 1
+    },
+    "review_support": {
+      "supported": 6
+    },
+    "review_conflicts": 0
+  },
+  "synthetic": true
+}

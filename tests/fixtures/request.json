@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "client_request_id": "b8cf945e-9287-47c2-b832-9055e22330a1",
+  "company_name": "Sagara Insurance",
+  "company_domain": "sagara.example",
+  "company_country": "Indonesia",
+  "company_industry": "Insurance",
+  "meeting_at": "2026-11-12T10:00:00+07:00",
+  "meeting_timezone": "Asia/Jakarta",
+  "meeting_type": "rfp_clarification",
+  "meeting_goal": "Klarifikasi scope portal agen sebelum estimasi.",
+  "public_topics": [
+    "portal",
+    "integration",
+    "identity"
+  ],
+  "participants": [
+    {
+      "name": "Rina",
+      "role": "Head of IT",
+      "organization": "Sagara Insurance",
+      "source_note": "Undangan meeting fiktif"
+    }
+  ],
+  "rfp_text": "Portal harus mendukung SSO dan integrasi dengan sistem existing.",
+  "notes": "Contoh sintetis untuk dokumentasi; bukan data pelanggan.",
+  "language": "id"
+}

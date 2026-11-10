@@ -1,0 +1,511 @@
+{
+  "case_id": "E05",
+  "system": "candidate",
+  "mode": "frozen_research",
+  "human_review": "pending",
+  "model": "gpt-6-luna",
+  "implementation_sha256": "a6aee3051661453c9b2558df438fa839a3cbaf0842eb47dd61d87f88d3dcccee",
+  "dataset_sha256": "5f76ff54f8716953c10f0906885751973a69edef8ee3d6b18f16ac7d90b9ded5",
+  "calls": [
+    {
+      "call_id": "call0001",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 374,
+        "output_tokens": 86
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "ResearchPlan",
+      "schema_version": "1.0",
+      "prompt_sha256": "3e68ebe55ee01dfa5e60f5b87edd991abb183d06dd78f50422041a61eeb33da1",
+      "schema_sha256": "237111ceaa9e961d9da55348ea4072c2497618ca89fa1dfa283ff7ab019996fe",
+      "duration_ms": 4265,
+      "status": "received"
+    },
+    {
+      "call_id": "call0002",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 1015,
+        "output_tokens": 324
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "AnalystOutput",
+      "schema_version": "1.0",
+      "prompt_sha256": "fd5d2dbe45fbe915659f33313b2c0b4c4533e0a0179b9170981e1d0a893adbfe",
+      "schema_sha256": "a74779c7781fb9993bbba38831e068840d1d2356ddb6be4749756689acaa41e8",
+      "duration_ms": 8422,
+      "status": "received"
+    },
+    {
+      "call_id": "call0003",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 1267,
+        "output_tokens": 209
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "VerifierOutput",
+      "schema_version": "1.0",
+      "prompt_sha256": "d85ca0015cb421ce77125a200e2d8043ad35b61446aeedee87e96bf74109fb08",
+      "schema_sha256": "3e9a88c93a49e31dd387cac95e00f1e8989b7f70ce6a06e23def91cd6f28423c",
+      "duration_ms": 5812,
+      "status": "received"
+    },
+    {
+      "call_id": "call0004",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 772,
+        "output_tokens": 192
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "ComposerOutput",
+      "schema_version": "1.0",
+      "prompt_sha256": "77e3870d8d985dc4ce797d51ba9d8eae2ac01f6b554c58356a0befc454855ff5",
+      "schema_sha256": "ef132fad857bceeddf365645620a90423d1bf0f55e5c9e54cc6ff77ba42a8aaf",
+      "duration_ms": 5765,
+      "status": "received"
+    },
+    {
+      "call_id": "call0005",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 764,
+        "output_tokens": 164
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "PremiseAudit",
+      "schema_version": "1.0",
+      "prompt_sha256": "f9908b7f507556dff6aa583518c97828db872a1a7379d160f01b9126719f6de6",
+      "schema_sha256": "50fee0a8eaa6d04e04f9c41d4d3d90b7c1679a8f3567bf625e29e2cdd9c16256",
+      "duration_ms": 5516,
+      "status": "received"
+    }
+  ],
+  "elapsed_seconds": 30.578,
+  "usage": {
+    "llm_input_tokens": 4192,
+    "llm_output_tokens": 975,
+    "tavily_credits_reported": null,
+    "usage_complete": true,
+    "model_usage_complete": true,
+    "tavily_usage_complete": true,
+    "estimated_model_cost_microusd": null
+  },
+  "result": {
+    "sources": [
+      {
+        "source_id": "s0001",
+        "original_url": "https://news.sagara.example/old-pilot-recap",
+        "canonical_url": "https://news.sagara.example/old-pilot-recap",
+        "title": "September pilot recap, updated in November",
+        "host": "news.sagara.example",
+        "text": "Updated 6 November 2026. The Sagara Insurance pilot began on 20 September 2026.",
+        "text_origin": "extract",
+        "extraction_status": "ok",
+        "retrieved_at": "2026-11-08T03:00:00+00:00",
+        "published_on": "2026-11-06",
+        "event_on": null,
+        "date_basis": "provider_estimate",
+        "raw_provider_date": "2026-11-06",
+        "date_precision": "day",
+        "published_at": null,
+        "date_quote": null,
+        "source_kind": "official",
+        "entity_match": "unreviewed",
+        "extraction_error": null,
+        "content_sha256": "5a76b8af3f3fcfa65cc79d08b1fc4b18006ec82cbe14c56711fbd2aaee15b5ec",
+        "truncated": false,
+        "duplicate_of_source_id": null
+      }
+    ],
+    "candidates": [
+      {
+        "candidate_id": "a0001",
+        "statement": "Halaman yang diperbarui pada 6 November 2026 menyatakan bahwa pilot Sagara Insurance dimulai pada 20 September 2026.",
+        "evidence_proposals": [
+          {
+            "source_id": "s0001",
+            "quote": "Updated 6 November 2026. The Sagara Insurance pilot began on 20 September 2026."
+          }
+        ],
+        "category": "other",
+        "proposed_event_on": "2026-09-20",
+        "event_date_quote": "The Sagara Insurance pilot began on 20 September 2026.",
+        "relevance_reason": "Pilot terkait, tetapi tanggal mulai lebih awal dari jendela informasi; tanggal pembaruan halaman berada dalam jendela."
+      }
+    ],
+    "reviews": [
+      {
+        "candidate_id": "a0001",
+        "support": "supported",
+        "entity_match": "matched",
+        "temporal_kind": "historical",
+        "event_on": "2026-09-20",
+        "date_quote": "20 September 2026",
+        "conflict_group": null,
+        "reasoning": "Source states the pilot began on 20 September 2026; that date is before the target window."
+      }
+    ],
+    "requirement_candidates": [
+      {
+        "requirement_id": "r0001",
+        "summary": "Portal harus mendukung SSO.",
+        "quote": "Portal harus mendukung SSO dan integrasi dengan sistem existing.",
+        "start": 0,
+        "end": 64,
+        "category": "identity",
+        "unspecified": [
+          "Mekanisme/protokol SSO tidak disebutkan."
+        ],
+        "offset_relocated": true
+      },
+      {
+        "requirement_id": "r0002",
+        "summary": "Portal harus terintegrasi dengan sistem existing.",
+        "quote": "Portal harus mendukung SSO dan integrasi dengan sistem existing.",
+        "start": 0,
+        "end": 64,
+        "category": "integration",
+        "unspecified": [
+          "Sistem existing dan cakupan integrasi tidak disebutkan."
+        ],
+        "offset_relocated": true
+      }
+    ],
+    "requirement_reviews": [
+      {
+        "requirement_id": "r0001",
+        "support": "supported",
+        "reason": "The quoted RFP explicitly requires the portal to support SSO."
+      },
+      {
+        "requirement_id": "r0002",
+        "support": "supported",
+        "reason": "The quoted RFP explicitly requires integration with existing systems."
+      }
+    ],
+    "claims": [],
+    "requirements": [
+      {
+        "requirement_id": "r0001",
+        "summary": "Portal harus mendukung SSO.",
+        "quote": "Portal harus mendukung SSO dan integrasi dengan sistem existing.",
+        "start": 0,
+        "end": 64,
+        "category": "identity",
+        "unspecified": [
+          "Mekanisme/protokol SSO tidak disebutkan."
+        ],
+        "offset_relocated": true
+      },
+      {
+        "requirement_id": "r0002",
+        "summary": "Portal harus terintegrasi dengan sistem existing.",
+        "quote": "Portal harus mendukung SSO dan integrasi dengan sistem existing.",
+        "start": 0,
+        "end": 64,
+        "category": "integration",
+        "unspecified": [
+          "Sistem existing dan cakupan integrasi tidak disebutkan."
+        ],
+        "offset_relocated": true
+      }
+    ],
+    "rejections": [
+      {
+        "candidate_id": "a0001",
+        "reason": "not_recent_or_conflicted"
+      }
+    ],
+    "warnings": [],
+    "window_start": "2026-10-13T10:00:00+07:00",
+    "window_end": "2026-11-08T03:00:00+00:00",
+    "knowledge_cutoff": "2026-11-08T03:00:00+00:00",
+    "research_mode": "frozen_research",
+    "metrics": {
+      "llm_input_tokens": 4192,
+      "llm_output_tokens": 975,
+      "tavily_credits_reported": null,
+      "usage_complete": true,
+      "model_usage_complete": true,
+      "tavily_usage_complete": true,
+      "estimated_model_cost_microusd": null,
+      "search_requests": 0,
+      "extract_requests": 0,
+      "extract_url_attempts": 0,
+      "llm_requests": 5,
+      "tavily_credits_reserved": 0
+    },
+    "research_queries": [
+      {
+        "kind": "official_news",
+        "query": "\"Sagara Insurance\" Indonesia Insurance news announcements portal integration identity",
+        "include_domains": [
+          "sagara.example"
+        ]
+      },
+      {
+        "kind": "product_launch",
+        "query": "\"Sagara Insurance\" Indonesia Insurance product launch service launch portal integration identity"
+      },
+      {
+        "kind": "partnership",
+        "query": "\"Sagara Insurance\" Indonesia Insurance partnership distribution agreement portal integration identity"
+      },
+      {
+        "kind": "digital_platform",
+        "query": "\"Sagara Insurance\" Indonesia Insurance digital platform customer portal portal integration identity"
+      },
+      {
+        "kind": "business_updates",
+        "query": "\"Sagara Insurance\" Indonesia Insurance company business update portal integration identity"
+      },
+      {
+        "kind": "leadership",
+        "query": "\"Sagara Insurance\" Indonesia Insurance executive appointment leadership portal integration identity"
+      }
+    ],
+    "extraction_results": {
+      "results": [
+        {
+          "url": "https://news.sagara.example/old-pilot-recap",
+          "raw_content": "Updated 6 November 2026. The Sagara Insurance pilot began on 20 September 2026."
+        }
+      ],
+      "failed_results": []
+    },
+    "prompt_passages": [
+      {
+        "source_id": "s0001",
+        "prompt_truncated": false
+      }
+    ],
+    "entity": {
+      "status": "user_scoped",
+      "domain": "sagara.example",
+      "candidate_companies": [
+        {
+          "name": "Sagara Insurance",
+          "domain": "sagara.example",
+          "source_ids": [
+            "s0001"
+          ]
+        }
+      ]
+    },
+    "composer_proposals": {
+      "question_proposals": [
+        {
+          "text": "Untuk kebutuhan SSO, protokol atau mekanisme apa yang harus didukung portal?",
+          "grounding": {
+            "claim_ids": [],
+            "requirement_ids": [
+              "r0001"
+            ],
+            "context_fields": [
+              "meeting_goal"
+            ]
+          },
+          "priority": "high",
+          "question_id": "q0001",
+          "origin": "model"
+        },
+        {
+          "text": "Sistem existing mana yang perlu diintegrasikan, dan data atau proses apa yang tercakup dalam tiap integrasi?",
+          "grounding": {
+            "claim_ids": [],
+            "requirement_ids": [
+              "r0002"
+            ],
+            "context_fields": [
+              "meeting_goal"
+            ]
+          },
+          "priority": "high",
+          "question_id": "q0002",
+          "origin": "model"
+        }
+      ],
+      "hypothesis_proposals": [],
+      "unknown_proposals": [
+        {
+          "text": "Mekanisme atau protokol SSO yang diperlukan belum disebutkan.",
+          "related_claim_ids": [],
+          "related_requirement_ids": [
+            "r0001"
+          ],
+          "unknown_id": "u0001"
+        },
+        {
+          "text": "Sistem existing serta cakupan integrasinya belum ditentukan.",
+          "related_claim_ids": [],
+          "related_requirement_ids": [
+            "r0002"
+          ],
+          "unknown_id": "u0002"
+        }
+      ]
+    },
+    "premise_reviews": [
+      {
+        "kind": "question",
+        "index": 0,
+        "decision": "accept",
+        "reason": "Requirement menetapkan SSO, tetapi protokol atau mekanismenya tidak disebutkan; pertanyaan meminta klarifikasi tanpa mengasumsikan jawaban."
+      },
+      {
+        "kind": "question",
+        "index": 1,
+        "decision": "accept",
+        "reason": "Requirement menyebut integrasi dengan sistem existing, tetapi tidak menentukan sistem atau cakupannya; pertanyaan mengklarifikasi keduanya."
+      },
+      {
+        "kind": "unknown",
+        "index": 0,
+        "decision": "accept",
+        "reason": "Protokol atau mekanisme SSO memang tidak disebutkan dalam requirement."
+      },
+      {
+        "kind": "unknown",
+        "index": 1,
+        "decision": "accept",
+        "reason": "Sistem existing dan cakupan integrasi memang tidak disebutkan dalam requirement."
+      }
+    ],
+    "status": "completed",
+    "quality": "context_only",
+    "composition": {
+      "question": [
+        {
+          "text": "Untuk kebutuhan SSO, protokol atau mekanisme apa yang harus didukung portal?",
+          "grounding": {
+            "claim_ids": [],
+            "requirement_ids": [
+              "r0001"
+            ],
+            "context_fields": [
+              "meeting_goal"
+            ]
+          },
+          "priority": "high",
+          "question_id": "q0001",
+          "origin": "model"
+        },
+        {
+          "text": "Sistem existing mana yang perlu diintegrasikan, dan data atau proses apa yang tercakup dalam tiap integrasi?",
+          "grounding": {
+            "claim_ids": [],
+            "requirement_ids": [
+              "r0002"
+            ],
+            "context_fields": [
+              "meeting_goal"
+            ]
+          },
+          "priority": "high",
+          "question_id": "q0002",
+          "origin": "model"
+        }
+      ],
+      "hypothesis": [],
+      "unknown": [
+        {
+          "text": "Mekanisme atau protokol SSO yang diperlukan belum disebutkan.",
+          "related_claim_ids": [],
+          "related_requirement_ids": [
+            "r0001"
+          ],
+          "unknown_id": "u0001"
+        },
+        {
+          "text": "Sistem existing serta cakupan integrasinya belum ditentukan.",
+          "related_claim_ids": [],
+          "related_requirement_ids": [
+            "r0002"
+          ],
+          "unknown_id": "u0002"
+        }
+      ]
+    },
+    "brief_selection": {
+      "finding_ids": [],
+      "requirement_ids": [
+        "r0001",
+        "r0002"
+      ],
+      "questions": [
+        {
+          "text": "Untuk kebutuhan SSO, protokol atau mekanisme apa yang harus didukung portal?",
+          "grounding": {
+            "claim_ids": [],
+            "requirement_ids": [
+              "r0001"
+            ],
+            "context_fields": [
+              "meeting_goal"
+            ]
+          },
+          "priority": "high",
+          "question_id": "q0001",
+          "origin": "model"
+        },
+        {
+          "text": "Sistem existing mana yang perlu diintegrasikan, dan data atau proses apa yang tercakup dalam tiap integrasi?",
+          "grounding": {
+            "claim_ids": [],
+            "requirement_ids": [
+              "r0002"
+            ],
+            "context_fields": [
+              "meeting_goal"
+            ]
+          },
+          "priority": "high",
+          "question_id": "q0002",
+          "origin": "model"
+        }
+      ],
+      "hypotheses": [],
+      "unknowns": [
+        {
+          "text": "Mekanisme atau protokol SSO yang diperlukan belum disebutkan.",
+          "related_claim_ids": [],
+          "related_requirement_ids": [
+            "r0001"
+          ],
+          "unknown_id": "u0001"
+        },
+        {
+          "text": "Sistem existing serta cakupan integrasinya belum ditentukan.",
+          "related_claim_ids": [],
+          "related_requirement_ids": [
+            "r0002"
+          ],
+          "unknown_id": "u0002"
+        }
+      ]
+    },
+    "diagnostics": {
+      "candidate_count": 1,
+      "requirement_candidate_count": 2,
+      "requirement_rejections": {},
+      "claim_rejections": {
+        "not_recent_or_conflicted": 1
+      },
+      "review_temporal": {
+        "historical": 1
+      },
+      "review_support": {
+        "supported": 1
+      },
+      "review_conflicts": 0
+    }
+  }
+}

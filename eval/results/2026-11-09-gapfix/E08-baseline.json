@@ -1,0 +1,59 @@
+{
+  "case_id": "E08",
+  "system": "baseline",
+  "mode": "frozen_research",
+  "human_review": "pending",
+  "model": "gpt-6-luna",
+  "implementation_sha256": "a6aee3051661453c9b2558df438fa839a3cbaf0842eb47dd61d87f88d3dcccee",
+  "dataset_sha256": "5f76ff54f8716953c10f0906885751973a69edef8ee3d6b18f16ac7d90b9ded5",
+  "calls": [
+    {
+      "call_id": "call0001",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 615,
+        "output_tokens": 278
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "baseline",
+      "schema_version": "1.0",
+      "prompt_sha256": "41fb0195b085234c9b5aeafb781b0a1208059ab6c3f9f5131ca9f1592d3f873b",
+      "schema_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "duration_ms": 7094,
+      "status": "received"
+    }
+  ],
+  "elapsed_seconds": 7.125,
+  "usage": {
+    "llm_input_tokens": 615,
+    "llm_output_tokens": 278,
+    "tavily_credits_reported": null,
+    "usage_complete": true,
+    "model_usage_complete": true,
+    "tavily_usage_complete": true,
+    "estimated_model_cost_microusd": null
+  },
+  "result": {
+    "status": "completed",
+    "raw_output": "{\n  \"findings\": [\n    {\n      \"text\": \"Sagara Insurance mengumumkan uji coba portal agen untuk 200 agen pada 5 November 2026.\",\n      \"source_url\": \"https://news.sagara.example/2026/11/05/agent-portal-pilot\"\n    }\n  ],\n  \"requirements\": [\n    \"Portal harus mendukung SSO.\",\n    \"Portal harus terintegrasi dengan sistem existing.\"\n  ],\n  \"questions\": [\n    \"Sistem existing apa saja yang perlu diintegrasikan, dan data atau proses apa yang terlibat?\",\n    \"Apa penyedia atau standar SSO yang digunakan, serta bagaimana alur autentikasi dan pengelolaan akses yang diharapkan?\",\n    \"Apakah uji coba portal untuk 200 agen menjadi bagian dari scope RFP, atau ada target pengguna dan tahapan implementasi lain?\",\n    \"Apa kriteria penerimaan dan batasan scope yang perlu diperhitungkan sebelum estimasi?\"\n  ]\n}",
+    "parsed": {
+      "findings": [
+        {
+          "text": "Sagara Insurance mengumumkan uji coba portal agen untuk 200 agen pada 5 November 2026.",
+          "source_url": "https://news.sagara.example/2026/11/05/agent-portal-pilot"
+        }
+      ],
+      "requirements": [
+        "Portal harus mendukung SSO.",
+        "Portal harus terintegrasi dengan sistem existing."
+      ],
+      "questions": [
+        "Sistem existing apa saja yang perlu diintegrasikan, dan data atau proses apa yang terlibat?",
+        "Apa penyedia atau standar SSO yang digunakan, serta bagaimana alur autentikasi dan pengelolaan akses yang diharapkan?",
+        "Apakah uji coba portal untuk 200 agen menjadi bagian dari scope RFP, atau ada target pengguna dan tahapan implementasi lain?",
+        "Apa kriteria penerimaan dan batasan scope yang perlu diperhitungkan sebelum estimasi?"
+      ]
+    }
+  }
+}

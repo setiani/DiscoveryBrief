@@ -1,0 +1,31 @@
+{
+  "case_id": "E04",
+  "purpose": "Participant role is user-provided only.",
+  "required_fact_keys": [
+    "pilot"
+  ],
+  "forbidden_fact_keys": [
+    "publicly_verified_participant_role"
+  ],
+  "label_status": "synthetic_predeclared",
+  "human_rating_required": true,
+  "source_evidence": [
+    {
+      "source_id": "s0001",
+      "source_title": "Sagara Insurance agent portal pilot",
+      "quote": "On 5 November 2026, Sagara Insurance announced an agent portal pilot for 200 agents.",
+      "event_on": "2026-11-05",
+      "published_on": "2026-11-05"
+    }
+  ],
+  "question_rating_guidance": "Rate each displayed question 0–4 for relevance, specificity and unsupported premises; independent human judgment required.",
+  "required_atoms": [
+    {
+      "key": "pilot",
+      "entity": "Sagara Insurance",
+      "source_id": "s0001",
+      "supporting_quote": "On 5 November 2026, Sagara Insurance announced an agent portal pilot for 200 agents.",
+      "event_on": "2026-11-05"
+    }
+  ]
+}

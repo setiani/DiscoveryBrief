@@ -1,0 +1,595 @@
+{
+  "case_id": "E04",
+  "system": "candidate",
+  "mode": "frozen_research",
+  "human_review": "pending",
+  "model": "gpt-6-luna",
+  "implementation_sha256": "a6aee3051661453c9b2558df438fa839a3cbaf0842eb47dd61d87f88d3dcccee",
+  "dataset_sha256": "5f76ff54f8716953c10f0906885751973a69edef8ee3d6b18f16ac7d90b9ded5",
+  "calls": [
+    {
+      "call_id": "call0001",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 374,
+        "output_tokens": 85
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "ResearchPlan",
+      "schema_version": "1.0",
+      "prompt_sha256": "3e68ebe55ee01dfa5e60f5b87edd991abb183d06dd78f50422041a61eeb33da1",
+      "schema_sha256": "237111ceaa9e961d9da55348ea4072c2497618ca89fa1dfa283ff7ab019996fe",
+      "duration_ms": 3984,
+      "status": "received"
+    },
+    {
+      "call_id": "call0002",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 1021,
+        "output_tokens": 287
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "AnalystOutput",
+      "schema_version": "1.0",
+      "prompt_sha256": "d5aafb5edd4201cf145627ae493797c0747fdfd52da11c6afe9b2cfbced593bd",
+      "schema_sha256": "a74779c7781fb9993bbba38831e068840d1d2356ddb6be4749756689acaa41e8",
+      "duration_ms": 10000,
+      "status": "received"
+    },
+    {
+      "call_id": "call0003",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 1247,
+        "output_tokens": 224
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "VerifierOutput",
+      "schema_version": "1.0",
+      "prompt_sha256": "c4d29fedf523799021f99cfae0db41b7c7be00c97c40e1a4273d55d267a09a69",
+      "schema_sha256": "3e9a88c93a49e31dd387cac95e00f1e8989b7f70ce6a06e23def91cd6f28423c",
+      "duration_ms": 6703,
+      "status": "received"
+    },
+    {
+      "call_id": "call0004",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 1021,
+        "output_tokens": 341
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "ComposerOutput",
+      "schema_version": "1.0",
+      "prompt_sha256": "84ff7c97777e25a8dab039ff1d3746db6216d76cc0d2e3ab0076620be1ff8515",
+      "schema_sha256": "ef132fad857bceeddf365645620a90423d1bf0f55e5c9e54cc6ff77ba42a8aaf",
+      "duration_ms": 9672,
+      "status": "received"
+    },
+    {
+      "call_id": "call0005",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 1179,
+        "output_tokens": 215
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "PremiseAudit",
+      "schema_version": "1.0",
+      "prompt_sha256": "9da2672e37ed6c704de0c374cb1019b72863e033c7fa8fdbe94044e9390b1b34",
+      "schema_sha256": "50fee0a8eaa6d04e04f9c41d4d3d90b7c1679a8f3567bf625e29e2cdd9c16256",
+      "duration_ms": 5672,
+      "status": "received"
+    }
+  ],
+  "elapsed_seconds": 37.125,
+  "usage": {
+    "llm_input_tokens": 4842,
+    "llm_output_tokens": 1152,
+    "tavily_credits_reported": null,
+    "usage_complete": true,
+    "model_usage_complete": true,
+    "tavily_usage_complete": true,
+    "estimated_model_cost_microusd": null
+  },
+  "result": {
+    "sources": [
+      {
+        "source_id": "s0001",
+        "original_url": "https://news.sagara.example/2026/11/05/agent-portal-pilot",
+        "canonical_url": "https://news.sagara.example/2026/11/05/agent-portal-pilot",
+        "title": "Sagara Insurance agent portal pilot",
+        "host": "news.sagara.example",
+        "text": "On 5 November 2026, Sagara Insurance announced an agent portal pilot for 200 agents.",
+        "text_origin": "extract",
+        "extraction_status": "ok",
+        "retrieved_at": "2026-11-08T03:00:00+00:00",
+        "published_on": "2026-11-05",
+        "event_on": null,
+        "date_basis": "provider_estimate",
+        "raw_provider_date": "2026-11-05",
+        "date_precision": "day",
+        "published_at": null,
+        "date_quote": null,
+        "source_kind": "official",
+        "entity_match": "unreviewed",
+        "extraction_error": null,
+        "content_sha256": "ed9344d57a1f2a789f2e65852f03b7ad198f02230b7c3c8fe132e20b2244e3da",
+        "truncated": false,
+        "duplicate_of_source_id": null
+      }
+    ],
+    "candidates": [
+      {
+        "candidate_id": "a0001",
+        "statement": "Pada 5 November 2026, Sagara Insurance mengumumkan uji coba portal agen untuk 200 agen.",
+        "evidence_proposals": [
+          {
+            "source_id": "s0001",
+            "quote": "On 5 November 2026, Sagara Insurance announced an agent portal pilot for 200 agents."
+          }
+        ],
+        "category": "launch",
+        "proposed_event_on": "2026-11-05",
+        "event_date_quote": "On 5 November 2026",
+        "relevance_reason": "Pengumuman portal agen relevan dengan klarifikasi cakupan portal dalam RFP."
+      }
+    ],
+    "reviews": [
+      {
+        "candidate_id": "a0001",
+        "support": "supported",
+        "entity_match": "matched",
+        "temporal_kind": "recent_development",
+        "event_on": "2026-11-05",
+        "date_quote": "5 November 2026",
+        "conflict_group": null,
+        "reasoning": "The source explicitly reports the agent portal pilot for 200 agents on 5 November 2026, within the target window."
+      }
+    ],
+    "requirement_candidates": [
+      {
+        "requirement_id": "r0001",
+        "summary": "Portal harus mendukung SSO.",
+        "quote": "Portal harus mendukung SSO",
+        "start": 0,
+        "end": 26,
+        "category": "identity",
+        "unspecified": [
+          "Protokol atau metode SSO tidak ditentukan."
+        ],
+        "offset_relocated": true
+      },
+      {
+        "requirement_id": "r0002",
+        "summary": "Portal harus terintegrasi dengan sistem yang sudah ada.",
+        "quote": "integrasi dengan sistem existing",
+        "start": 31,
+        "end": 63,
+        "category": "integration",
+        "unspecified": [
+          "Sistem yang sudah ada tidak diidentifikasi."
+        ],
+        "offset_relocated": true
+      }
+    ],
+    "requirement_reviews": [
+      {
+        "requirement_id": "r0001",
+        "support": "supported",
+        "reason": "The exact RFP quote says the portal must support SSO."
+      },
+      {
+        "requirement_id": "r0002",
+        "support": "supported",
+        "reason": "The RFP text requires integration with existing systems; the summary restates this without adding a system identity."
+      }
+    ],
+    "claims": [
+      {
+        "candidate_id": "a0001",
+        "statement": "Pada 5 November 2026, Sagara Insurance mengumumkan uji coba portal agen untuk 200 agen.",
+        "event_on": "2026-11-05",
+        "evidence": [
+          {
+            "source_id": "s0001",
+            "quote": "On 5 November 2026, Sagara Insurance announced an agent portal pilot for 200 agents.",
+            "start": 0,
+            "end": 84,
+            "quote_sha256": "ed9344d57a1f2a789f2e65852f03b7ad198f02230b7c3c8fe132e20b2244e3da",
+            "evidence_id": "e0001"
+          }
+        ],
+        "temporal_basis": "explicit_event",
+        "date_precision": "day",
+        "precision_limited": false,
+        "published_on": "2026-11-05",
+        "claim_id": "c0001",
+        "category": "launch",
+        "source_kind": "official",
+        "eligibility": "recent",
+        "relevance": {
+          "topic_match": true,
+          "meeting_type_match": true,
+          "rfp_link": true
+        },
+        "event_cluster_id": "event0001",
+        "rank_score": 10
+      }
+    ],
+    "requirements": [
+      {
+        "requirement_id": "r0001",
+        "summary": "Portal harus mendukung SSO.",
+        "quote": "Portal harus mendukung SSO",
+        "start": 0,
+        "end": 26,
+        "category": "identity",
+        "unspecified": [
+          "Protokol atau metode SSO tidak ditentukan."
+        ],
+        "offset_relocated": true
+      },
+      {
+        "requirement_id": "r0002",
+        "summary": "Portal harus terintegrasi dengan sistem yang sudah ada.",
+        "quote": "integrasi dengan sistem existing",
+        "start": 31,
+        "end": 63,
+        "category": "integration",
+        "unspecified": [
+          "Sistem yang sudah ada tidak diidentifikasi."
+        ],
+        "offset_relocated": true
+      }
+    ],
+    "rejections": [],
+    "warnings": [],
+    "window_start": "2026-10-13T10:00:00+07:00",
+    "window_end": "2026-11-08T03:00:00+00:00",
+    "knowledge_cutoff": "2026-11-08T03:00:00+00:00",
+    "research_mode": "frozen_research",
+    "metrics": {
+      "llm_input_tokens": 4842,
+      "llm_output_tokens": 1152,
+      "tavily_credits_reported": null,
+      "usage_complete": true,
+      "model_usage_complete": true,
+      "tavily_usage_complete": true,
+      "estimated_model_cost_microusd": null,
+      "search_requests": 0,
+      "extract_requests": 0,
+      "extract_url_attempts": 0,
+      "llm_requests": 5,
+      "tavily_credits_reserved": 0
+    },
+    "research_queries": [
+      {
+        "kind": "official_news",
+        "query": "\"Sagara Insurance\" Indonesia Insurance news announcements portal integration identity",
+        "include_domains": [
+          "sagara.example"
+        ]
+      },
+      {
+        "kind": "digital_platform",
+        "query": "\"Sagara Insurance\" Indonesia Insurance digital platform customer portal portal integration identity"
+      },
+      {
+        "kind": "business_updates",
+        "query": "\"Sagara Insurance\" Indonesia Insurance company business update portal integration identity"
+      },
+      {
+        "kind": "partnership",
+        "query": "\"Sagara Insurance\" Indonesia Insurance partnership distribution agreement portal integration identity"
+      },
+      {
+        "kind": "product_launch",
+        "query": "\"Sagara Insurance\" Indonesia Insurance product launch service launch portal integration identity"
+      },
+      {
+        "kind": "leadership",
+        "query": "\"Sagara Insurance\" Indonesia Insurance executive appointment leadership portal integration identity"
+      }
+    ],
+    "extraction_results": {
+      "results": [
+        {
+          "url": "https://news.sagara.example/2026/11/05/agent-portal-pilot",
+          "raw_content": "On 5 November 2026, Sagara Insurance announced an agent portal pilot for 200 agents."
+        }
+      ],
+      "failed_results": []
+    },
+    "prompt_passages": [
+      {
+        "source_id": "s0001",
+        "prompt_truncated": false
+      }
+    ],
+    "entity": {
+      "status": "user_scoped",
+      "domain": "sagara.example",
+      "candidate_companies": [
+        {
+          "name": "Sagara Insurance",
+          "domain": "sagara.example",
+          "source_ids": [
+            "s0001"
+          ]
+        }
+      ]
+    },
+    "composer_proposals": {
+      "question_proposals": [
+        {
+          "text": "Untuk kebutuhan SSO, protokol atau metode apa yang harus didukung, dan apakah ada batasan identitas atau alur autentikasi?",
+          "grounding": {
+            "claim_ids": [
+              "c0001"
+            ],
+            "requirement_ids": [
+              "r0001"
+            ],
+            "context_fields": [
+              "meeting_goal",
+              "meeting_type"
+            ]
+          },
+          "priority": "high",
+          "question_id": "q0001",
+          "origin": "model"
+        },
+        {
+          "text": "Sistem existing apa saja yang perlu diintegrasikan dengan portal agen, dan untuk tiap sistem apa data serta pola integrasinya?",
+          "grounding": {
+            "claim_ids": [
+              "c0001"
+            ],
+            "requirement_ids": [
+              "r0002"
+            ],
+            "context_fields": [
+              "meeting_goal",
+              "meeting_type"
+            ]
+          },
+          "priority": "high",
+          "question_id": "q0002",
+          "origin": "model"
+        },
+        {
+          "text": "Apa cakupan uji coba portal untuk 200 agen yang diumumkan, dan apakah cakupan itu relevan dengan scope yang akan diestimasi?",
+          "grounding": {
+            "claim_ids": [
+              "c0001"
+            ],
+            "requirement_ids": [],
+            "context_fields": [
+              "meeting_goal",
+              "notes"
+            ]
+          },
+          "priority": "medium"
+        }
+      ],
+      "hypothesis_proposals": [
+        {
+          "text": "Pengumuman uji coba 200 agen mungkin memberi konteks untuk membahas skala awal portal, tetapi relevansinya terhadap scope estimasi perlu dik",
+          "grounding": {
+            "claim_ids": [
+              "c0001"
+            ],
+            "requirement_ids": [],
+            "context_fields": [
+              "meeting_goal",
+              "notes"
+            ]
+          }
+        }
+      ],
+      "unknown_proposals": [
+        {
+          "text": "Protokol atau metode SSO belum ditentukan.",
+          "related_claim_ids": [],
+          "related_requirement_ids": [
+            "r0001"
+          ],
+          "unknown_id": "u0001"
+        },
+        {
+          "text": "Sistem existing yang perlu diintegrasikan belum diidentifikasi.",
+          "related_claim_ids": [],
+          "related_requirement_ids": [
+            "r0002"
+          ],
+          "unknown_id": "u0002"
+        }
+      ]
+    },
+    "premise_reviews": [
+      {
+        "kind": "question",
+        "index": 0,
+        "decision": "accept",
+        "reason": "Requirement explicitly says portal must support SSO and leaves protocol/method unspecified; clarifying this is grounded."
+      },
+      {
+        "kind": "question",
+        "index": 1,
+        "decision": "accept",
+        "reason": "Requirement explicitly calls for integration with existing systems and says those systems are unidentified."
+      },
+      {
+        "kind": "question",
+        "index": 2,
+        "decision": "reject",
+        "reason": "The notes identify the announcement as synthetic, not customer data; it does not establish a relevant pilot or scope."
+      },
+      {
+        "kind": "hypothesis",
+        "index": 0,
+        "decision": "reject",
+        "reason": "It relies on a synthetic announcement and lacks a supported basis for connecting the 200-agent pilot to estimation scope."
+      },
+      {
+        "kind": "unknown",
+        "index": 0,
+        "decision": "accept",
+        "reason": "The SSO requirement explicitly lists its protocol or method as undetermined."
+      },
+      {
+        "kind": "unknown",
+        "index": 1,
+        "decision": "accept",
+        "reason": "The integration requirement explicitly says the existing systems are not identified."
+      }
+    ],
+    "status": "completed",
+    "quality": "limited",
+    "composition": {
+      "question": [
+        {
+          "text": "Untuk kebutuhan SSO, protokol atau metode apa yang harus didukung, dan apakah ada batasan identitas atau alur autentikasi?",
+          "grounding": {
+            "claim_ids": [
+              "c0001"
+            ],
+            "requirement_ids": [
+              "r0001"
+            ],
+            "context_fields": [
+              "meeting_goal",
+              "meeting_type"
+            ]
+          },
+          "priority": "high",
+          "question_id": "q0001",
+          "origin": "model"
+        },
+        {
+          "text": "Sistem existing apa saja yang perlu diintegrasikan dengan portal agen, dan untuk tiap sistem apa data serta pola integrasinya?",
+          "grounding": {
+            "claim_ids": [
+              "c0001"
+            ],
+            "requirement_ids": [
+              "r0002"
+            ],
+            "context_fields": [
+              "meeting_goal",
+              "meeting_type"
+            ]
+          },
+          "priority": "high",
+          "question_id": "q0002",
+          "origin": "model"
+        }
+      ],
+      "hypothesis": [],
+      "unknown": [
+        {
+          "text": "Protokol atau metode SSO belum ditentukan.",
+          "related_claim_ids": [],
+          "related_requirement_ids": [
+            "r0001"
+          ],
+          "unknown_id": "u0001"
+        },
+        {
+          "text": "Sistem existing yang perlu diintegrasikan belum diidentifikasi.",
+          "related_claim_ids": [],
+          "related_requirement_ids": [
+            "r0002"
+          ],
+          "unknown_id": "u0002"
+        }
+      ]
+    },
+    "brief_selection": {
+      "finding_ids": [
+        "c0001"
+      ],
+      "requirement_ids": [
+        "r0001",
+        "r0002"
+      ],
+      "questions": [
+        {
+          "text": "Untuk kebutuhan SSO, protokol atau metode apa yang harus didukung, dan apakah ada batasan identitas atau alur autentikasi?",
+          "grounding": {
+            "claim_ids": [
+              "c0001"
+            ],
+            "requirement_ids": [
+              "r0001"
+            ],
+            "context_fields": [
+              "meeting_goal",
+              "meeting_type"
+            ]
+          },
+          "priority": "high",
+          "question_id": "q0001",
+          "origin": "model"
+        },
+        {
+          "text": "Sistem existing apa saja yang perlu diintegrasikan dengan portal agen, dan untuk tiap sistem apa data serta pola integrasinya?",
+          "grounding": {
+            "claim_ids": [
+              "c0001"
+            ],
+            "requirement_ids": [
+              "r0002"
+            ],
+            "context_fields": [
+              "meeting_goal",
+              "meeting_type"
+            ]
+          },
+          "priority": "high",
+          "question_id": "q0002",
+          "origin": "model"
+        }
+      ],
+      "hypotheses": [],
+      "unknowns": [
+        {
+          "text": "Protokol atau metode SSO belum ditentukan.",
+          "related_claim_ids": [],
+          "related_requirement_ids": [
+            "r0001"
+          ],
+          "unknown_id": "u0001"
+        },
+        {
+          "text": "Sistem existing yang perlu diintegrasikan belum diidentifikasi.",
+          "related_claim_ids": [],
+          "related_requirement_ids": [
+            "r0002"
+          ],
+          "unknown_id": "u0002"
+        }
+      ]
+    },
+    "diagnostics": {
+      "candidate_count": 1,
+      "requirement_candidate_count": 2,
+      "requirement_rejections": {},
+      "claim_rejections": {},
+      "review_temporal": {
+        "recent_development": 1
+      },
+      "review_support": {
+        "supported": 1
+      },
+      "review_conflicts": 0
+    }
+  }
+}

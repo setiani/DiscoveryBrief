@@ -1,0 +1,298 @@
+{
+  "fixture_version": "1.0",
+  "synthetic": true,
+  "planner": {
+    "query_kinds": [
+      "official_news",
+      "product_launch",
+      "partnership"
+    ],
+    "reason": "Cari perkembangan perusahaan dan portal dengan query publik."
+  },
+  "analyst": {
+    "entity_candidates": [
+      {
+        "name": "Sagara Insurance",
+        "domain": "sagara.example",
+        "source_ids": [
+          "s0001",
+          "s0006"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "statement": "Sagara Insurance mengumumkan pilot portal agen pada 5 November 2026.",
+        "evidence_proposals": [
+          {
+            "source_id": "s0001",
+            "quote": "On 5 November 2026, Sagara Insurance announced an agent portal pilot for 200 agents."
+          }
+        ],
+        "category": "launch",
+        "proposed_event_on": "2026-11-05",
+        "event_date_quote": "5 November 2026",
+        "relevance_reason": "Pilot portal relevan dengan klarifikasi scope portal agen."
+      },
+      {
+        "statement": "Sagara Insurance mengumumkan pilot portal agen pada 5 November 2026.",
+        "evidence_proposals": [
+          {
+            "source_id": "s0002",
+            "quote": "Sagara Insurance announced an agent portal pilot for 200 agents on 5 November 2026."
+          }
+        ],
+        "category": "launch",
+        "proposed_event_on": "2026-11-05",
+        "event_date_quote": "5 November 2026",
+        "relevance_reason": "Sindikasi pengumuman yang sama, bukan kejadian kedua."
+      },
+      {
+        "statement": "Pilot Sagara Insurance dimulai pada 20 September 2026.",
+        "evidence_proposals": [
+          {
+            "source_id": "s0003",
+            "quote": "Updated 6 November 2026. The Sagara Insurance pilot began on 20 September 2026."
+          }
+        ],
+        "category": "operations",
+        "proposed_event_on": "2026-09-20",
+        "event_date_quote": "20 September 2026",
+        "relevance_reason": "Konteks historis, di luar jendela perkembangan terbaru."
+      },
+      {
+        "statement": "Sagara Logistics membuka hub distribusi baru di Malaysia.",
+        "evidence_proposals": [
+          {
+            "source_id": "s0004",
+            "quote": "On 6 November 2026, Sagara Logistics opened a new distribution hub in Malaysia."
+          }
+        ],
+        "category": "operations",
+        "proposed_event_on": "2026-11-06",
+        "event_date_quote": "6 November 2026",
+        "relevance_reason": "Kandidat sengaja salah entitas untuk uji penolakan."
+      },
+      {
+        "statement": "Sagara Insurance mengumumkan peluncuran komersial pada 10 November 2026.",
+        "evidence_proposals": [
+          {
+            "source_id": "s0005",
+            "quote": "On 10 November 2026, Sagara Insurance announced its commercial portal launch."
+          }
+        ],
+        "category": "launch",
+        "proposed_event_on": "2026-11-10",
+        "event_date_quote": "10 November 2026",
+        "relevance_reason": "Kandidat setelah knowledge cutoff untuk uji penolakan."
+      },
+      {
+        "statement": "Sagara Insurance adalah perusahaan asuransi.",
+        "evidence_proposals": [
+          {
+            "source_id": "s0006",
+            "quote": "Sagara Insurance is an insurance company."
+          }
+        ],
+        "category": "other",
+        "proposed_event_on": null,
+        "event_date_quote": null,
+        "relevance_reason": "Konteks tanpa tanggal; bukan perkembangan baru."
+      }
+    ],
+    "requirements": [
+      {
+        "summary": "Portal mendukung SSO dan integrasi dengan sistem existing.",
+        "quote": "Portal harus mendukung SSO dan integrasi dengan sistem existing.",
+        "start": 0,
+        "end": 64,
+        "category": "integration",
+        "unspecified": [
+          "Sistem identitas",
+          "Sistem tujuan dan protokol integrasi"
+        ]
+      }
+    ],
+    "warnings": [
+      "Instruksi pada s0007 adalah data tidak tepercaya dan diabaikan."
+    ]
+  },
+  "verifier": {
+    "entity": {
+      "status": "matched",
+      "company_name": "Sagara Insurance",
+      "domain": "sagara.example",
+      "candidate_companies": [],
+      "basis_source_ids": [
+        "s0001",
+        "s0006"
+      ],
+      "notes": [
+        "Identitas dalam fixture sintetis sesuai target."
+      ]
+    },
+    "reviews": [
+      {
+        "candidate_id": "a0001",
+        "support": "supported",
+        "entity_match": "matched",
+        "temporal_kind": "recent_development",
+        "event_on": "2026-11-05",
+        "date_quote": "5 November 2026",
+        "conflict_group": null,
+        "reasoning": "Kutipan mendukung pengumuman; sindikasi harus dikelompokkan."
+      },
+      {
+        "candidate_id": "a0002",
+        "support": "supported",
+        "entity_match": "matched",
+        "temporal_kind": "recent_development",
+        "event_on": "2026-11-05",
+        "date_quote": "5 November 2026",
+        "conflict_group": null,
+        "reasoning": "Kutipan mendukung pengumuman; sindikasi harus dikelompokkan."
+      },
+      {
+        "candidate_id": "a0003",
+        "support": "supported",
+        "entity_match": "matched",
+        "temporal_kind": "historical",
+        "event_on": "2026-09-20",
+        "date_quote": "20 September 2026",
+        "conflict_group": null,
+        "reasoning": "Kejadian historis, bukan pembaruan November."
+      },
+      {
+        "candidate_id": "a0004",
+        "support": "supported",
+        "entity_match": "mismatched",
+        "temporal_kind": "recent_development",
+        "event_on": "2026-11-06",
+        "date_quote": "6 November 2026",
+        "conflict_group": null,
+        "reasoning": "Entitas berbeda dari target."
+      },
+      {
+        "candidate_id": "a0005",
+        "support": "supported",
+        "entity_match": "matched",
+        "temporal_kind": "recent_development",
+        "event_on": "2026-11-10",
+        "date_quote": "10 November 2026",
+        "conflict_group": null,
+        "reasoning": "Tanggal setelah cutoff; kode harus menolak meskipun review menyebut recent."
+      },
+      {
+        "candidate_id": "a0006",
+        "support": "supported",
+        "entity_match": "matched",
+        "temporal_kind": "uncertain",
+        "event_on": null,
+        "date_quote": null,
+        "conflict_group": null,
+        "reasoning": "Tidak ada tanggal untuk menempatkan klaim pada jendela terbaru."
+      }
+    ],
+    "requirement_reviews": [
+      {
+        "requirement_id": "r0001",
+        "support": "supported",
+        "reason": "Ringkasan sesuai kutipan RFP; sistem identitas dan protokol memang belum disebutkan."
+      }
+    ]
+  },
+  "composer": {
+    "question_proposals": [
+      {
+        "text": "Sistem identitas apa yang harus terhubung dengan SSO portal?",
+        "grounding": {
+          "claim_ids": [],
+          "requirement_ids": [
+            "r0001"
+          ],
+          "context_fields": []
+        },
+        "priority": "high"
+      },
+      {
+        "text": "Kriteria keberhasilan pilot portal agen apa yang perlu dikonfirmasi?",
+        "grounding": {
+          "claim_ids": [
+            "c0001"
+          ],
+          "requirement_ids": [],
+          "context_fields": []
+        },
+        "priority": "high"
+      },
+      {
+        "text": "Siapa pemilik keputusan integrasi dan penerimaan hasil proyek?",
+        "grounding": {
+          "claim_ids": [],
+          "requirement_ids": [
+            "r0001"
+          ],
+          "context_fields": [
+            "participants"
+          ]
+        },
+        "priority": "medium"
+      }
+    ],
+    "hypothesis_proposals": [
+      {
+        "text": "Integrasi identitas mungkin perlu diklarifikasi sebelum estimasi.",
+        "grounding": {
+          "claim_ids": [],
+          "requirement_ids": [
+            "r0001"
+          ],
+          "context_fields": []
+        }
+      }
+    ],
+    "unknown_proposals": [
+      {
+        "text": "Sistem identitas dan protokol integrasi belum disebutkan.",
+        "related_claim_ids": [],
+        "related_requirement_ids": [
+          "r0001"
+        ]
+      }
+    ]
+  },
+  "auditor": {
+    "items": [
+      {
+        "kind": "question",
+        "index": 0,
+        "decision": "accept",
+        "reason": "Menanyakan informasi yang belum diberikan."
+      },
+      {
+        "kind": "question",
+        "index": 1,
+        "decision": "accept",
+        "reason": "Pilot didukung c0001; kriteria ditanyakan, bukan ditebak."
+      },
+      {
+        "kind": "question",
+        "index": 2,
+        "decision": "accept",
+        "reason": "Pertanyaan kepemilikan tidak menetapkan otoritas peserta."
+      },
+      {
+        "kind": "hypothesis",
+        "index": 0,
+        "decision": "accept",
+        "reason": "Bersifat tentatif dan merujuk kebutuhan eksplisit."
+      },
+      {
+        "kind": "unknown",
+        "index": 0,
+        "decision": "accept",
+        "reason": "Detail tersebut memang tidak disebutkan dalam RFP."
+      }
+    ]
+  }
+}

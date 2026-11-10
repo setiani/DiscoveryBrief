@@ -1,0 +1,20 @@
+.env
+.env.*
+!.env.example
+.venv/
+data/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.py[cod]
+web/node_modules/
+web/dist/
+*.egg-info/
+/docs/plan/
+
+# Local source-review archives contain an earlier snapshot, including the plan.
+/submission/*.zip
+/submission/*.zip.sha256
+
+# Office temporary lock files.
+~$*

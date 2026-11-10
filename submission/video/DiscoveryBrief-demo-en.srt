@@ -1,0 +1,190 @@
+1
+00:00:00,000 --> 00:00:04,863
+DiscoveryBrief helps pre-sales teams prepare
+for better discovery meetings.
+
+2
+00:00:04,863 --> 00:00:10,114
+It connects recent company research, customer
+requirements, and questions you can
+
+3
+00:00:10,114 --> 00:00:12,967
+actually use, with evidence you can inspect.
+
+4
+00:00:14,000 --> 00:00:18,990
+Before a customer meeting, useful information
+is scattered across company
+
+5
+00:00:18,990 --> 00:00:23,912
+announcements, documents, and notes. A
+convincing summary is not enough.
+
+6
+00:00:23,912 --> 00:00:29,313
+You need to know what changed, what the
+customer explicitly asked for, and what
+
+7
+00:00:29,313 --> 00:00:31,022
+still needs confirmation.
+
+8
+00:00:32,000 --> 00:00:37,720
+Here is the real application. We enter OpenAI
+and its official domain, choose a
+
+9
+00:00:37,720 --> 00:00:40,833
+meeting time, and request an English brief.
+
+10
+00:00:40,833 --> 00:00:46,046
+This demonstration uses a public company with
+fictional meeting context.
+
+11
+00:00:46,046 --> 00:00:51,476
+The sample RFP asks for single sign-on and
+document repository integration.
+
+12
+00:00:51,476 --> 00:00:56,906
+Private notes, participant names, and the RFP
+are kept out of public search
+
+13
+00:00:56,906 --> 00:00:57,485
+queries.
+
+14
+00:01:00,000 --> 00:01:03,659
+Tavily searches the public web and extracts
+selected pages.
+
+15
+00:01:03,659 --> 00:01:06,512
+Every live model request goes through Bifrost.
+
+16
+00:01:06,512 --> 00:01:11,287
+Separate Planner, Analyst, Verifier, Composer,
+and Auditor steps organize the
+
+17
+00:01:11,287 --> 00:01:15,629
+work. Application code checks dates,
+references, and exact quotations.
+
+18
+00:01:15,629 --> 00:01:19,350
+The research wait is omitted from this edited
+demonstration.
+
+19
+00:01:20,000 --> 00:01:25,197
+The completed live result brings the meeting
+context and research together.
+
+20
+00:01:25,197 --> 00:01:30,878
+Recent developments are separate from RFP
+requirements, questions, hypotheses, and
+
+21
+00:01:30,878 --> 00:01:35,382
+unknowns. The visible quality label describes
+available coverage.
+
+22
+00:01:35,382 --> 00:01:40,786
+It is not an accuracy score. A hypothesis
+remains something to confirm, rather
+
+23
+00:01:40,786 --> 00:01:43,350
+than an assertion about the customer.
+
+24
+00:01:44,000 --> 00:01:48,951
+Open the evidence section to inspect a literal
+source quotation and its link.
+
+25
+00:01:48,951 --> 00:01:53,710
+Event dates help explain why a development
+belongs in the research window.
+
+26
+00:01:53,710 --> 00:01:57,825
+RFP requirements also retain quotations from
+the submitted text.
+
+27
+00:01:57,825 --> 00:02:03,034
+This lets a pre-sales engineer check the basis
+of a statement before repeating it
+
+28
+00:02:03,034 --> 00:02:04,770
+in a customer conversation.
+
+29
+00:02:10,000 --> 00:02:13,610
+The priority questions turn preparation into a
+meeting agenda.
+
+30
+00:02:13,610 --> 00:02:17,976
+They connect the supplied requirements and
+available evidence to topics for
+
+31
+00:02:17,976 --> 00:02:22,751
+clarification. The usage view records
+operational details, including retrieval and
+
+32
+00:02:22,751 --> 00:02:27,350
+model calls. Unknown cost or usage stays
+unknown, instead of appearing as zero.
+
+33
+00:02:28,000 --> 00:02:31,901
+This separate example is a clearly labelled
+synthetic replay.
+
+34
+00:02:31,901 --> 00:02:36,187
+When no public development is verified, the
+result is context only.
+
+35
+00:02:36,187 --> 00:02:41,047
+DiscoveryBrief can still organize user-
+provided context and questions, while
+
+36
+00:02:41,047 --> 00:02:43,350
+making the missing evidence visible.
+
+37
+00:02:44,000 --> 00:02:48,180
+Export a one-page PDF and keep the detailed
+evidence separately.
+
+38
+00:02:48,180 --> 00:02:53,079
+DiscoveryBrief is a working local prototype,
+with independent human quality
+
+39
+00:02:53,079 --> 00:02:57,325
+evaluation still pending. Prepare with
+context. Ask with purpose.
+
+40
+00:02:57,325 --> 00:02:59,350
+Keep the evidence within reach.

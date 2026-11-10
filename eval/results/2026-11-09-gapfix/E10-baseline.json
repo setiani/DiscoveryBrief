@@ -1,0 +1,56 @@
+{
+  "case_id": "E10",
+  "system": "baseline",
+  "mode": "frozen_research",
+  "human_review": "pending",
+  "model": "gpt-6-luna",
+  "implementation_sha256": "a6aee3051661453c9b2558df438fa839a3cbaf0842eb47dd61d87f88d3dcccee",
+  "dataset_sha256": "5f76ff54f8716953c10f0906885751973a69edef8ee3d6b18f16ac7d90b9ded5",
+  "calls": [
+    {
+      "call_id": "call0001",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 508,
+        "output_tokens": 326
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "baseline",
+      "schema_version": "1.0",
+      "prompt_sha256": "6e54bb7bceb53a788f4541e0a0daef75c33a29cc5ba39e6392aefd9bfbe6db04",
+      "schema_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "duration_ms": 8078,
+      "status": "received"
+    }
+  ],
+  "elapsed_seconds": 8.078,
+  "usage": {
+    "llm_input_tokens": 508,
+    "llm_output_tokens": 326,
+    "tavily_credits_reported": null,
+    "usage_complete": true,
+    "model_usage_complete": true,
+    "tavily_usage_complete": true,
+    "estimated_model_cost_microusd": null
+  },
+  "result": {
+    "status": "completed",
+    "raw_output": "{\n  \"findings\": [\n    \"Pada 5 November 2026, Sagara Insurance mengumumkan pilot portal agen untuk 200 agen. Sumber: https://news.sagara.example/2026/11/05/agent-portal-pilot\"\n  ],\n  \"requirements\": [\n    \"RFP menyebut portal harus mendukung SSO.\",\n    \"RFP menyebut portal harus terintegrasi dengan sistem existing.\"\n  ],\n  \"questions\": [\n    \"Apakah scope yang dibahas mencakup pilot portal agen untuk 200 agen, dan apakah angka tersebut masih berlaku?\",\n    \"Apa alur pengguna dan fungsi portal yang termasuk dalam scope estimasi?\",\n    \"Apa solusi identity/SSO yang digunakan, dan bagaimana alur autentikasi serta kebutuhan akses pengguna?\",\n    \"Sistem existing mana yang perlu diintegrasikan, dan data atau proses apa yang harus dipertukarkan?\"\n  ]\n}",
+    "parsed": {
+      "findings": [
+        "Pada 5 November 2026, Sagara Insurance mengumumkan pilot portal agen untuk 200 agen. Sumber: https://news.sagara.example/2026/11/05/agent-portal-pilot"
+      ],
+      "requirements": [
+        "RFP menyebut portal harus mendukung SSO.",
+        "RFP menyebut portal harus terintegrasi dengan sistem existing."
+      ],
+      "questions": [
+        "Apakah scope yang dibahas mencakup pilot portal agen untuk 200 agen, dan apakah angka tersebut masih berlaku?",
+        "Apa alur pengguna dan fungsi portal yang termasuk dalam scope estimasi?",
+        "Apa solusi identity/SSO yang digunakan, dan bagaimana alur autentikasi serta kebutuhan akses pengguna?",
+        "Sistem existing mana yang perlu diintegrasikan, dan data atau proses apa yang harus dipertukarkan?"
+      ]
+    }
+  }
+}

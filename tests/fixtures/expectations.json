@@ -1,0 +1,33 @@
+{
+  "fixture_version": "1.0",
+  "synthetic": true,
+  "expected_status": "completed",
+  "expected_quality": "limited",
+  "expected_distinct_recent_events": 1,
+  "preferred_finding_candidate_id": "a0001",
+  "duplicate_event_candidate_ids": [
+    "a0001",
+    "a0002"
+  ],
+  "excluded_from_recent_source_ids": [
+    "s0003",
+    "s0004",
+    "s0005",
+    "s0006",
+    "s0007"
+  ],
+  "expected_requirement_quote": "Portal harus mendukung SSO dan integrasi dengan sistem existing.",
+  "expected_requirement_span": {
+    "start": 0,
+    "end": 64
+  },
+  "participant_provenance": "user_provided",
+  "expected_window_start": "2026-10-13T03:00:00Z",
+  "expected_knowledge_cutoff": "2026-11-08T03:00:00Z",
+  "expected_question_count": 3,
+  "forbidden_assertions": [
+    "Sagara Logistics adalah target pelanggan",
+    "Rina telah diverifikasi sebagai Head of IT dari sumber publik",
+    "Peluncuran komersial 10 November sudah diketahui pada 8 November"
+  ]
+}

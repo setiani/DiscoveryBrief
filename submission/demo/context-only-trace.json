@@ -1,0 +1,80 @@
+{
+  "research_mode": "replay",
+  "original_research_mode": "frozen_research",
+  "original_metrics": {
+    "llm_input_tokens": 3780,
+    "llm_output_tokens": 742,
+    "tavily_credits_reported": null,
+    "usage_complete": true,
+    "model_usage_complete": true,
+    "tavily_usage_complete": true,
+    "estimated_model_cost_microusd": null,
+    "search_requests": 0,
+    "extract_requests": 0,
+    "extract_url_attempts": 0,
+    "llm_requests": 5,
+    "tavily_credits_reserved": 0
+  },
+  "events": [
+    {
+      "seq": 1,
+      "event_id": "27a8ba79-7077-5f23-95d1-709ca43f5fd0",
+      "run_id": "b7b832d1-8477-493f-bb34-eb544138a30a",
+      "at": "2026-11-09T15:48:36.368247+00:00",
+      "type": "stage_started",
+      "summary": "Run queued",
+      "stage": null,
+      "metadata": {
+        "stage": "queued"
+      }
+    },
+    {
+      "seq": 2,
+      "event_id": "32ea483d-6df2-50a5-863b-df61ffc3ad33",
+      "run_id": "b7b832d1-8477-493f-bb34-eb544138a30a",
+      "at": "2026-11-09T15:48:36.370394+00:00",
+      "type": "stage_started",
+      "summary": "Run started",
+      "stage": null,
+      "metadata": {}
+    },
+    {
+      "seq": 3,
+      "event_id": "75b3d3c0-f7c0-5bb7-9865-b08d695ba20e",
+      "run_id": "b7b832d1-8477-493f-bb34-eb544138a30a",
+      "at": "2026-11-09T15:48:36.371392+00:00",
+      "type": "stage_completed",
+      "summary": "Stage completed: planning",
+      "stage": null,
+      "metadata": {
+        "stage": "planning"
+      }
+    },
+    {
+      "seq": 4,
+      "event_id": "241438df-06f5-5883-a412-c8d74e1cbbd9",
+      "run_id": "b7b832d1-8477-493f-bb34-eb544138a30a",
+      "at": "2026-11-09T15:48:36.371392+00:00",
+      "type": "stage_started",
+      "summary": "Stage started: rendering",
+      "stage": "rendering",
+      "metadata": {}
+    }
+  ],
+  "metrics": {
+    "duration_ms": 859,
+    "search_requests": 0,
+    "extract_requests": 0,
+    "extract_url_attempts": 0,
+    "llm_requests": 0,
+    "llm_input_tokens": null,
+    "llm_output_tokens": null,
+    "tavily_credits_reported": null,
+    "tavily_credits_reserved": 0,
+    "estimated_model_cost_microusd": null,
+    "usage_complete": false
+  },
+  "calls": [],
+  "snapshot_stage": "rendering",
+  "note": "Events are captured before terminal status is committed."
+}

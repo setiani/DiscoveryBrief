@@ -1,0 +1,155 @@
+{
+  "sources": [],
+  "candidates": [],
+  "reviews": [],
+  "requirement_candidates": [
+    {
+      "requirement_id": "r0001",
+      "summary": "Portal harus mendukung SSO.",
+      "quote": "Portal harus mendukung SSO",
+      "start": 0,
+      "end": 26,
+      "category": "identity",
+      "unspecified": [
+        "Penyedia identitas atau protokol SSO tidak ditentukan."
+      ]
+    },
+    {
+      "requirement_id": "r0002",
+      "summary": "Portal harus terintegrasi dengan sistem yang sudah ada.",
+      "quote": "integrasi dengan sistem existing",
+      "start": 31,
+      "end": 63,
+      "category": "integration",
+      "unspecified": [
+        "Sistem existing dan cakupan atau metode integrasi tidak ditentukan."
+      ]
+    }
+  ],
+  "requirement_reviews": [
+    {
+      "requirement_id": "r0001",
+      "support": "supported",
+      "reason": "Kutipan RFP secara eksplisit menyatakan portal harus mendukung SSO."
+    },
+    {
+      "requirement_id": "r0002",
+      "support": "supported",
+      "reason": "Kutipan RFP secara eksplisit mensyaratkan integrasi dengan sistem existing."
+    }
+  ],
+  "claims": [],
+  "requirements": [
+    {
+      "requirement_id": "r0001",
+      "summary": "Portal harus mendukung SSO.",
+      "quote": "Portal harus mendukung SSO",
+      "start": 0,
+      "end": 26,
+      "category": "identity",
+      "unspecified": [
+        "Penyedia identitas atau protokol SSO tidak ditentukan."
+      ]
+    },
+    {
+      "requirement_id": "r0002",
+      "summary": "Portal harus terintegrasi dengan sistem yang sudah ada.",
+      "quote": "integrasi dengan sistem existing",
+      "start": 31,
+      "end": 63,
+      "category": "integration",
+      "unspecified": [
+        "Sistem existing dan cakupan atau metode integrasi tidak ditentukan."
+      ]
+    }
+  ],
+  "rejections": [],
+  "composer_proposals": {
+    "question_proposals": [
+      {
+        "text": "Untuk kebutuhan SSO, penyedia identitas dan protokol apa yang perlu didukung portal?",
+        "grounding": {
+          "claim_ids": [],
+          "requirement_ids": [
+            "r0001"
+          ],
+          "context_fields": [
+            "meeting_goal"
+          ]
+        },
+        "priority": "high",
+        "question_id": "q0001",
+        "origin": "model"
+      },
+      {
+        "text": "Sistem existing apa yang perlu diintegrasikan, dan cakupan serta metode integrasi apa yang diharapkan?",
+        "grounding": {
+          "claim_ids": [],
+          "requirement_ids": [
+            "r0002"
+          ],
+          "context_fields": [
+            "meeting_goal"
+          ]
+        },
+        "priority": "high",
+        "question_id": "q0002",
+        "origin": "model"
+      }
+    ],
+    "hypothesis_proposals": [],
+    "unknown_proposals": [
+      {
+        "text": "Penyedia identitas dan protokol SSO belum ditentukan.",
+        "related_claim_ids": [],
+        "related_requirement_ids": [
+          "r0001"
+        ],
+        "unknown_id": "u0001"
+      },
+      {
+        "text": "Sistem existing, cakupan integrasi, dan metode integrasi belum ditentukan.",
+        "related_claim_ids": [],
+        "related_requirement_ids": [
+          "r0002"
+        ],
+        "unknown_id": "u0002"
+      }
+    ]
+  },
+  "premise_reviews": [
+    {
+      "kind": "question",
+      "index": 0,
+      "decision": "accept",
+      "reason": "Requirement menyebut SSO, tetapi penyedia identitas dan protokolnya belum ditentukan; pertanyaan mengklarifikasi detail tersebut."
+    },
+    {
+      "kind": "question",
+      "index": 1,
+      "decision": "accept",
+      "reason": "Requirement hanya menyebut integrasi dengan sistem existing; sistem, cakupan, dan metode belum ditentukan."
+    },
+    {
+      "kind": "unknown",
+      "index": 0,
+      "decision": "accept",
+      "reason": "Penyedia identitas dan protokol SSO memang tidak disebutkan dalam requirement."
+    },
+    {
+      "kind": "unknown",
+      "index": 1,
+      "decision": "accept",
+      "reason": "Sistem existing serta cakupan dan metode integrasi tidak ditentukan dalam requirement."
+    }
+  ],
+  "diagnostics": {
+    "candidate_count": 0,
+    "requirement_candidate_count": 2,
+    "requirement_rejections": {},
+    "claim_rejections": {},
+    "review_temporal": {},
+    "review_support": {},
+    "review_conflicts": 0
+  }
+}

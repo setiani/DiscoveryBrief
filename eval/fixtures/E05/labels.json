@@ -1,0 +1,21 @@
+{
+  "case_id": "E05",
+  "purpose": "A historic event has a recent update date.",
+  "required_fact_keys": [],
+  "forbidden_fact_keys": [
+    "old_event_as_recent"
+  ],
+  "label_status": "synthetic_predeclared",
+  "human_rating_required": true,
+  "source_evidence": [
+    {
+      "source_id": "s0003",
+      "source_title": "September pilot recap, updated in November",
+      "quote": "Updated 6 November 2026. The Sagara Insurance pilot began on 20 September 2026.",
+      "event_on": "2026-09-20",
+      "published_on": "2026-11-06"
+    }
+  ],
+  "question_rating_guidance": "Rate each displayed question 0–4 for relevance, specificity and unsupported premises; independent human judgment required.",
+  "required_atoms": []
+}

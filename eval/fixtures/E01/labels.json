@@ -1,0 +1,62 @@
+{
+  "case_id": "E01",
+  "purpose": "Three distinct recent developments and an explicit RFP.",
+  "required_fact_keys": [
+    "pilot",
+    "partnership",
+    "appointment"
+  ],
+  "forbidden_fact_keys": [
+    "wrong_company",
+    "future_launch"
+  ],
+  "label_status": "synthetic_predeclared",
+  "human_rating_required": true,
+  "source_evidence": [
+    {
+      "source_id": "s0001",
+      "source_title": "Sagara Insurance agent portal pilot",
+      "quote": "On 5 November 2026, Sagara Insurance announced an agent portal pilot for 200 agents.",
+      "event_on": "2026-11-05",
+      "published_on": "2026-11-05"
+    },
+    {
+      "source_id": "s0008",
+      "source_title": "Synthetic partnership",
+      "quote": "On 6 November 2026, Sagara Insurance announced a distribution partnership with fictional Bumi Group.",
+      "event_on": "2026-11-06",
+      "published_on": "2026-11-06"
+    },
+    {
+      "source_id": "s0009",
+      "source_title": "Synthetic appointment",
+      "quote": "On 7 November 2026, Sagara Insurance appointed fictional Maya as its chief technology officer.",
+      "event_on": "2026-11-07",
+      "published_on": "2026-11-07"
+    }
+  ],
+  "question_rating_guidance": "Rate each displayed question 0–4 for relevance, specificity and unsupported premises; independent human judgment required.",
+  "required_atoms": [
+    {
+      "key": "pilot",
+      "entity": "Sagara Insurance",
+      "source_id": "s0001",
+      "supporting_quote": "On 5 November 2026, Sagara Insurance announced an agent portal pilot for 200 agents.",
+      "event_on": "2026-11-05"
+    },
+    {
+      "key": "partnership",
+      "entity": "Sagara Insurance",
+      "source_id": "s0008",
+      "supporting_quote": "On 6 November 2026, Sagara Insurance announced a distribution partnership with fictional Bumi Group.",
+      "event_on": "2026-11-06"
+    },
+    {
+      "key": "appointment",
+      "entity": "Sagara Insurance",
+      "source_id": "s0009",
+      "supporting_quote": "On 7 November 2026, Sagara Insurance appointed fictional Maya as its chief technology officer.",
+      "event_on": "2026-11-07"
+    }
+  ]
+}

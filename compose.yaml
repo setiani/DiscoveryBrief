@@ -1,0 +1,37 @@
+services:
+  app:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      DISCOVERYBRIEF_MODE: ${DISCOVERYBRIEF_MODE:-public_demo}
+      RESEARCH_MODE: ${RESEARCH_MODE:-fixture}
+      ENABLE_LIVE_RUNS: ${ENABLE_LIVE_RUNS:-0}
+      MODEL_PRIMARY: ${MODEL_PRIMARY:-}
+      MODEL_FALLBACK: ${MODEL_FALLBACK:-}
+      MODEL_MIN_INTERVAL_SECONDS: ${MODEL_MIN_INTERVAL_SECONDS:-15}
+      BIFROST_VIRTUAL_KEY: ${BIFROST_VIRTUAL_KEY:-}
+      MODEL_PROVIDER_API_KEY: ${MODEL_PROVIDER_API_KEY:-}
+      TAVILY_API_KEY: ${TAVILY_API_KEY:-}
+      BIFROST_BASE_URL: http://bifrost:8080/v1
+      APP_DATA_DIR: /data
+    volumes:
+      - app_data:/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+  bifrost:
+    profiles: [live]
+    image: maximhq/bifrost:v1.5.0
+    environment:
+      MODEL_PROVIDER_API_KEY: ${MODEL_PROVIDER_API_KEY:-}
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - ./data/bifrost/config.json:/app/data/config.json:ro
+      - bifrost_data:/app/data
+volumes:
+  app_data:
+  bifrost_data:

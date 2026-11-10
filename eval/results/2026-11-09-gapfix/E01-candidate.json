@@ -1,0 +1,884 @@
+{
+  "case_id": "E01",
+  "system": "candidate",
+  "mode": "frozen_research",
+  "human_review": "pending",
+  "model": "gpt-6-luna",
+  "implementation_sha256": "a6aee3051661453c9b2558df438fa839a3cbaf0842eb47dd61d87f88d3dcccee",
+  "dataset_sha256": "5f76ff54f8716953c10f0906885751973a69edef8ee3d6b18f16ac7d90b9ded5",
+  "calls": [
+    {
+      "call_id": "call0001",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 374,
+        "output_tokens": 87
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "ResearchPlan",
+      "schema_version": "1.0",
+      "prompt_sha256": "3e68ebe55ee01dfa5e60f5b87edd991abb183d06dd78f50422041a61eeb33da1",
+      "schema_sha256": "237111ceaa9e961d9da55348ea4072c2497618ca89fa1dfa283ff7ab019996fe",
+      "duration_ms": 3921,
+      "status": "received"
+    },
+    {
+      "call_id": "call0002",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 1261,
+        "output_tokens": 612
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "AnalystOutput",
+      "schema_version": "1.0",
+      "prompt_sha256": "f55fcc9c45a86f3f70dbc933cf77f22002974dc6c5cf0307aed2f675686a8e6f",
+      "schema_sha256": "a74779c7781fb9993bbba38831e068840d1d2356ddb6be4749756689acaa41e8",
+      "duration_ms": 13656,
+      "status": "received"
+    },
+    {
+      "call_id": "call0003",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 1726,
+        "output_tokens": 392
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "VerifierOutput",
+      "schema_version": "1.0",
+      "prompt_sha256": "3946764a7ea800f8f274a667f995a3bffeee3521d1d979ac4304342f16d89fb4",
+      "schema_sha256": "3e9a88c93a49e31dd387cac95e00f1e8989b7f70ce6a06e23def91cd6f28423c",
+      "duration_ms": 9719,
+      "status": "received"
+    },
+    {
+      "call_id": "call0004",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 1548,
+        "output_tokens": 427
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "ComposerOutput",
+      "schema_version": "1.0",
+      "prompt_sha256": "38265dd5dbe00e6708480c44397b502d984cc97cf25e8a36126d6821c574f8f4",
+      "schema_sha256": "ef132fad857bceeddf365645620a90423d1bf0f55e5c9e54cc6ff77ba42a8aaf",
+      "duration_ms": 10641,
+      "status": "received"
+    },
+    {
+      "call_id": "call0005",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 1801,
+        "output_tokens": 314
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "PremiseAudit",
+      "schema_version": "1.0",
+      "prompt_sha256": "46bbe4338ad7e1682c8fd8e915d06854a347a669da50e747ab644430344d4677",
+      "schema_sha256": "50fee0a8eaa6d04e04f9c41d4d3d90b7c1679a8f3567bf625e29e2cdd9c16256",
+      "duration_ms": 8547,
+      "status": "received"
+    }
+  ],
+  "elapsed_seconds": 47.672,
+  "usage": {
+    "llm_input_tokens": 6710,
+    "llm_output_tokens": 1832,
+    "tavily_credits_reported": null,
+    "usage_complete": true,
+    "model_usage_complete": true,
+    "tavily_usage_complete": true,
+    "estimated_model_cost_microusd": null
+  },
+  "result": {
+    "sources": [
+      {
+        "source_id": "s0001",
+        "original_url": "https://news.sagara.example/2026/11/05/agent-portal-pilot",
+        "canonical_url": "https://news.sagara.example/2026/11/05/agent-portal-pilot",
+        "title": "Sagara Insurance agent portal pilot",
+        "host": "news.sagara.example",
+        "text": "On 5 November 2026, Sagara Insurance announced an agent portal pilot for 200 agents.",
+        "text_origin": "extract",
+        "extraction_status": "ok",
+        "retrieved_at": "2026-11-08T03:00:00+00:00",
+        "published_on": "2026-11-05",
+        "event_on": null,
+        "date_basis": "provider_estimate",
+        "raw_provider_date": "2026-11-05",
+        "date_precision": "day",
+        "published_at": null,
+        "date_quote": null,
+        "source_kind": "official",
+        "entity_match": "unreviewed",
+        "extraction_error": null,
+        "content_sha256": "ed9344d57a1f2a789f2e65852f03b7ad198f02230b7c3c8fe132e20b2244e3da",
+        "truncated": false,
+        "duplicate_of_source_id": null
+      },
+      {
+        "source_id": "s0002",
+        "original_url": "https://news.sagara.example/2026/11/06/partnership",
+        "canonical_url": "https://news.sagara.example/2026/11/06/partnership",
+        "title": "Synthetic partnership",
+        "host": "news.sagara.example",
+        "text": "On 6 November 2026, Sagara Insurance announced a distribution partnership with fictional Bumi Group.",
+        "text_origin": "extract",
+        "extraction_status": "ok",
+        "retrieved_at": "2026-11-08T03:00:00+00:00",
+        "published_on": "2026-11-06",
+        "event_on": null,
+        "date_basis": "provider_estimate",
+        "raw_provider_date": "2026-11-06",
+        "date_precision": "day",
+        "published_at": null,
+        "date_quote": null,
+        "source_kind": "official",
+        "entity_match": "unreviewed",
+        "extraction_error": null,
+        "content_sha256": "cebe4bf854c2a0dbb9f3be4ec8907dc459c6332e3186ad3ab74d841e55f7e6c9",
+        "truncated": false,
+        "duplicate_of_source_id": null
+      },
+      {
+        "source_id": "s0003",
+        "original_url": "https://news.sagara.example/2026/11/07/appointment",
+        "canonical_url": "https://news.sagara.example/2026/11/07/appointment",
+        "title": "Synthetic appointment",
+        "host": "news.sagara.example",
+        "text": "On 7 November 2026, Sagara Insurance appointed fictional Maya as its chief technology officer.",
+        "text_origin": "extract",
+        "extraction_status": "ok",
+        "retrieved_at": "2026-11-08T03:00:00+00:00",
+        "published_on": "2026-11-07",
+        "event_on": null,
+        "date_basis": "provider_estimate",
+        "raw_provider_date": "2026-11-07",
+        "date_precision": "day",
+        "published_at": null,
+        "date_quote": null,
+        "source_kind": "official",
+        "entity_match": "unreviewed",
+        "extraction_error": null,
+        "content_sha256": "2ce6bc0860be67c845770cf765f55a910cae4ba24014b0916e35fdbd5f3f072f",
+        "truncated": false,
+        "duplicate_of_source_id": null
+      }
+    ],
+    "candidates": [
+      {
+        "candidate_id": "a0001",
+        "statement": "Pada 5 November 2026, Sagara Insurance mengumumkan uji coba portal agen untuk 200 agen.",
+        "evidence_proposals": [
+          {
+            "source_id": "s0001",
+            "quote": "On 5 November 2026, Sagara Insurance announced an agent portal pilot for 200 agents."
+          }
+        ],
+        "category": "launch",
+        "proposed_event_on": "2026-11-05",
+        "event_date_quote": "On 5 November 2026",
+        "relevance_reason": "Relevan dengan klarifikasi cakupan portal agen; sumber menyebut pengumuman rencana pilot, bukan bahwa pilot telah berlangsung."
+      },
+      {
+        "candidate_id": "a0002",
+        "statement": "Pada 6 November 2026, Sagara Insurance mengumumkan kemitraan distribusi dengan Bumi Group.",
+        "evidence_proposals": [
+          {
+            "source_id": "s0002",
+            "quote": "On 6 November 2026, Sagara Insurance announced a distribution partnership with fictional Bumi Group."
+          }
+        ],
+        "category": "partnership",
+        "proposed_event_on": "2026-11-06",
+        "event_date_quote": "On 6 November 2026",
+        "relevance_reason": "Perkembangan kemitraan independen; sumber secara eksplisit menyebut Bumi Group fiktif."
+      },
+      {
+        "candidate_id": "a0003",
+        "statement": "Pada 7 November 2026, Sagara Insurance menunjuk Maya sebagai chief technology officer.",
+        "evidence_proposals": [
+          {
+            "source_id": "s0003",
+            "quote": "On 7 November 2026, Sagara Insurance appointed fictional Maya as its chief technology officer."
+          }
+        ],
+        "category": "leadership",
+        "proposed_event_on": "2026-11-07",
+        "event_date_quote": "On 7 November 2026",
+        "relevance_reason": "Perubahan kepemimpinan teknologi dapat menjadi konteks klarifikasi portal; sumber menyebut Maya fiktif."
+      }
+    ],
+    "reviews": [
+      {
+        "candidate_id": "a0001",
+        "support": "supported",
+        "entity_match": "matched",
+        "temporal_kind": "recent_development",
+        "event_on": "2026-11-05",
+        "date_quote": "5 November 2026",
+        "conflict_group": null,
+        "reasoning": "Sumber menyatakan Sagara Insurance mengumumkan uji coba portal agen untuk 200 agen pada 5 November 2026."
+      },
+      {
+        "candidate_id": "a0002",
+        "support": "supported",
+        "entity_match": "matched",
+        "temporal_kind": "recent_development",
+        "event_on": "2026-11-06",
+        "date_quote": "6 November 2026",
+        "conflict_group": null,
+        "reasoning": "Sumber mendukung pengumuman kemitraan distribusi dengan Bumi Group pada 6 November 2026."
+      },
+      {
+        "candidate_id": "a0003",
+        "support": "supported",
+        "entity_match": "matched",
+        "temporal_kind": "recent_development",
+        "event_on": "2026-11-07",
+        "date_quote": "7 November 2026",
+        "conflict_group": null,
+        "reasoning": "Sumber mendukung penunjukan Maya sebagai CTO pada 7 November 2026."
+      }
+    ],
+    "requirement_candidates": [
+      {
+        "requirement_id": "r0001",
+        "summary": "Portal harus mendukung SSO.",
+        "quote": "SSO",
+        "start": 23,
+        "end": 26,
+        "category": "identity",
+        "unspecified": [
+          "Protokol dan penyedia SSO tidak disebutkan."
+        ],
+        "offset_relocated": true
+      },
+      {
+        "requirement_id": "r0002",
+        "summary": "Portal harus terintegrasi dengan sistem existing.",
+        "quote": "integrasi dengan sistem existing",
+        "start": 31,
+        "end": 63,
+        "category": "integration",
+        "unspecified": [
+          "Sistem existing yang dimaksud tidak disebutkan.",
+          "Mekanisme atau cakupan integrasi tidak disebutkan."
+        ],
+        "offset_relocated": true
+      }
+    ],
+    "requirement_reviews": [
+      {
+        "requirement_id": "r0001",
+        "support": "supported",
+        "reason": "Kutipan RFP secara eksplisit menyatakan portal harus mendukung SSO."
+      },
+      {
+        "requirement_id": "r0002",
+        "support": "supported",
+        "reason": "Kutipan RFP secara eksplisit mensyaratkan integrasi dengan sistem existing."
+      }
+    ],
+    "claims": [
+      {
+        "candidate_id": "a0001",
+        "statement": "Pada 5 November 2026, Sagara Insurance mengumumkan uji coba portal agen untuk 200 agen.",
+        "event_on": "2026-11-05",
+        "evidence": [
+          {
+            "source_id": "s0001",
+            "quote": "On 5 November 2026, Sagara Insurance announced an agent portal pilot for 200 agents.",
+            "start": 0,
+            "end": 84,
+            "quote_sha256": "ed9344d57a1f2a789f2e65852f03b7ad198f02230b7c3c8fe132e20b2244e3da",
+            "evidence_id": "e0001"
+          }
+        ],
+        "temporal_basis": "explicit_event",
+        "date_precision": "day",
+        "precision_limited": false,
+        "published_on": "2026-11-05",
+        "claim_id": "c0001",
+        "category": "launch",
+        "source_kind": "official",
+        "eligibility": "recent",
+        "relevance": {
+          "topic_match": true,
+          "meeting_type_match": true,
+          "rfp_link": true
+        },
+        "event_cluster_id": "event0001",
+        "rank_score": 10
+      },
+      {
+        "candidate_id": "a0002",
+        "statement": "Pada 6 November 2026, Sagara Insurance mengumumkan kemitraan distribusi dengan Bumi Group.",
+        "event_on": "2026-11-06",
+        "evidence": [
+          {
+            "source_id": "s0002",
+            "quote": "On 6 November 2026, Sagara Insurance announced a distribution partnership with fictional Bumi Group.",
+            "start": 0,
+            "end": 100,
+            "quote_sha256": "cebe4bf854c2a0dbb9f3be4ec8907dc459c6332e3186ad3ab74d841e55f7e6c9",
+            "evidence_id": "e0002"
+          }
+        ],
+        "temporal_basis": "explicit_event",
+        "date_precision": "day",
+        "precision_limited": false,
+        "published_on": "2026-11-06",
+        "claim_id": "c0002",
+        "category": "partnership",
+        "source_kind": "official",
+        "eligibility": "recent",
+        "relevance": {
+          "topic_match": false,
+          "meeting_type_match": false,
+          "rfp_link": false
+        },
+        "event_cluster_id": "event0002",
+        "rank_score": 6
+      },
+      {
+        "candidate_id": "a0003",
+        "statement": "Pada 7 November 2026, Sagara Insurance menunjuk Maya sebagai chief technology officer.",
+        "event_on": "2026-11-07",
+        "evidence": [
+          {
+            "source_id": "s0003",
+            "quote": "On 7 November 2026, Sagara Insurance appointed fictional Maya as its chief technology officer.",
+            "start": 0,
+            "end": 94,
+            "quote_sha256": "2ce6bc0860be67c845770cf765f55a910cae4ba24014b0916e35fdbd5f3f072f",
+            "evidence_id": "e0003"
+          }
+        ],
+        "temporal_basis": "explicit_event",
+        "date_precision": "day",
+        "precision_limited": false,
+        "published_on": "2026-11-07",
+        "claim_id": "c0003",
+        "category": "leadership",
+        "source_kind": "official",
+        "eligibility": "recent",
+        "relevance": {
+          "topic_match": false,
+          "meeting_type_match": false,
+          "rfp_link": false
+        },
+        "event_cluster_id": "event0003",
+        "rank_score": 6
+      }
+    ],
+    "requirements": [
+      {
+        "requirement_id": "r0001",
+        "summary": "Portal harus mendukung SSO.",
+        "quote": "SSO",
+        "start": 23,
+        "end": 26,
+        "category": "identity",
+        "unspecified": [
+          "Protokol dan penyedia SSO tidak disebutkan."
+        ],
+        "offset_relocated": true
+      },
+      {
+        "requirement_id": "r0002",
+        "summary": "Portal harus terintegrasi dengan sistem existing.",
+        "quote": "integrasi dengan sistem existing",
+        "start": 31,
+        "end": 63,
+        "category": "integration",
+        "unspecified": [
+          "Sistem existing yang dimaksud tidak disebutkan.",
+          "Mekanisme atau cakupan integrasi tidak disebutkan."
+        ],
+        "offset_relocated": true
+      }
+    ],
+    "rejections": [],
+    "warnings": [],
+    "window_start": "2026-10-13T10:00:00+07:00",
+    "window_end": "2026-11-08T03:00:00+00:00",
+    "knowledge_cutoff": "2026-11-08T03:00:00+00:00",
+    "research_mode": "frozen_research",
+    "metrics": {
+      "llm_input_tokens": 6710,
+      "llm_output_tokens": 1832,
+      "tavily_credits_reported": null,
+      "usage_complete": true,
+      "model_usage_complete": true,
+      "tavily_usage_complete": true,
+      "estimated_model_cost_microusd": null,
+      "search_requests": 0,
+      "extract_requests": 0,
+      "extract_url_attempts": 0,
+      "llm_requests": 5,
+      "tavily_credits_reserved": 0
+    },
+    "research_queries": [
+      {
+        "kind": "official_news",
+        "query": "\"Sagara Insurance\" Indonesia Insurance news announcements portal integration identity",
+        "include_domains": [
+          "sagara.example"
+        ]
+      },
+      {
+        "kind": "digital_platform",
+        "query": "\"Sagara Insurance\" Indonesia Insurance digital platform customer portal portal integration identity"
+      },
+      {
+        "kind": "business_updates",
+        "query": "\"Sagara Insurance\" Indonesia Insurance company business update portal integration identity"
+      },
+      {
+        "kind": "partnership",
+        "query": "\"Sagara Insurance\" Indonesia Insurance partnership distribution agreement portal integration identity"
+      }
+    ],
+    "extraction_results": {
+      "results": [
+        {
+          "url": "https://news.sagara.example/2026/11/05/agent-portal-pilot",
+          "raw_content": "On 5 November 2026, Sagara Insurance announced an agent portal pilot for 200 agents."
+        },
+        {
+          "url": "https://news.sagara.example/2026/11/06/partnership",
+          "raw_content": "On 6 November 2026, Sagara Insurance announced a distribution partnership with fictional Bumi Group."
+        },
+        {
+          "url": "https://news.sagara.example/2026/11/07/appointment",
+          "raw_content": "On 7 November 2026, Sagara Insurance appointed fictional Maya as its chief technology officer."
+        }
+      ],
+      "failed_results": []
+    },
+    "prompt_passages": [
+      {
+        "source_id": "s0001",
+        "prompt_truncated": false
+      },
+      {
+        "source_id": "s0002",
+        "prompt_truncated": false
+      },
+      {
+        "source_id": "s0003",
+        "prompt_truncated": false
+      }
+    ],
+    "entity": {
+      "status": "user_scoped",
+      "domain": "sagara.example",
+      "candidate_companies": [
+        {
+          "name": "Sagara Insurance",
+          "domain": "sagara.example",
+          "source_ids": [
+            "s0001",
+            "s0002",
+            "s0003"
+          ]
+        }
+      ]
+    },
+    "composer_proposals": {
+      "question_proposals": [
+        {
+          "text": "Untuk pilot portal agen yang diumumkan bagi 200 agen, apakah cakupan pilot tersebut menjadi dasar estimasi, dan siapa pengguna atau tahapan berikutnya yang perlu diperhitungkan?",
+          "grounding": {
+            "claim_ids": [
+              "c0001"
+            ],
+            "requirement_ids": [],
+            "context_fields": [
+              "meeting_goal"
+            ]
+          },
+          "priority": "high",
+          "question_id": "q0001",
+          "origin": "model"
+        },
+        {
+          "text": "Protokol dan penyedia SSO apa yang perlu didukung portal, serta bagaimana keberhasilan autentikasi akan divalidasi?",
+          "grounding": {
+            "claim_ids": [],
+            "requirement_ids": [
+              "r0001"
+            ],
+            "context_fields": [
+              "meeting_goal"
+            ]
+          },
+          "priority": "high",
+          "question_id": "q0002",
+          "origin": "model"
+        },
+        {
+          "text": "Sistem existing mana yang harus terintegrasi, data atau alur apa yang dipertukarkan, dan mekanisme integrasi apa yang diharapkan?",
+          "grounding": {
+            "claim_ids": [],
+            "requirement_ids": [
+              "r0002"
+            ],
+            "context_fields": [
+              "meeting_goal"
+            ]
+          },
+          "priority": "high",
+          "question_id": "q0003",
+          "origin": "model"
+        },
+        {
+          "text": "Apakah ada batasan atau kriteria penerimaan lain untuk scope portal yang perlu diketahui sebelum estimasi?",
+          "grounding": {
+            "claim_ids": [],
+            "requirement_ids": [],
+            "context_fields": [
+              "meeting_goal",
+              "meeting_type"
+            ]
+          },
+          "priority": "medium",
+          "question_id": "q0004",
+          "origin": "model"
+        }
+      ],
+      "hypothesis_proposals": [
+        {
+          "text": "Pilot untuk 200 agen mungkin menjadi acuan awal bagi cakupan pengguna portal; perlu dikonfirmasi apakah estimasi juga harus mencakup skala/t",
+          "grounding": {
+            "claim_ids": [
+              "c0001"
+            ],
+            "requirement_ids": [],
+            "context_fields": [
+              "meeting_goal"
+            ]
+          },
+          "hypothesis_id": "h0001"
+        }
+      ],
+      "unknown_proposals": [
+        {
+          "text": "Protokol dan penyedia SSO belum disebutkan.",
+          "related_claim_ids": [],
+          "related_requirement_ids": [
+            "r0001"
+          ],
+          "unknown_id": "u0001"
+        },
+        {
+          "text": "Sistem existing serta mekanisme dan cakupan integrasinya belum disebutkan.",
+          "related_claim_ids": [],
+          "related_requirement_ids": [
+            "r0002"
+          ],
+          "unknown_id": "u0002"
+        },
+        {
+          "text": "Belum diketahui apakah cakupan pilot 200 agen menjadi dasar estimasi atau perluasan portal termasuk dalam scope.",
+          "related_claim_ids": [
+            "c0001"
+          ],
+          "related_requirement_ids": [],
+          "unknown_id": "u0003"
+        }
+      ]
+    },
+    "premise_reviews": [
+      {
+        "kind": "question",
+        "index": 0,
+        "decision": "accept",
+        "reason": "Klaim menyatakan pilot 200 agen; pertanyaan memvalidasi apakah angka itu menjadi basis estimasi dan menanyakan cakupan berikutnya."
+      },
+      {
+        "kind": "question",
+        "index": 1,
+        "decision": "accept",
+        "reason": "SSO adalah requirement eksplisit; protokol, penyedia, dan validasi memang belum ditentukan."
+      },
+      {
+        "kind": "question",
+        "index": 2,
+        "decision": "accept",
+        "reason": "Integrasi sistem existing adalah requirement eksplisit; sistem, data/alur, dan mekanisme belum disebutkan."
+      },
+      {
+        "kind": "question",
+        "index": 3,
+        "decision": "accept",
+        "reason": "Pertanyaan terbuka untuk batasan atau kriteria lain, tanpa mengasumsikan fakta tertentu."
+      },
+      {
+        "kind": "hypothesis",
+        "index": 0,
+        "decision": "accept",
+        "reason": "Secara eksplisit menyebutkan kemungkinan pilot sebagai acuan dan meminta konfirmasi, bukan menyajikannya sebagai fakta."
+      },
+      {
+        "kind": "unknown",
+        "index": 0,
+        "decision": "accept",
+        "reason": "Protokol dan penyedia SSO memang belum dinyatakan dalam requirement."
+      },
+      {
+        "kind": "unknown",
+        "index": 1,
+        "decision": "accept",
+        "reason": "Identitas sistem serta mekanisme dan cakupan integrasi belum ditentukan."
+      },
+      {
+        "kind": "unknown",
+        "index": 2,
+        "decision": "accept",
+        "reason": "Klaim hanya menetapkan pilot untuk 200 agen; statusnya sebagai basis estimasi atau cakupan perluasan belum diketahui."
+      }
+    ],
+    "status": "completed",
+    "quality": "ready",
+    "composition": {
+      "question": [
+        {
+          "text": "Untuk pilot portal agen yang diumumkan bagi 200 agen, apakah cakupan pilot tersebut menjadi dasar estimasi, dan siapa pengguna atau tahapan berikutnya yang perlu diperhitungkan?",
+          "grounding": {
+            "claim_ids": [
+              "c0001"
+            ],
+            "requirement_ids": [],
+            "context_fields": [
+              "meeting_goal"
+            ]
+          },
+          "priority": "high",
+          "question_id": "q0001",
+          "origin": "model"
+        },
+        {
+          "text": "Protokol dan penyedia SSO apa yang perlu didukung portal, serta bagaimana keberhasilan autentikasi akan divalidasi?",
+          "grounding": {
+            "claim_ids": [],
+            "requirement_ids": [
+              "r0001"
+            ],
+            "context_fields": [
+              "meeting_goal"
+            ]
+          },
+          "priority": "high",
+          "question_id": "q0002",
+          "origin": "model"
+        },
+        {
+          "text": "Sistem existing mana yang harus terintegrasi, data atau alur apa yang dipertukarkan, dan mekanisme integrasi apa yang diharapkan?",
+          "grounding": {
+            "claim_ids": [],
+            "requirement_ids": [
+              "r0002"
+            ],
+            "context_fields": [
+              "meeting_goal"
+            ]
+          },
+          "priority": "high",
+          "question_id": "q0003",
+          "origin": "model"
+        },
+        {
+          "text": "Apakah ada batasan atau kriteria penerimaan lain untuk scope portal yang perlu diketahui sebelum estimasi?",
+          "grounding": {
+            "claim_ids": [],
+            "requirement_ids": [],
+            "context_fields": [
+              "meeting_goal",
+              "meeting_type"
+            ]
+          },
+          "priority": "medium",
+          "question_id": "q0004",
+          "origin": "model"
+        }
+      ],
+      "hypothesis": [
+        {
+          "text": "Pilot untuk 200 agen mungkin menjadi acuan awal bagi cakupan pengguna portal; perlu dikonfirmasi apakah estimasi juga harus mencakup skala/t",
+          "grounding": {
+            "claim_ids": [
+              "c0001"
+            ],
+            "requirement_ids": [],
+            "context_fields": [
+              "meeting_goal"
+            ]
+          },
+          "hypothesis_id": "h0001"
+        }
+      ],
+      "unknown": [
+        {
+          "text": "Protokol dan penyedia SSO belum disebutkan.",
+          "related_claim_ids": [],
+          "related_requirement_ids": [
+            "r0001"
+          ],
+          "unknown_id": "u0001"
+        },
+        {
+          "text": "Sistem existing serta mekanisme dan cakupan integrasinya belum disebutkan.",
+          "related_claim_ids": [],
+          "related_requirement_ids": [
+            "r0002"
+          ],
+          "unknown_id": "u0002"
+        },
+        {
+          "text": "Belum diketahui apakah cakupan pilot 200 agen menjadi dasar estimasi atau perluasan portal termasuk dalam scope.",
+          "related_claim_ids": [
+            "c0001"
+          ],
+          "related_requirement_ids": [],
+          "unknown_id": "u0003"
+        }
+      ]
+    },
+    "brief_selection": {
+      "finding_ids": [
+        "c0001",
+        "c0002",
+        "c0003"
+      ],
+      "requirement_ids": [
+        "r0001",
+        "r0002"
+      ],
+      "questions": [
+        {
+          "text": "Untuk pilot portal agen yang diumumkan bagi 200 agen, apakah cakupan pilot tersebut menjadi dasar estimasi, dan siapa pengguna atau tahapan berikutnya yang perlu diperhitungkan?",
+          "grounding": {
+            "claim_ids": [
+              "c0001"
+            ],
+            "requirement_ids": [],
+            "context_fields": [
+              "meeting_goal"
+            ]
+          },
+          "priority": "high",
+          "question_id": "q0001",
+          "origin": "model"
+        },
+        {
+          "text": "Protokol dan penyedia SSO apa yang perlu didukung portal, serta bagaimana keberhasilan autentikasi akan divalidasi?",
+          "grounding": {
+            "claim_ids": [],
+            "requirement_ids": [
+              "r0001"
+            ],
+            "context_fields": [
+              "meeting_goal"
+            ]
+          },
+          "priority": "high",
+          "question_id": "q0002",
+          "origin": "model"
+        },
+        {
+          "text": "Sistem existing mana yang harus terintegrasi, data atau alur apa yang dipertukarkan, dan mekanisme integrasi apa yang diharapkan?",
+          "grounding": {
+            "claim_ids": [],
+            "requirement_ids": [
+              "r0002"
+            ],
+            "context_fields": [
+              "meeting_goal"
+            ]
+          },
+          "priority": "high",
+          "question_id": "q0003",
+          "origin": "model"
+        },
+        {
+          "text": "Apakah ada batasan atau kriteria penerimaan lain untuk scope portal yang perlu diketahui sebelum estimasi?",
+          "grounding": {
+            "claim_ids": [],
+            "requirement_ids": [],
+            "context_fields": [
+              "meeting_goal",
+              "meeting_type"
+            ]
+          },
+          "priority": "medium",
+          "question_id": "q0004",
+          "origin": "model"
+        }
+      ],
+      "hypotheses": [
+        {
+          "text": "Pilot untuk 200 agen mungkin menjadi acuan awal bagi cakupan pengguna portal; perlu dikonfirmasi apakah estimasi juga harus mencakup skala/t",
+          "grounding": {
+            "claim_ids": [
+              "c0001"
+            ],
+            "requirement_ids": [],
+            "context_fields": [
+              "meeting_goal"
+            ]
+          },
+          "hypothesis_id": "h0001"
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "Protokol dan penyedia SSO belum disebutkan.",
+          "related_claim_ids": [],
+          "related_requirement_ids": [
+            "r0001"
+          ],
+          "unknown_id": "u0001"
+        },
+        {
+          "text": "Sistem existing serta mekanisme dan cakupan integrasinya belum disebutkan.",
+          "related_claim_ids": [],
+          "related_requirement_ids": [
+            "r0002"
+          ],
+          "unknown_id": "u0002"
+        },
+        {
+          "text": "Belum diketahui apakah cakupan pilot 200 agen menjadi dasar estimasi atau perluasan portal termasuk dalam scope.",
+          "related_claim_ids": [
+            "c0001"
+          ],
+          "related_requirement_ids": [],
+          "unknown_id": "u0003"
+        }
+      ]
+    },
+    "diagnostics": {
+      "candidate_count": 3,
+      "requirement_candidate_count": 2,
+      "requirement_rejections": {},
+      "claim_rejections": {},
+      "review_temporal": {
+        "recent_development": 3
+      },
+      "review_support": {
+        "supported": 3
+      },
+      "review_conflicts": 0
+    }
+  }
+}

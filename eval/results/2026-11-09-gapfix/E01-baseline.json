@@ -1,0 +1,54 @@
+{
+  "case_id": "E01",
+  "system": "baseline",
+  "mode": "frozen_research",
+  "human_review": "pending",
+  "model": "gpt-6-luna",
+  "implementation_sha256": "a6aee3051661453c9b2558df438fa839a3cbaf0842eb47dd61d87f88d3dcccee",
+  "dataset_sha256": "5f76ff54f8716953c10f0906885751973a69edef8ee3d6b18f16ac7d90b9ded5",
+  "calls": [
+    {
+      "call_id": "call0001",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 748,
+        "output_tokens": 287
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "baseline",
+      "schema_version": "1.0",
+      "prompt_sha256": "ac5cef87fc0ee4dcd1b5e8e7c20291d062bef85ccd073674cdfda100d0caeaca",
+      "schema_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "duration_ms": 9032,
+      "status": "received"
+    }
+  ],
+  "elapsed_seconds": 9.063,
+  "usage": {
+    "llm_input_tokens": 748,
+    "llm_output_tokens": 287,
+    "tavily_credits_reported": null,
+    "usage_complete": true,
+    "model_usage_complete": true,
+    "tavily_usage_complete": true,
+    "estimated_model_cost_microusd": null
+  },
+  "result": {
+    "status": "completed",
+    "raw_output": "{\n  \"findings\": [\n    \"Sagara mengumumkan uji coba portal agen untuk 200 agen pada 5 November 2026. Sumber: https://news.sagara.example/2026/11/05/agent-portal-pilot\"\n  ],\n  \"requirements\": [\n    \"Portal perlu mendukung SSO dan integrasi dengan sistem existing, sesuai teks RFP yang diberikan.\"\n  ],\n  \"questions\": [\n    \"Apakah estimasi scope mencakup uji coba 200 agen, dan apakah jumlah tersebut menjadi target awal atau cakupan final?\",\n    \"Penyedia identitas, protokol SSO, serta kebutuhan autentikasi apa yang harus didukung?\",\n    \"Sistem existing apa yang perlu diintegrasikan, dan untuk tiap integrasi apa alur data serta kebutuhan teknisnya?\"\n  ]\n}",
+    "parsed": {
+      "findings": [
+        "Sagara mengumumkan uji coba portal agen untuk 200 agen pada 5 November 2026. Sumber: https://news.sagara.example/2026/11/05/agent-portal-pilot"
+      ],
+      "requirements": [
+        "Portal perlu mendukung SSO dan integrasi dengan sistem existing, sesuai teks RFP yang diberikan."
+      ],
+      "questions": [
+        "Apakah estimasi scope mencakup uji coba 200 agen, dan apakah jumlah tersebut menjadi target awal atau cakupan final?",
+        "Penyedia identitas, protokol SSO, serta kebutuhan autentikasi apa yang harus didukung?",
+        "Sistem existing apa yang perlu diintegrasikan, dan untuk tiap integrasi apa alur data serta kebutuhan teknisnya?"
+      ]
+    }
+  }
+}

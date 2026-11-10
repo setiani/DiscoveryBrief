@@ -1,0 +1,28 @@
+{
+  "case_id": "E07",
+  "purpose": "Conflicting role announcements remain unresolved.",
+  "required_fact_keys": [],
+  "forbidden_fact_keys": [
+    "unqualified_role_resolution"
+  ],
+  "label_status": "synthetic_predeclared",
+  "human_rating_required": true,
+  "source_evidence": [
+    {
+      "source_id": "s0010",
+      "source_title": "Synthetic role A",
+      "quote": "On 6 November 2026, Sagara Insurance named Rina as Head of IT.",
+      "event_on": "2026-11-06",
+      "published_on": "2026-11-06"
+    },
+    {
+      "source_id": "s0011",
+      "source_title": "Synthetic role B",
+      "quote": "On 6 November 2026, Sagara Insurance named Rina as Head of Operations instead of Head of IT.",
+      "event_on": "2026-11-06",
+      "published_on": "2026-11-06"
+    }
+  ],
+  "question_rating_guidance": "Rate each displayed question 0–4 for relevance, specificity and unsupported premises; independent human judgment required.",
+  "required_atoms": []
+}

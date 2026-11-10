@@ -1,0 +1,21 @@
+{
+  "case_id": "E09",
+  "purpose": "A story occurs after the frozen cutoff.",
+  "required_fact_keys": [],
+  "forbidden_fact_keys": [
+    "future_launch"
+  ],
+  "label_status": "synthetic_predeclared",
+  "human_rating_required": true,
+  "source_evidence": [
+    {
+      "source_id": "s0005",
+      "source_title": "Future-dated commercial launch",
+      "quote": "On 10 November 2026, Sagara Insurance announced its commercial portal launch.",
+      "event_on": "2026-11-10",
+      "published_on": "2026-11-10"
+    }
+  ],
+  "question_rating_guidance": "Rate each displayed question 0–4 for relevance, specificity and unsupported premises; independent human judgment required.",
+  "required_atoms": []
+}

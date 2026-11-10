@@ -1,0 +1,1044 @@
+{
+  "status": "pending_independent_review",
+  "records": [
+    {
+      "case_id": "E01",
+      "system": "baseline",
+      "review_status": "pending",
+      "raw_record": "eval\\results\\2026-11-09-gapfix\\E01-baseline.json",
+      "label_path": "fixtures/E01/labels.json",
+      "outcome_and_quality_correct": null,
+      "claims": [
+        {
+          "text": "Sagara mengumumkan uji coba portal agen untuk 200 agen pada 5 November 2026. Sumber: https://news.sagara.example/2026/11/05/agent-portal-pilot",
+          "human_supported": null,
+          "entity_correct": null,
+          "temporal_eligible": null,
+          "references_valid": null,
+          "notes": ""
+        }
+      ],
+      "requirements": [
+        {
+          "text": "Portal perlu mendukung SSO dan integrasi dengan sistem existing, sesuai teks RFP yang diberikan.",
+          "grounded": null,
+          "notes": ""
+        }
+      ],
+      "questions": [
+        {
+          "text": "Apakah estimasi scope mencakup uji coba 200 agen, dan apakah jumlah tersebut menjadi target awal atau cakupan final?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Penyedia identitas, protokol SSO, serta kebutuhan autentikasi apa yang harus didukung?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Sistem existing apa yang perlu diintegrasikan, dan untuk tiap integrasi apa alur data serta kebutuhan teknisnya?",
+          "rating": null,
+          "notes": ""
+        }
+      ],
+      "required_atoms": [
+        {
+          "key": "pilot",
+          "surfaced": null,
+          "notes": ""
+        },
+        {
+          "key": "partnership",
+          "surfaced": null,
+          "notes": ""
+        },
+        {
+          "key": "appointment",
+          "surfaced": null,
+          "notes": ""
+        }
+      ],
+      "forbidden_assertions_checked": null,
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "E01",
+      "system": "candidate",
+      "review_status": "pending",
+      "raw_record": "eval\\results\\2026-11-09-gapfix\\E01-candidate.json",
+      "label_path": "fixtures/E01/labels.json",
+      "outcome_and_quality_correct": null,
+      "claims": [
+        {
+          "text": "Pada 5 November 2026, Sagara Insurance mengumumkan uji coba portal agen untuk 200 agen.",
+          "human_supported": null,
+          "entity_correct": null,
+          "temporal_eligible": null,
+          "references_valid": null,
+          "notes": ""
+        },
+        {
+          "text": "Pada 6 November 2026, Sagara Insurance mengumumkan kemitraan distribusi dengan Bumi Group.",
+          "human_supported": null,
+          "entity_correct": null,
+          "temporal_eligible": null,
+          "references_valid": null,
+          "notes": ""
+        },
+        {
+          "text": "Pada 7 November 2026, Sagara Insurance menunjuk Maya sebagai chief technology officer.",
+          "human_supported": null,
+          "entity_correct": null,
+          "temporal_eligible": null,
+          "references_valid": null,
+          "notes": ""
+        }
+      ],
+      "requirements": [
+        {
+          "text": "Portal harus mendukung SSO.",
+          "grounded": null,
+          "notes": ""
+        },
+        {
+          "text": "Portal harus terintegrasi dengan sistem existing.",
+          "grounded": null,
+          "notes": ""
+        }
+      ],
+      "questions": [
+        {
+          "text": "Untuk pilot portal agen yang diumumkan bagi 200 agen, apakah cakupan pilot tersebut menjadi dasar estimasi, dan siapa pengguna atau tahapan berikutnya yang perlu diperhitungkan?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Protokol dan penyedia SSO apa yang perlu didukung portal, serta bagaimana keberhasilan autentikasi akan divalidasi?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Sistem existing mana yang harus terintegrasi, data atau alur apa yang dipertukarkan, dan mekanisme integrasi apa yang diharapkan?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Apakah ada batasan atau kriteria penerimaan lain untuk scope portal yang perlu diketahui sebelum estimasi?",
+          "rating": null,
+          "notes": ""
+        }
+      ],
+      "required_atoms": [
+        {
+          "key": "pilot",
+          "surfaced": null,
+          "notes": ""
+        },
+        {
+          "key": "partnership",
+          "surfaced": null,
+          "notes": ""
+        },
+        {
+          "key": "appointment",
+          "surfaced": null,
+          "notes": ""
+        }
+      ],
+      "forbidden_assertions_checked": null,
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "E02",
+      "system": "baseline",
+      "review_status": "pending",
+      "raw_record": "eval\\results\\2026-11-09-gapfix\\E02-baseline.json",
+      "label_path": "fixtures/E02/labels.json",
+      "outcome_and_quality_correct": null,
+      "claims": [
+        {
+          "text": "Sagara Insurance mengumumkan pilot portal agen untuk 200 agen pada 5 November 2026.",
+          "human_supported": null,
+          "entity_correct": null,
+          "temporal_eligible": null,
+          "references_valid": null,
+          "notes": ""
+        }
+      ],
+      "requirements": [
+        {
+          "text": "Portal harus mendukung SSO.",
+          "grounded": null,
+          "notes": ""
+        },
+        {
+          "text": "Portal harus terintegrasi dengan sistem existing.",
+          "grounded": null,
+          "notes": ""
+        }
+      ],
+      "questions": [
+        {
+          "text": "Apakah estimasi scope portal mencakup pilot 200 agen, dan apakah jumlah tersebut masih menjadi dasar perencanaan?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Penyedia identity atau protokol SSO apa yang digunakan, dan bagaimana alur autentikasi serta otorisasi yang diharapkan?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Sistem existing apa saja yang perlu diintegrasikan, dan apakah API atau dokumentasi integrasi tersedia?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Fitur dan proses agen apa saja yang termasuk dalam scope portal untuk estimasi?",
+          "rating": null,
+          "notes": ""
+        }
+      ],
+      "required_atoms": [],
+      "forbidden_assertions_checked": null,
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "E02",
+      "system": "candidate",
+      "review_status": "pending",
+      "raw_record": "eval\\results\\2026-11-09-gapfix\\E02-candidate.json",
+      "label_path": "fixtures/E02/labels.json",
+      "outcome_and_quality_correct": null,
+      "claims": [],
+      "requirements": [],
+      "questions": [],
+      "required_atoms": [],
+      "forbidden_assertions_checked": null,
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "E03",
+      "system": "baseline",
+      "review_status": "pending",
+      "raw_record": "eval\\results\\2026-11-09-gapfix\\E03-baseline.json",
+      "label_path": "fixtures/E03/labels.json",
+      "outcome_and_quality_correct": null,
+      "claims": [],
+      "requirements": [
+        {
+          "text": "RFP menyebut portal agen harus mendukung SSO.",
+          "grounded": null,
+          "notes": ""
+        },
+        {
+          "text": "RFP menyebut portal agen harus terintegrasi dengan sistem existing; sistem yang dimaksud belum disebutkan.",
+          "grounded": null,
+          "notes": ""
+        }
+      ],
+      "questions": [
+        {
+          "text": "Siapa pengguna portal agen dan alur kerja utama yang harus dicakup dalam scope?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Penyedia identitas atau protokol SSO apa yang digunakan, dan apakah ada kebutuhan seperti MFA atau provisioning pengguna?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Sistem existing apa saja yang perlu diintegrasikan, dan untuk tiap integrasi apa arah pertukaran data serta metode yang diharapkan?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Apa kriteria penerimaan, kebutuhan keamanan, dan batasan lingkungan yang perlu digunakan untuk estimasi?",
+          "rating": null,
+          "notes": ""
+        }
+      ],
+      "required_atoms": [],
+      "forbidden_assertions_checked": null,
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "E03",
+      "system": "candidate",
+      "review_status": "pending",
+      "raw_record": "eval\\results\\2026-11-09-gapfix\\E03-candidate.json",
+      "label_path": "fixtures/E03/labels.json",
+      "outcome_and_quality_correct": null,
+      "claims": [],
+      "requirements": [
+        {
+          "text": "Portal harus mendukung SSO.",
+          "grounded": null,
+          "notes": ""
+        },
+        {
+          "text": "Portal harus terintegrasi dengan sistem yang sudah ada.",
+          "grounded": null,
+          "notes": ""
+        }
+      ],
+      "questions": [
+        {
+          "text": "Untuk kebutuhan SSO, penyedia identitas dan protokol apa yang perlu didukung portal?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Sistem existing apa yang perlu diintegrasikan, dan cakupan serta metode integrasi apa yang diharapkan?",
+          "rating": null,
+          "notes": ""
+        }
+      ],
+      "required_atoms": [],
+      "forbidden_assertions_checked": null,
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "E04",
+      "system": "baseline",
+      "review_status": "pending",
+      "raw_record": "eval\\results\\2026-11-09-gapfix\\E04-baseline.json",
+      "label_path": "fixtures/E04/labels.json",
+      "outcome_and_quality_correct": null,
+      "claims": [
+        {
+          "text": "Sagara mengumumkan pilot portal agen untuk 200 agen pada 5 November 2026. Sumber: https://news.sagara.example/2026/11/05/agent-portal-pilot",
+          "human_supported": null,
+          "entity_correct": null,
+          "temporal_eligible": null,
+          "references_valid": null,
+          "notes": ""
+        }
+      ],
+      "requirements": [
+        {
+          "text": "Portal perlu mendukung SSO.",
+          "grounded": null,
+          "notes": ""
+        },
+        {
+          "text": "Portal perlu terintegrasi dengan sistem existing; sistem dan cakupan integrasi belum dirinci.",
+          "grounded": null,
+          "notes": ""
+        }
+      ],
+      "questions": [
+        {
+          "text": "Apa cakupan portal dan kemampuan yang dibutuhkan untuk pilot 200 agen?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Sistem existing mana yang perlu diintegrasikan, dan data atau alur apa yang terlibat?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Apa kebutuhan SSO, termasuk penyedia identitas, metode autentikasi, dan pengelolaan akses?",
+          "rating": null,
+          "notes": ""
+        }
+      ],
+      "required_atoms": [
+        {
+          "key": "pilot",
+          "surfaced": null,
+          "notes": ""
+        }
+      ],
+      "forbidden_assertions_checked": null,
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "E04",
+      "system": "candidate",
+      "review_status": "pending",
+      "raw_record": "eval\\results\\2026-11-09-gapfix\\E04-candidate.json",
+      "label_path": "fixtures/E04/labels.json",
+      "outcome_and_quality_correct": null,
+      "claims": [
+        {
+          "text": "Pada 5 November 2026, Sagara Insurance mengumumkan uji coba portal agen untuk 200 agen.",
+          "human_supported": null,
+          "entity_correct": null,
+          "temporal_eligible": null,
+          "references_valid": null,
+          "notes": ""
+        }
+      ],
+      "requirements": [
+        {
+          "text": "Portal harus mendukung SSO.",
+          "grounded": null,
+          "notes": ""
+        },
+        {
+          "text": "Portal harus terintegrasi dengan sistem yang sudah ada.",
+          "grounded": null,
+          "notes": ""
+        }
+      ],
+      "questions": [
+        {
+          "text": "Untuk kebutuhan SSO, protokol atau metode apa yang harus didukung, dan apakah ada batasan identitas atau alur autentikasi?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Sistem existing apa saja yang perlu diintegrasikan dengan portal agen, dan untuk tiap sistem apa data serta pola integrasinya?",
+          "rating": null,
+          "notes": ""
+        }
+      ],
+      "required_atoms": [
+        {
+          "key": "pilot",
+          "surfaced": null,
+          "notes": ""
+        }
+      ],
+      "forbidden_assertions_checked": null,
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "E05",
+      "system": "baseline",
+      "review_status": "pending",
+      "raw_record": "eval\\results\\2026-11-09-gapfix\\E05-baseline.json",
+      "label_path": "fixtures/E05/labels.json",
+      "outcome_and_quality_correct": null,
+      "claims": [
+        {
+          "text": "Sumber menyebut pilot Sagara Insurance dimulai pada 20 September 2026; tanggal tersebut mendahului rentang riset yang dimulai 13 Oktober 2026, dan sumber tidak menjelaskan cakupan atau hasil pilot. https://news.sagara.example/old-pilot-recap",
+          "human_supported": null,
+          "entity_correct": null,
+          "temporal_eligible": null,
+          "references_valid": null,
+          "notes": ""
+        }
+      ],
+      "requirements": [
+        {
+          "text": "Portal agen harus mendukung SSO.",
+          "grounded": null,
+          "notes": ""
+        },
+        {
+          "text": "Portal agen harus terintegrasi dengan sistem existing; sistem dan cakupan integrasi belum dirinci.",
+          "grounded": null,
+          "notes": ""
+        }
+      ],
+      "questions": [
+        {
+          "text": "Apa alur dan jenis pengguna portal agen yang termasuk dalam scope?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Penyedia atau standar SSO apa yang digunakan, dan bagaimana kebutuhan autentikasi serta otorisasi?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Sistem existing apa yang perlu diintegrasikan, dan data atau proses apa yang dipertukarkan?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Apakah pilot yang disebut sumber terkait dengan portal ini, dan adakah temuan atau batasan yang perlu diperhitungkan dalam estimasi?",
+          "rating": null,
+          "notes": ""
+        }
+      ],
+      "required_atoms": [],
+      "forbidden_assertions_checked": null,
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "E05",
+      "system": "candidate",
+      "review_status": "pending",
+      "raw_record": "eval\\results\\2026-11-09-gapfix\\E05-candidate.json",
+      "label_path": "fixtures/E05/labels.json",
+      "outcome_and_quality_correct": null,
+      "claims": [],
+      "requirements": [
+        {
+          "text": "Portal harus mendukung SSO.",
+          "grounded": null,
+          "notes": ""
+        },
+        {
+          "text": "Portal harus terintegrasi dengan sistem existing.",
+          "grounded": null,
+          "notes": ""
+        }
+      ],
+      "questions": [
+        {
+          "text": "Untuk kebutuhan SSO, protokol atau mekanisme apa yang harus didukung portal?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Sistem existing mana yang perlu diintegrasikan, dan data atau proses apa yang tercakup dalam tiap integrasi?",
+          "rating": null,
+          "notes": ""
+        }
+      ],
+      "required_atoms": [],
+      "forbidden_assertions_checked": null,
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "E06",
+      "system": "baseline",
+      "review_status": "pending",
+      "raw_record": "eval\\results\\2026-11-09-gapfix\\E06-baseline.json",
+      "label_path": "fixtures/E06/labels.json",
+      "outcome_and_quality_correct": null,
+      "claims": [
+        {
+          "text": "Sagara Insurance mengumumkan pilot portal agen untuk 200 agen pada 5 November 2026.",
+          "human_supported": null,
+          "entity_correct": null,
+          "temporal_eligible": null,
+          "references_valid": null,
+          "notes": ""
+        }
+      ],
+      "requirements": [
+        {
+          "text": "Portal harus mendukung SSO.",
+          "grounded": null,
+          "notes": ""
+        },
+        {
+          "text": "Portal harus terintegrasi dengan sistem existing; sistem dan cakupan integrasi belum dirinci.",
+          "grounded": null,
+          "notes": ""
+        }
+      ],
+      "questions": [
+        {
+          "text": "Apakah scope RFP ini mencakup pilot portal yang diumumkan untuk 200 agen, dan apakah 200 agen menjadi basis estimasi?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Identity provider dan protokol SSO apa yang digunakan, serta bagaimana kebutuhan provisioning dan deprovisioning agen?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Sistem existing apa saja yang perlu diintegrasikan, dan untuk setiap integrasi apa data, arah pertukaran, serta metode integrasinya?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Apa saja fitur, peran pengguna, dan alur kerja agen yang termasuk dalam scope portal?",
+          "rating": null,
+          "notes": ""
+        }
+      ],
+      "required_atoms": [
+        {
+          "key": "pilot",
+          "surfaced": null,
+          "notes": ""
+        }
+      ],
+      "forbidden_assertions_checked": null,
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "E06",
+      "system": "candidate",
+      "review_status": "pending",
+      "raw_record": "eval\\results\\2026-11-09-gapfix\\E06-candidate.json",
+      "label_path": "fixtures/E06/labels.json",
+      "outcome_and_quality_correct": null,
+      "claims": [
+        {
+          "text": "Sagara Insurance mengumumkan pilot portal agen pada 5 November 2026 untuk 200 agen.",
+          "human_supported": null,
+          "entity_correct": null,
+          "temporal_eligible": null,
+          "references_valid": null,
+          "notes": ""
+        }
+      ],
+      "requirements": [
+        {
+          "text": "Portal harus mendukung SSO.",
+          "grounded": null,
+          "notes": ""
+        },
+        {
+          "text": "Portal harus terintegrasi dengan sistem existing.",
+          "grounded": null,
+          "notes": ""
+        }
+      ],
+      "questions": [
+        {
+          "text": "Untuk pilot 200 agen yang diumumkan, apakah cakupan tersebut juga menjadi basis estimasi portal, atau ada jumlah/pengguna lain yang perlu dipertimbangkan?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Apa penyedia atau protokol SSO yang harus didukung, dan apakah ada kebutuhan autentikasi atau provisioning lain?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Sistem existing mana yang perlu diintegrasikan, dan data atau alur apa yang harus dipertukarkan dengan portal?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Apakah ada batasan atau kriteria penerimaan lain yang perlu dipastikan sebelum estimasi scope portal?",
+          "rating": null,
+          "notes": ""
+        }
+      ],
+      "required_atoms": [
+        {
+          "key": "pilot",
+          "surfaced": null,
+          "notes": ""
+        }
+      ],
+      "forbidden_assertions_checked": null,
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "E07",
+      "system": "baseline",
+      "review_status": "pending",
+      "raw_record": "eval\\results\\2026-11-09-gapfix\\E07-baseline.json",
+      "label_path": "fixtures/E07/labels.json",
+      "outcome_and_quality_correct": null,
+      "claims": [
+        {
+          "text": "Sagara Insurance dinyatakan mengangkat Rina sebagai Head of IT pada 6 November 2026, tetapi sumber lain pada tanggal yang sama menyebutnya sebagai Head of Operations. Peran Rina perlu dikonfirmasi.",
+          "human_supported": null,
+          "entity_correct": null,
+          "temporal_eligible": null,
+          "references_valid": null,
+          "notes": ""
+        },
+        {
+          "text": "RFP menyebut kebutuhan portal agen dengan SSO dan integrasi ke sistem existing; rincian teknis belum tersedia dalam konteks.",
+          "human_supported": null,
+          "entity_correct": null,
+          "temporal_eligible": null,
+          "references_valid": null,
+          "notes": ""
+        }
+      ],
+      "requirements": [
+        {
+          "text": "Portal agen harus mendukung SSO, sesuai RFP.",
+          "grounded": null,
+          "notes": ""
+        },
+        {
+          "text": "Portal agen harus terintegrasi dengan sistem existing, sesuai RFP; sistem dan cakupan integrasinya belum ditentukan.",
+          "grounded": null,
+          "notes": ""
+        }
+      ],
+      "questions": [
+        {
+          "text": "Sistem identitas atau penyedia SSO apa yang digunakan, dan bagaimana alur autentikasi serta kebutuhan provisioning dan pengelolaan akses agen?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Sistem existing apa saja yang perlu diintegrasikan, dan data atau proses apa yang harus dipertukarkan?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Apa cakupan fungsi portal agen, kelompok pengguna, dan kebutuhan alur kerja yang perlu dimasukkan dalam estimasi?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Dapatkah peran Rina dikonfirmasi sebagai Head of IT atau Head of Operations?",
+          "rating": null,
+          "notes": ""
+        }
+      ],
+      "required_atoms": [],
+      "forbidden_assertions_checked": null,
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "E07",
+      "system": "candidate",
+      "review_status": "pending",
+      "raw_record": "eval\\results\\2026-11-09-gapfix\\E07-candidate.json",
+      "label_path": "fixtures/E07/labels.json",
+      "outcome_and_quality_correct": null,
+      "claims": [],
+      "requirements": [
+        {
+          "text": "Portal harus mendukung SSO.",
+          "grounded": null,
+          "notes": ""
+        },
+        {
+          "text": "Portal harus terintegrasi dengan sistem existing.",
+          "grounded": null,
+          "notes": ""
+        }
+      ],
+      "questions": [
+        {
+          "text": "SSO perlu menggunakan protokol atau metode apa, dan apakah ada persyaratan khusus terkait autentikasi?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Sistem existing mana yang perlu terhubung dengan portal, serta data atau proses apa yang termasuk dalam ruang lingkup integrasi?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Pola integrasi apa yang diharapkan untuk tiap sistem, misalnya API atau mekanisme lain?",
+          "rating": null,
+          "notes": ""
+        }
+      ],
+      "required_atoms": [],
+      "forbidden_assertions_checked": null,
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "E08",
+      "system": "baseline",
+      "review_status": "pending",
+      "raw_record": "eval\\results\\2026-11-09-gapfix\\E08-baseline.json",
+      "label_path": "fixtures/E08/labels.json",
+      "outcome_and_quality_correct": null,
+      "claims": [
+        {
+          "text": "Sagara Insurance mengumumkan uji coba portal agen untuk 200 agen pada 5 November 2026.",
+          "human_supported": null,
+          "entity_correct": null,
+          "temporal_eligible": null,
+          "references_valid": null,
+          "notes": ""
+        }
+      ],
+      "requirements": [
+        {
+          "text": "Portal harus mendukung SSO.",
+          "grounded": null,
+          "notes": ""
+        },
+        {
+          "text": "Portal harus terintegrasi dengan sistem existing.",
+          "grounded": null,
+          "notes": ""
+        }
+      ],
+      "questions": [
+        {
+          "text": "Sistem existing apa saja yang perlu diintegrasikan, dan data atau proses apa yang terlibat?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Apa penyedia atau standar SSO yang digunakan, serta bagaimana alur autentikasi dan pengelolaan akses yang diharapkan?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Apakah uji coba portal untuk 200 agen menjadi bagian dari scope RFP, atau ada target pengguna dan tahapan implementasi lain?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Apa kriteria penerimaan dan batasan scope yang perlu diperhitungkan sebelum estimasi?",
+          "rating": null,
+          "notes": ""
+        }
+      ],
+      "required_atoms": [
+        {
+          "key": "pilot",
+          "surfaced": null,
+          "notes": ""
+        }
+      ],
+      "forbidden_assertions_checked": null,
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "E08",
+      "system": "candidate",
+      "review_status": "pending",
+      "raw_record": "eval\\results\\2026-11-09-gapfix\\E08-candidate.json",
+      "label_path": "fixtures/E08/labels.json",
+      "outcome_and_quality_correct": null,
+      "claims": [
+        {
+          "text": "Sagara Insurance mengumumkan pilot portal agen untuk 200 agen pada 5 November 2026.",
+          "human_supported": null,
+          "entity_correct": null,
+          "temporal_eligible": null,
+          "references_valid": null,
+          "notes": ""
+        }
+      ],
+      "requirements": [
+        {
+          "text": "Portal harus mendukung SSO.",
+          "grounded": null,
+          "notes": ""
+        },
+        {
+          "text": "Portal harus terintegrasi dengan sistem yang sudah ada.",
+          "grounded": null,
+          "notes": ""
+        }
+      ],
+      "questions": [
+        {
+          "text": "Untuk pilot portal agen yang diumumkan bagi 200 agen, apakah cakupan pilot tersebut menjadi dasar estimasi, dan kemampuan apa yang perlu diklarifikasi?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Penyedia atau protokol SSO apa yang harus didukung, dan bagaimana kebutuhan autentikasi untuk agen akan ditentukan?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Sistem existing mana yang perlu diintegrasikan, serta pola integrasi dan alur data apa yang diharapkan?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Apakah ada batasan atau asumsi lain yang perlu disepakati sebelum estimasi scope portal agen?",
+          "rating": null,
+          "notes": ""
+        }
+      ],
+      "required_atoms": [
+        {
+          "key": "pilot",
+          "surfaced": null,
+          "notes": ""
+        }
+      ],
+      "forbidden_assertions_checked": null,
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "E09",
+      "system": "baseline",
+      "review_status": "pending",
+      "raw_record": "eval\\results\\2026-11-09-gapfix\\E09-baseline.json",
+      "label_path": "fixtures/E09/labels.json",
+      "outcome_and_quality_correct": null,
+      "claims": [],
+      "requirements": [
+        {
+          "text": "Portal harus mendukung SSO.",
+          "grounded": null,
+          "notes": ""
+        },
+        {
+          "text": "Portal harus terintegrasi dengan sistem existing.",
+          "grounded": null,
+          "notes": ""
+        }
+      ],
+      "questions": [
+        {
+          "text": "Apa cakupan pengguna, peran, dan fitur yang dibutuhkan pada portal agen?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "SSO harus menggunakan penyedia identitas atau protokol tertentu?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Sistem existing apa saja yang perlu diintegrasikan, dan data atau alur apa yang terlibat?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Apakah ada kebutuhan keamanan, lingkungan, atau kriteria penerimaan yang perlu dipenuhi untuk estimasi?",
+          "rating": null,
+          "notes": ""
+        }
+      ],
+      "required_atoms": [],
+      "forbidden_assertions_checked": null,
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "E09",
+      "system": "candidate",
+      "review_status": "pending",
+      "raw_record": "eval\\results\\2026-11-09-gapfix\\E09-candidate.json",
+      "label_path": "fixtures/E09/labels.json",
+      "outcome_and_quality_correct": null,
+      "claims": [],
+      "requirements": [
+        {
+          "text": "Portal harus mendukung SSO.",
+          "grounded": null,
+          "notes": ""
+        },
+        {
+          "text": "Portal harus terintegrasi dengan sistem existing.",
+          "grounded": null,
+          "notes": ""
+        }
+      ],
+      "questions": [
+        {
+          "text": "Untuk kebutuhan SSO, penyedia atau standar apa yang harus didukung, dan protokol serta alur autentikasi seperti apa yang diharapkan?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Sistem existing apa saja yang perlu diintegrasikan dengan portal, dan mekanisme serta cakupan integrasi apa yang diperlukan?",
+          "rating": null,
+          "notes": ""
+        }
+      ],
+      "required_atoms": [],
+      "forbidden_assertions_checked": null,
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "E10",
+      "system": "baseline",
+      "review_status": "pending",
+      "raw_record": "eval\\results\\2026-11-09-gapfix\\E10-baseline.json",
+      "label_path": "fixtures/E10/labels.json",
+      "outcome_and_quality_correct": null,
+      "claims": [
+        {
+          "text": "Pada 5 November 2026, Sagara Insurance mengumumkan pilot portal agen untuk 200 agen. Sumber: https://news.sagara.example/2026/11/05/agent-portal-pilot",
+          "human_supported": null,
+          "entity_correct": null,
+          "temporal_eligible": null,
+          "references_valid": null,
+          "notes": ""
+        }
+      ],
+      "requirements": [
+        {
+          "text": "RFP menyebut portal harus mendukung SSO.",
+          "grounded": null,
+          "notes": ""
+        },
+        {
+          "text": "RFP menyebut portal harus terintegrasi dengan sistem existing.",
+          "grounded": null,
+          "notes": ""
+        }
+      ],
+      "questions": [
+        {
+          "text": "Apakah scope yang dibahas mencakup pilot portal agen untuk 200 agen, dan apakah angka tersebut masih berlaku?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Apa alur pengguna dan fungsi portal yang termasuk dalam scope estimasi?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Apa solusi identity/SSO yang digunakan, dan bagaimana alur autentikasi serta kebutuhan akses pengguna?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Sistem existing mana yang perlu diintegrasikan, dan data atau proses apa yang harus dipertukarkan?",
+          "rating": null,
+          "notes": ""
+        }
+      ],
+      "required_atoms": [
+        {
+          "key": "pilot",
+          "surfaced": null,
+          "notes": ""
+        }
+      ],
+      "forbidden_assertions_checked": null,
+      "reviewer_notes": ""
+    },
+    {
+      "case_id": "E10",
+      "system": "candidate",
+      "review_status": "pending",
+      "raw_record": "eval\\results\\2026-11-09-gapfix\\E10-candidate.json",
+      "label_path": "fixtures/E10/labels.json",
+      "outcome_and_quality_correct": null,
+      "claims": [
+        {
+          "text": "Pada 5 November 2026, Sagara Insurance mengumumkan pilot portal agen untuk 200 agen.",
+          "human_supported": null,
+          "entity_correct": null,
+          "temporal_eligible": null,
+          "references_valid": null,
+          "notes": ""
+        }
+      ],
+      "requirements": [
+        {
+          "text": "Portal harus mendukung SSO.",
+          "grounded": null,
+          "notes": ""
+        },
+        {
+          "text": "Portal harus terintegrasi dengan sistem existing.",
+          "grounded": null,
+          "notes": ""
+        }
+      ],
+      "questions": [
+        {
+          "text": "Bagaimana SSO harus bekerja di portal, dan apakah ada penyedia atau protokol tertentu yang perlu didukung?",
+          "rating": null,
+          "notes": ""
+        },
+        {
+          "text": "Sistem existing mana yang perlu diintegrasikan dengan portal, dan data atau alur kerja apa yang perlu dipertukarkan?",
+          "rating": null,
+          "notes": ""
+        }
+      ],
+      "required_atoms": [
+        {
+          "key": "pilot",
+          "surfaced": null,
+          "notes": ""
+        }
+      ],
+      "forbidden_assertions_checked": null,
+      "reviewer_notes": ""
+    }
+  ]
+}

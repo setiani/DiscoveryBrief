@@ -1,0 +1,423 @@
+{
+  "case_id": "E03",
+  "system": "candidate",
+  "mode": "frozen_research",
+  "human_review": "pending",
+  "model": "gpt-6-luna",
+  "implementation_sha256": "a6aee3051661453c9b2558df438fa839a3cbaf0842eb47dd61d87f88d3dcccee",
+  "dataset_sha256": "5f76ff54f8716953c10f0906885751973a69edef8ee3d6b18f16ac7d90b9ded5",
+  "calls": [
+    {
+      "call_id": "call0001",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 374,
+        "output_tokens": 63
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "ResearchPlan",
+      "schema_version": "1.0",
+      "prompt_sha256": "3e68ebe55ee01dfa5e60f5b87edd991abb183d06dd78f50422041a61eeb33da1",
+      "schema_sha256": "237111ceaa9e961d9da55348ea4072c2497618ca89fa1dfa283ff7ab019996fe",
+      "duration_ms": 3250,
+      "status": "received"
+    },
+    {
+      "call_id": "call0002",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 898,
+        "output_tokens": 178
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "AnalystOutput",
+      "schema_version": "1.0",
+      "prompt_sha256": "a88335e4d6d8f103ca1428e8f65ee34f0347d9435922bcea48ab73a67d6fd208",
+      "schema_sha256": "a74779c7781fb9993bbba38831e068840d1d2356ddb6be4749756689acaa41e8",
+      "duration_ms": 5562,
+      "status": "received"
+    },
+    {
+      "call_id": "call0003",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 1005,
+        "output_tokens": 144
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "VerifierOutput",
+      "schema_version": "1.0",
+      "prompt_sha256": "c0d5f54e91925b338f212c6b9e7b4fbcd1202967f1c1568b2bedf83595242166",
+      "schema_sha256": "3e9a88c93a49e31dd387cac95e00f1e8989b7f70ce6a06e23def91cd6f28423c",
+      "duration_ms": 5375,
+      "status": "received"
+    },
+    {
+      "call_id": "call0004",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 753,
+        "output_tokens": 198
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "ComposerOutput",
+      "schema_version": "1.0",
+      "prompt_sha256": "592a200dbcc328cf95e10323f6e5de8fed6a20cee871eb7d90c1f5f3f8ac8db6",
+      "schema_sha256": "ef132fad857bceeddf365645620a90423d1bf0f55e5c9e54cc6ff77ba42a8aaf",
+      "duration_ms": 5984,
+      "status": "received"
+    },
+    {
+      "call_id": "call0005",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 750,
+        "output_tokens": 159
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "PremiseAudit",
+      "schema_version": "1.0",
+      "prompt_sha256": "a65c014398a357e224a13ba8721f9eb14db4bcf97775ef197a4a0d199250bb72",
+      "schema_sha256": "50fee0a8eaa6d04e04f9c41d4d3d90b7c1679a8f3567bf625e29e2cdd9c16256",
+      "duration_ms": 5031,
+      "status": "received"
+    }
+  ],
+  "elapsed_seconds": 27.047,
+  "usage": {
+    "llm_input_tokens": 3780,
+    "llm_output_tokens": 742,
+    "tavily_credits_reported": null,
+    "usage_complete": true,
+    "model_usage_complete": true,
+    "tavily_usage_complete": true,
+    "estimated_model_cost_microusd": null
+  },
+  "result": {
+    "sources": [],
+    "candidates": [],
+    "reviews": [],
+    "requirement_candidates": [
+      {
+        "requirement_id": "r0001",
+        "summary": "Portal harus mendukung SSO.",
+        "quote": "Portal harus mendukung SSO",
+        "start": 0,
+        "end": 26,
+        "category": "identity",
+        "unspecified": [
+          "Penyedia identitas atau protokol SSO tidak ditentukan."
+        ]
+      },
+      {
+        "requirement_id": "r0002",
+        "summary": "Portal harus terintegrasi dengan sistem yang sudah ada.",
+        "quote": "integrasi dengan sistem existing",
+        "start": 31,
+        "end": 63,
+        "category": "integration",
+        "unspecified": [
+          "Sistem existing dan cakupan atau metode integrasi tidak ditentukan."
+        ]
+      }
+    ],
+    "requirement_reviews": [
+      {
+        "requirement_id": "r0001",
+        "support": "supported",
+        "reason": "Kutipan RFP secara eksplisit menyatakan portal harus mendukung SSO."
+      },
+      {
+        "requirement_id": "r0002",
+        "support": "supported",
+        "reason": "Kutipan RFP secara eksplisit mensyaratkan integrasi dengan sistem existing."
+      }
+    ],
+    "claims": [],
+    "requirements": [
+      {
+        "requirement_id": "r0001",
+        "summary": "Portal harus mendukung SSO.",
+        "quote": "Portal harus mendukung SSO",
+        "start": 0,
+        "end": 26,
+        "category": "identity",
+        "unspecified": [
+          "Penyedia identitas atau protokol SSO tidak ditentukan."
+        ]
+      },
+      {
+        "requirement_id": "r0002",
+        "summary": "Portal harus terintegrasi dengan sistem yang sudah ada.",
+        "quote": "integrasi dengan sistem existing",
+        "start": 31,
+        "end": 63,
+        "category": "integration",
+        "unspecified": [
+          "Sistem existing dan cakupan atau metode integrasi tidak ditentukan."
+        ]
+      }
+    ],
+    "rejections": [],
+    "warnings": [],
+    "window_start": "2026-10-13T10:00:00+07:00",
+    "window_end": "2026-11-08T03:00:00+00:00",
+    "knowledge_cutoff": "2026-11-08T03:00:00+00:00",
+    "research_mode": "frozen_research",
+    "metrics": {
+      "llm_input_tokens": 3780,
+      "llm_output_tokens": 742,
+      "tavily_credits_reported": null,
+      "usage_complete": true,
+      "model_usage_complete": true,
+      "tavily_usage_complete": true,
+      "estimated_model_cost_microusd": null,
+      "search_requests": 0,
+      "extract_requests": 0,
+      "extract_url_attempts": 0,
+      "llm_requests": 5,
+      "tavily_credits_reserved": 0
+    },
+    "research_queries": [
+      {
+        "kind": "official_news",
+        "query": "\"Sagara Insurance\" Indonesia Insurance news announcements portal integration identity",
+        "include_domains": [
+          "sagara.example"
+        ]
+      },
+      {
+        "kind": "digital_platform",
+        "query": "\"Sagara Insurance\" Indonesia Insurance digital platform customer portal portal integration identity"
+      },
+      {
+        "kind": "business_updates",
+        "query": "\"Sagara Insurance\" Indonesia Insurance company business update portal integration identity"
+      },
+      {
+        "kind": "partnership",
+        "query": "\"Sagara Insurance\" Indonesia Insurance partnership distribution agreement portal integration identity"
+      },
+      {
+        "kind": "product_launch",
+        "query": "\"Sagara Insurance\" Indonesia Insurance product launch service launch portal integration identity"
+      },
+      {
+        "kind": "leadership",
+        "query": "\"Sagara Insurance\" Indonesia Insurance executive appointment leadership portal integration identity"
+      }
+    ],
+    "prompt_passages": [],
+    "entity": {
+      "status": "needs_input",
+      "candidate_companies": [],
+      "reason": "unknown_basis"
+    },
+    "composer_proposals": {
+      "question_proposals": [
+        {
+          "text": "Untuk kebutuhan SSO, penyedia identitas dan protokol apa yang perlu didukung portal?",
+          "grounding": {
+            "claim_ids": [],
+            "requirement_ids": [
+              "r0001"
+            ],
+            "context_fields": [
+              "meeting_goal"
+            ]
+          },
+          "priority": "high",
+          "question_id": "q0001",
+          "origin": "model"
+        },
+        {
+          "text": "Sistem existing apa yang perlu diintegrasikan, dan cakupan serta metode integrasi apa yang diharapkan?",
+          "grounding": {
+            "claim_ids": [],
+            "requirement_ids": [
+              "r0002"
+            ],
+            "context_fields": [
+              "meeting_goal"
+            ]
+          },
+          "priority": "high",
+          "question_id": "q0002",
+          "origin": "model"
+        }
+      ],
+      "hypothesis_proposals": [],
+      "unknown_proposals": [
+        {
+          "text": "Penyedia identitas dan protokol SSO belum ditentukan.",
+          "related_claim_ids": [],
+          "related_requirement_ids": [
+            "r0001"
+          ],
+          "unknown_id": "u0001"
+        },
+        {
+          "text": "Sistem existing, cakupan integrasi, dan metode integrasi belum ditentukan.",
+          "related_claim_ids": [],
+          "related_requirement_ids": [
+            "r0002"
+          ],
+          "unknown_id": "u0002"
+        }
+      ]
+    },
+    "premise_reviews": [
+      {
+        "kind": "question",
+        "index": 0,
+        "decision": "accept",
+        "reason": "Requirement menyebut SSO, tetapi penyedia identitas dan protokolnya belum ditentukan; pertanyaan mengklarifikasi detail tersebut."
+      },
+      {
+        "kind": "question",
+        "index": 1,
+        "decision": "accept",
+        "reason": "Requirement hanya menyebut integrasi dengan sistem existing; sistem, cakupan, dan metode belum ditentukan."
+      },
+      {
+        "kind": "unknown",
+        "index": 0,
+        "decision": "accept",
+        "reason": "Penyedia identitas dan protokol SSO memang tidak disebutkan dalam requirement."
+      },
+      {
+        "kind": "unknown",
+        "index": 1,
+        "decision": "accept",
+        "reason": "Sistem existing serta cakupan dan metode integrasi tidak ditentukan dalam requirement."
+      }
+    ],
+    "status": "completed",
+    "quality": "context_only",
+    "composition": {
+      "question": [
+        {
+          "text": "Untuk kebutuhan SSO, penyedia identitas dan protokol apa yang perlu didukung portal?",
+          "grounding": {
+            "claim_ids": [],
+            "requirement_ids": [
+              "r0001"
+            ],
+            "context_fields": [
+              "meeting_goal"
+            ]
+          },
+          "priority": "high",
+          "question_id": "q0001",
+          "origin": "model"
+        },
+        {
+          "text": "Sistem existing apa yang perlu diintegrasikan, dan cakupan serta metode integrasi apa yang diharapkan?",
+          "grounding": {
+            "claim_ids": [],
+            "requirement_ids": [
+              "r0002"
+            ],
+            "context_fields": [
+              "meeting_goal"
+            ]
+          },
+          "priority": "high",
+          "question_id": "q0002",
+          "origin": "model"
+        }
+      ],
+      "hypothesis": [],
+      "unknown": [
+        {
+          "text": "Penyedia identitas dan protokol SSO belum ditentukan.",
+          "related_claim_ids": [],
+          "related_requirement_ids": [
+            "r0001"
+          ],
+          "unknown_id": "u0001"
+        },
+        {
+          "text": "Sistem existing, cakupan integrasi, dan metode integrasi belum ditentukan.",
+          "related_claim_ids": [],
+          "related_requirement_ids": [
+            "r0002"
+          ],
+          "unknown_id": "u0002"
+        }
+      ]
+    },
+    "brief_selection": {
+      "finding_ids": [],
+      "requirement_ids": [
+        "r0001",
+        "r0002"
+      ],
+      "questions": [
+        {
+          "text": "Untuk kebutuhan SSO, penyedia identitas dan protokol apa yang perlu didukung portal?",
+          "grounding": {
+            "claim_ids": [],
+            "requirement_ids": [
+              "r0001"
+            ],
+            "context_fields": [
+              "meeting_goal"
+            ]
+          },
+          "priority": "high",
+          "question_id": "q0001",
+          "origin": "model"
+        },
+        {
+          "text": "Sistem existing apa yang perlu diintegrasikan, dan cakupan serta metode integrasi apa yang diharapkan?",
+          "grounding": {
+            "claim_ids": [],
+            "requirement_ids": [
+              "r0002"
+            ],
+            "context_fields": [
+              "meeting_goal"
+            ]
+          },
+          "priority": "high",
+          "question_id": "q0002",
+          "origin": "model"
+        }
+      ],
+      "hypotheses": [],
+      "unknowns": [
+        {
+          "text": "Penyedia identitas dan protokol SSO belum ditentukan.",
+          "related_claim_ids": [],
+          "related_requirement_ids": [
+            "r0001"
+          ],
+          "unknown_id": "u0001"
+        },
+        {
+          "text": "Sistem existing, cakupan integrasi, dan metode integrasi belum ditentukan.",
+          "related_claim_ids": [],
+          "related_requirement_ids": [
+            "r0002"
+          ],
+          "unknown_id": "u0002"
+        }
+      ]
+    },
+    "diagnostics": {
+      "candidate_count": 0,
+      "requirement_candidate_count": 2,
+      "requirement_rejections": {},
+      "claim_rejections": {},
+      "review_temporal": {},
+      "review_support": {},
+      "review_conflicts": 0
+    }
+  }
+}

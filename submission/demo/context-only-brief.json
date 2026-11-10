@@ -1,0 +1,154 @@
+{
+  "brief": {
+    "schema_version": "1.0",
+    "run_id": "b7b832d1-8477-493f-bb34-eb544138a30a",
+    "language": "id",
+    "company_name": "Sagara Insurance",
+    "company_domain": "sagara.example",
+    "meeting_at": "2026-11-12T10:00:00+07:00",
+    "meeting_timezone": "Asia/Jakarta",
+    "knowledge_cutoff": "2026-11-08T03:00:00Z",
+    "window_start": "2026-10-13T10:00:00+07:00",
+    "window_end": "2026-11-08T03:00:00Z",
+    "quality": "context_only",
+    "research_mode": "replay",
+    "finding_ids": [],
+    "requirement_ids": [
+      "r0001",
+      "r0002"
+    ],
+    "questions": [
+      {
+        "question_id": "q0001",
+        "text": "Untuk kebutuhan SSO, penyedia identitas dan protokol apa yang perlu didukung portal?",
+        "grounding": {
+          "claim_ids": [],
+          "requirement_ids": [
+            "r0001"
+          ],
+          "context_fields": [
+            "meeting_goal"
+          ]
+        },
+        "priority": "high",
+        "origin": "model"
+      },
+      {
+        "question_id": "q0002",
+        "text": "Sistem existing apa yang perlu diintegrasikan, dan cakupan serta metode integrasi apa yang diharapkan?",
+        "grounding": {
+          "claim_ids": [],
+          "requirement_ids": [
+            "r0002"
+          ],
+          "context_fields": [
+            "meeting_goal"
+          ]
+        },
+        "priority": "high",
+        "origin": "model"
+      }
+    ],
+    "hypotheses": [],
+    "unknowns": [
+      {
+        "unknown_id": "u0001",
+        "text": "Penyedia identitas dan protokol SSO belum ditentukan.",
+        "related_claim_ids": [],
+        "related_requirement_ids": [
+          "r0001"
+        ]
+      },
+      {
+        "unknown_id": "u0002",
+        "text": "Sistem existing, cakupan integrasi, dan metode integrasi belum ditentukan.",
+        "related_claim_ids": [],
+        "related_requirement_ids": [
+          "r0002"
+        ]
+      }
+    ],
+    "context_summary": [
+      {
+        "field": "meeting_goal",
+        "text": "Klarifikasi scope portal agen sebelum estimasi.",
+        "provenance": "user_provided"
+      },
+      {
+        "field": "participant",
+        "text": "Rina — Head of IT",
+        "provenance": "user_provided"
+      }
+    ],
+    "coverage_notes": [
+      "Riset hanya mencakup informasi yang tersedia hingga batas pengetahuan.",
+      "Belum ditemukan perkembangan terbaru yang dapat diverifikasi dari bukti tersedia.",
+      "Cakupan terbatas; periksa bukti sebelum menggunakan brief."
+    ],
+    "overflow_note": null,
+    "source_ids": [],
+    "evidence_ids": []
+  },
+  "claims": [],
+  "requirements": [
+    {
+      "requirement_id": "r0001",
+      "summary": "Portal harus mendukung SSO.",
+      "quote": "Portal harus mendukung SSO",
+      "start": 0,
+      "end": 26,
+      "category": "identity",
+      "unspecified": [
+        "Penyedia identitas atau protokol SSO tidak ditentukan."
+      ],
+      "offset_relocated": false
+    },
+    {
+      "requirement_id": "r0002",
+      "summary": "Portal harus terintegrasi dengan sistem yang sudah ada.",
+      "quote": "integrasi dengan sistem existing",
+      "start": 31,
+      "end": 63,
+      "category": "integration",
+      "unspecified": [
+        "Sistem existing dan cakupan atau metode integrasi tidak ditentukan."
+      ],
+      "offset_relocated": false
+    }
+  ],
+  "sources": [],
+  "evidence": [],
+  "metrics": {
+    "duration_ms": 859,
+    "search_requests": 0,
+    "extract_requests": 0,
+    "extract_url_attempts": 0,
+    "llm_requests": 0,
+    "llm_input_tokens": null,
+    "llm_output_tokens": null,
+    "estimated_model_cost_microusd": null,
+    "tavily_credits_reported": null,
+    "tavily_credits_reserved": 0,
+    "usage_complete": false,
+    "model_usage_complete": false,
+    "tavily_usage_complete": false,
+    "fallbacks_observed": null
+  },
+  "warnings": [],
+  "synthetic": true,
+  "original_research_mode": "frozen_research",
+  "original_metrics": {
+    "llm_input_tokens": 3780,
+    "llm_output_tokens": 742,
+    "tavily_credits_reported": null,
+    "usage_complete": true,
+    "model_usage_complete": true,
+    "tavily_usage_complete": true,
+    "estimated_model_cost_microusd": null,
+    "search_requests": 0,
+    "extract_requests": 0,
+    "extract_url_attempts": 0,
+    "llm_requests": 5,
+    "tavily_credits_reserved": 0
+  }
+}

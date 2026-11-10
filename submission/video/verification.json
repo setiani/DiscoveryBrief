@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "duration_seconds": 180,
+  "video": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": "30/1",
+    "frames": "5400"
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": "48000",
+    "channels": 1,
+    "duration_seconds": 180.0
+  },
+  "full_decode_without_errors": true,
+  "contact_sheet_visually_inspected": true,
+  "narration": "Synthetic English, Microsoft Zira Desktop",
+  "bytes": 9642079,
+  "sha256": "3c2d1518a2db7281c27eae35b86dee6080a87a769747191023620a0dc549cbfa"
+}

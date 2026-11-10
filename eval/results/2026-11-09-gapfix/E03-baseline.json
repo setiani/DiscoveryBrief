@@ -1,0 +1,54 @@
+{
+  "case_id": "E03",
+  "system": "baseline",
+  "mode": "frozen_research",
+  "human_review": "pending",
+  "model": "gpt-6-luna",
+  "implementation_sha256": "a6aee3051661453c9b2558df438fa839a3cbaf0842eb47dd61d87f88d3dcccee",
+  "dataset_sha256": "5f76ff54f8716953c10f0906885751973a69edef8ee3d6b18f16ac7d90b9ded5",
+  "calls": [
+    {
+      "call_id": "call0001",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 385,
+        "output_tokens": 321
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "baseline",
+      "schema_version": "1.0",
+      "prompt_sha256": "c81199b5a3fea41190e75370c32eb5852abf8154e4b608e9e580f941b93791eb",
+      "schema_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "duration_ms": 8281,
+      "status": "received"
+    }
+  ],
+  "elapsed_seconds": 8.312,
+  "usage": {
+    "llm_input_tokens": 385,
+    "llm_output_tokens": 321,
+    "tavily_credits_reported": null,
+    "usage_complete": true,
+    "model_usage_complete": true,
+    "tavily_usage_complete": true,
+    "estimated_model_cost_microusd": null
+  },
+  "result": {
+    "status": "completed",
+    "raw_output": "{\n  \"findings\": [],\n  \"requirements\": [\n    \"RFP menyebut portal agen harus mendukung SSO.\",\n    \"RFP menyebut portal agen harus terintegrasi dengan sistem existing; sistem yang dimaksud belum disebutkan.\"\n  ],\n  \"questions\": [\n    \"Siapa pengguna portal agen dan alur kerja utama yang harus dicakup dalam scope?\",\n    \"Penyedia identitas atau protokol SSO apa yang digunakan, dan apakah ada kebutuhan seperti MFA atau provisioning pengguna?\",\n    \"Sistem existing apa saja yang perlu diintegrasikan, dan untuk tiap integrasi apa arah pertukaran data serta metode yang diharapkan?\",\n    \"Apa kriteria penerimaan, kebutuhan keamanan, dan batasan lingkungan yang perlu digunakan untuk estimasi?\"\n  ]\n}",
+    "parsed": {
+      "findings": [],
+      "requirements": [
+        "RFP menyebut portal agen harus mendukung SSO.",
+        "RFP menyebut portal agen harus terintegrasi dengan sistem existing; sistem yang dimaksud belum disebutkan."
+      ],
+      "questions": [
+        "Siapa pengguna portal agen dan alur kerja utama yang harus dicakup dalam scope?",
+        "Penyedia identitas atau protokol SSO apa yang digunakan, dan apakah ada kebutuhan seperti MFA atau provisioning pengguna?",
+        "Sistem existing apa saja yang perlu diintegrasikan, dan untuk tiap integrasi apa arah pertukaran data serta metode yang diharapkan?",
+        "Apa kriteria penerimaan, kebutuhan keamanan, dan batasan lingkungan yang perlu digunakan untuk estimasi?"
+      ]
+    }
+  }
+}

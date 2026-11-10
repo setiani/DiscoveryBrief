@@ -1,0 +1,28 @@
+{
+  "case_id": "E02",
+  "purpose": "Ambiguous target without domain; require target selection.",
+  "required_fact_keys": [],
+  "forbidden_fact_keys": [
+    "mixed_entity"
+  ],
+  "label_status": "synthetic_predeclared",
+  "human_rating_required": true,
+  "source_evidence": [
+    {
+      "source_id": "s0001",
+      "source_title": "Sagara Insurance agent portal pilot",
+      "quote": "On 5 November 2026, Sagara Insurance announced an agent portal pilot for 200 agents.",
+      "event_on": "2026-11-05",
+      "published_on": "2026-11-05"
+    },
+    {
+      "source_id": "s0004",
+      "source_title": "Sagara Logistics opens a hub",
+      "quote": "On 6 November 2026, Sagara Logistics opened a new distribution hub in Malaysia.",
+      "event_on": "2026-11-06",
+      "published_on": "2026-11-06"
+    }
+  ],
+  "question_rating_guidance": "Rate each displayed question 0–4 for relevance, specificity and unsupported premises; independent human judgment required.",
+  "required_atoms": []
+}

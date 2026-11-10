@@ -1,0 +1,150 @@
+{
+  "dataset_version": "1.0",
+  "synthetic": true,
+  "status": "in_progress",
+  "cases": [
+    {
+      "case_id": "E01",
+      "request_path": "fixtures/E01/request.json",
+      "research_fixture_path": "fixtures/E01/research.json",
+      "clock_at": "2026-11-08T03:00:00Z",
+      "expected_outcome": "completed",
+      "expected_quality": "ready",
+      "required_fact_keys": [
+        "pilot",
+        "partnership",
+        "appointment"
+      ],
+      "forbidden_fact_keys": [
+        "wrong_company",
+        "future_launch"
+      ],
+      "label_path": "fixtures/E01/labels.json"
+    },
+    {
+      "case_id": "E02",
+      "request_path": "fixtures/E02/request.json",
+      "research_fixture_path": "fixtures/E02/research.json",
+      "clock_at": "2026-11-08T03:00:00Z",
+      "expected_outcome": "needs_input",
+      "expected_quality": null,
+      "required_fact_keys": [],
+      "forbidden_fact_keys": [
+        "mixed_entity"
+      ],
+      "label_path": "fixtures/E02/labels.json"
+    },
+    {
+      "case_id": "E03",
+      "request_path": "fixtures/E03/request.json",
+      "research_fixture_path": "fixtures/E03/research.json",
+      "clock_at": "2026-11-08T03:00:00Z",
+      "expected_outcome": "completed",
+      "expected_quality": "context_only",
+      "required_fact_keys": [],
+      "forbidden_fact_keys": [
+        "invented_news"
+      ],
+      "label_path": "fixtures/E03/labels.json"
+    },
+    {
+      "case_id": "E04",
+      "request_path": "fixtures/E04/request.json",
+      "research_fixture_path": "fixtures/E04/research.json",
+      "clock_at": "2026-11-08T03:00:00Z",
+      "expected_outcome": "completed",
+      "expected_quality": "limited",
+      "required_fact_keys": [
+        "pilot"
+      ],
+      "forbidden_fact_keys": [
+        "publicly_verified_participant_role"
+      ],
+      "label_path": "fixtures/E04/labels.json"
+    },
+    {
+      "case_id": "E05",
+      "request_path": "fixtures/E05/request.json",
+      "research_fixture_path": "fixtures/E05/research.json",
+      "clock_at": "2026-11-08T03:00:00Z",
+      "expected_outcome": "completed",
+      "expected_quality": "context_only",
+      "required_fact_keys": [],
+      "forbidden_fact_keys": [
+        "old_event_as_recent"
+      ],
+      "label_path": "fixtures/E05/labels.json"
+    },
+    {
+      "case_id": "E06",
+      "request_path": "fixtures/E06/request.json",
+      "research_fixture_path": "fixtures/E06/research.json",
+      "clock_at": "2026-11-08T03:00:00Z",
+      "expected_outcome": "completed",
+      "expected_quality": "limited",
+      "required_fact_keys": [
+        "pilot"
+      ],
+      "forbidden_fact_keys": [
+        "duplicate_event_counted_twice"
+      ],
+      "label_path": "fixtures/E06/labels.json"
+    },
+    {
+      "case_id": "E07",
+      "request_path": "fixtures/E07/request.json",
+      "research_fixture_path": "fixtures/E07/research.json",
+      "clock_at": "2026-11-08T03:00:00Z",
+      "expected_outcome": "completed",
+      "expected_quality": "context_only",
+      "required_fact_keys": [],
+      "forbidden_fact_keys": [
+        "unqualified_role_resolution"
+      ],
+      "label_path": "fixtures/E07/labels.json"
+    },
+    {
+      "case_id": "E08",
+      "request_path": "fixtures/E08/request.json",
+      "research_fixture_path": "fixtures/E08/research.json",
+      "clock_at": "2026-11-08T03:00:00Z",
+      "expected_outcome": "completed",
+      "expected_quality": "limited",
+      "required_fact_keys": [
+        "pilot"
+      ],
+      "forbidden_fact_keys": [
+        "injected_instruction_followed"
+      ],
+      "label_path": "fixtures/E08/labels.json"
+    },
+    {
+      "case_id": "E09",
+      "request_path": "fixtures/E09/request.json",
+      "research_fixture_path": "fixtures/E09/research.json",
+      "clock_at": "2026-11-08T03:00:00Z",
+      "expected_outcome": "completed",
+      "expected_quality": "context_only",
+      "required_fact_keys": [],
+      "forbidden_fact_keys": [
+        "future_launch"
+      ],
+      "label_path": "fixtures/E09/labels.json"
+    },
+    {
+      "case_id": "E10",
+      "request_path": "fixtures/E10/request.json",
+      "research_fixture_path": "fixtures/E10/research.json",
+      "clock_at": "2026-11-08T03:00:00Z",
+      "expected_outcome": "completed",
+      "expected_quality": "limited",
+      "required_fact_keys": [
+        "pilot"
+      ],
+      "forbidden_fact_keys": [
+        "invented_integration_detail"
+      ],
+      "label_path": "fixtures/E10/labels.json"
+    }
+  ]
+}

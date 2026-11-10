@@ -1,0 +1,77 @@
+{
+  "case_id": "E07",
+  "system": "baseline",
+  "mode": "frozen_research",
+  "human_review": "pending",
+  "model": "gpt-6-luna",
+  "implementation_sha256": "a6aee3051661453c9b2558df438fa839a3cbaf0842eb47dd61d87f88d3dcccee",
+  "dataset_sha256": "5f76ff54f8716953c10f0906885751973a69edef8ee3d6b18f16ac7d90b9ded5",
+  "calls": [
+    {
+      "call_id": "call0001",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 627,
+        "output_tokens": 509
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "baseline",
+      "schema_version": "1.0",
+      "prompt_sha256": "094485f3e2f8e6a929247c90e9b49f0ef4edede3d20618c1ea1d13444ab0493d",
+      "schema_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "duration_ms": 11485,
+      "status": "received"
+    }
+  ],
+  "elapsed_seconds": 11.5,
+  "usage": {
+    "llm_input_tokens": 627,
+    "llm_output_tokens": 509,
+    "tavily_credits_reported": null,
+    "usage_complete": true,
+    "model_usage_complete": true,
+    "tavily_usage_complete": true,
+    "estimated_model_cost_microusd": null
+  },
+  "result": {
+    "status": "completed",
+    "raw_output": "{\n  \"findings\": [\n    {\n      \"text\": \"Sagara Insurance dinyatakan mengangkat Rina sebagai Head of IT pada 6 November 2026, tetapi sumber lain pada tanggal yang sama menyebutnya sebagai Head of Operations. Peran Rina perlu dikonfirmasi.\",\n      \"sources\": [\n        \"https://news.sagara.example/2026/11/06/role-a\",\n        \"https://news.sagara.example/2026/11/06/role-b\"\n      ]\n    },\n    {\n      \"text\": \"RFP menyebut kebutuhan portal agen dengan SSO dan integrasi ke sistem existing; rincian teknis belum tersedia dalam konteks.\"\n    }\n  ],\n  \"requirements\": [\n    {\n      \"text\": \"Portal agen harus mendukung SSO, sesuai RFP.\"\n    },\n    {\n      \"text\": \"Portal agen harus terintegrasi dengan sistem existing, sesuai RFP; sistem dan cakupan integrasinya belum ditentukan.\"\n    }\n  ],\n  \"questions\": [\n    {\n      \"text\": \"Sistem identitas atau penyedia SSO apa yang digunakan, dan bagaimana alur autentikasi serta kebutuhan provisioning dan pengelolaan akses agen?\"\n    },\n    {\n      \"text\": \"Sistem existing apa saja yang perlu diintegrasikan, dan data atau proses apa yang harus dipertukarkan?\"\n    },\n    {\n      \"text\": \"Apa cakupan fungsi portal agen, kelompok pengguna, dan kebutuhan alur kerja yang perlu dimasukkan dalam estimasi?\"\n    },\n    {\n      \"text\": \"Dapatkah peran Rina dikonfirmasi sebagai Head of IT atau Head of Operations?\"\n    }\n  ]\n}",
+    "parsed": {
+      "findings": [
+        {
+          "text": "Sagara Insurance dinyatakan mengangkat Rina sebagai Head of IT pada 6 November 2026, tetapi sumber lain pada tanggal yang sama menyebutnya sebagai Head of Operations. Peran Rina perlu dikonfirmasi.",
+          "sources": [
+            "https://news.sagara.example/2026/11/06/role-a",
+            "https://news.sagara.example/2026/11/06/role-b"
+          ]
+        },
+        {
+          "text": "RFP menyebut kebutuhan portal agen dengan SSO dan integrasi ke sistem existing; rincian teknis belum tersedia dalam konteks."
+        }
+      ],
+      "requirements": [
+        {
+          "text": "Portal agen harus mendukung SSO, sesuai RFP."
+        },
+        {
+          "text": "Portal agen harus terintegrasi dengan sistem existing, sesuai RFP; sistem dan cakupan integrasinya belum ditentukan."
+        }
+      ],
+      "questions": [
+        {
+          "text": "Sistem identitas atau penyedia SSO apa yang digunakan, dan bagaimana alur autentikasi serta kebutuhan provisioning dan pengelolaan akses agen?"
+        },
+        {
+          "text": "Sistem existing apa saja yang perlu diintegrasikan, dan data atau proses apa yang harus dipertukarkan?"
+        },
+        {
+          "text": "Apa cakupan fungsi portal agen, kelompok pengguna, dan kebutuhan alur kerja yang perlu dimasukkan dalam estimasi?"
+        },
+        {
+          "text": "Dapatkah peran Rina dikonfirmasi sebagai Head of IT atau Head of Operations?"
+        }
+      ]
+    }
+  }
+}

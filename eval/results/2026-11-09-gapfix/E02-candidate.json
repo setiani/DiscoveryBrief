@@ -1,0 +1,304 @@
+{
+  "case_id": "E02",
+  "system": "candidate",
+  "mode": "frozen_research",
+  "human_review": "pending",
+  "model": "gpt-6-luna",
+  "implementation_sha256": "a6aee3051661453c9b2558df438fa839a3cbaf0842eb47dd61d87f88d3dcccee",
+  "dataset_sha256": "5f76ff54f8716953c10f0906885751973a69edef8ee3d6b18f16ac7d90b9ded5",
+  "calls": [
+    {
+      "call_id": "call0001",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 370,
+        "output_tokens": 69
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "ResearchPlan",
+      "schema_version": "1.0",
+      "prompt_sha256": "d866acea2e6589a892e55dc828ecc9bd1dade4bb5728f9f15c9b5e4ec189d515",
+      "schema_sha256": "237111ceaa9e961d9da55348ea4072c2497618ca89fa1dfa283ff7ab019996fe",
+      "duration_ms": 4188,
+      "status": "received"
+    },
+    {
+      "call_id": "call0002",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 1130,
+        "output_tokens": 410
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "AnalystOutput",
+      "schema_version": "1.0",
+      "prompt_sha256": "d84ae77109fcaa76fbb05f16e0fc18fd78eec2b00ac3761f0f3e1055172b6b58",
+      "schema_sha256": "a74779c7781fb9993bbba38831e068840d1d2356ddb6be4749756689acaa41e8",
+      "duration_ms": 9625,
+      "status": "received"
+    },
+    {
+      "call_id": "call0003",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 1490,
+        "output_tokens": 336
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "VerifierOutput",
+      "schema_version": "1.0",
+      "prompt_sha256": "2f4b454b6fd50bdfae49d1c664dc22b7eb58d12afc64a6cf5e6dac73f1f7a95a",
+      "schema_sha256": "3e9a88c93a49e31dd387cac95e00f1e8989b7f70ce6a06e23def91cd6f28423c",
+      "duration_ms": 8734,
+      "status": "received"
+    }
+  ],
+  "elapsed_seconds": 23.422,
+  "usage": {
+    "llm_input_tokens": 2990,
+    "llm_output_tokens": 815,
+    "tavily_credits_reported": null,
+    "usage_complete": true,
+    "model_usage_complete": true,
+    "tavily_usage_complete": true,
+    "estimated_model_cost_microusd": null
+  },
+  "result": {
+    "sources": [
+      {
+        "source_id": "s0001",
+        "original_url": "https://news.sagara.example/2026/11/05/agent-portal-pilot",
+        "canonical_url": "https://news.sagara.example/2026/11/05/agent-portal-pilot",
+        "title": "Sagara Insurance agent portal pilot",
+        "host": "news.sagara.example",
+        "text": "On 5 November 2026, Sagara Insurance announced an agent portal pilot for 200 agents.",
+        "text_origin": "extract",
+        "extraction_status": "ok",
+        "retrieved_at": "2026-11-08T03:00:00+00:00",
+        "published_on": "2026-11-05",
+        "event_on": null,
+        "date_basis": "provider_estimate",
+        "raw_provider_date": "2026-11-05",
+        "date_precision": "day",
+        "published_at": null,
+        "date_quote": null,
+        "source_kind": "other",
+        "entity_match": "unreviewed",
+        "extraction_error": null,
+        "content_sha256": "ed9344d57a1f2a789f2e65852f03b7ad198f02230b7c3c8fe132e20b2244e3da",
+        "truncated": false,
+        "duplicate_of_source_id": null
+      },
+      {
+        "source_id": "s0002",
+        "original_url": "https://sagara-logistics.example/news/new-hub",
+        "canonical_url": "https://sagara-logistics.example/news/new-hub",
+        "title": "Sagara Logistics opens a hub",
+        "host": "sagara-logistics.example",
+        "text": "On 6 November 2026, Sagara Logistics opened a new distribution hub in Malaysia.",
+        "text_origin": "extract",
+        "extraction_status": "ok",
+        "retrieved_at": "2026-11-08T03:00:00+00:00",
+        "published_on": "2026-11-06",
+        "event_on": null,
+        "date_basis": "provider_estimate",
+        "raw_provider_date": "2026-11-06",
+        "date_precision": "day",
+        "published_at": null,
+        "date_quote": null,
+        "source_kind": "other",
+        "entity_match": "unreviewed",
+        "extraction_error": null,
+        "content_sha256": "67b3b7ca05b7fdb1f72d42a0bbef157e82cb94a4878b26204b4132aa0f09f52c",
+        "truncated": false,
+        "duplicate_of_source_id": null
+      }
+    ],
+    "candidates": [
+      {
+        "candidate_id": "a0001",
+        "statement": "Sagara Insurance mengumumkan uji coba portal agen untuk 200 agen pada 5 November 2026.",
+        "evidence_proposals": [
+          {
+            "source_id": "s0001",
+            "quote": "On 5 November 2026, Sagara Insurance announced an agent portal pilot for 200 agents."
+          }
+        ],
+        "category": "launch",
+        "proposed_event_on": "2026-11-05",
+        "event_date_quote": "On 5 November 2026",
+        "relevance_reason": "Perkembangan portal agen yang relevan dengan klarifikasi ruang lingkup."
+      },
+      {
+        "candidate_id": "a0002",
+        "statement": "Sagara Logistics membuka hub distribusi baru di Malaysia pada 6 November 2026.",
+        "evidence_proposals": [
+          {
+            "source_id": "s0002",
+            "quote": "On 6 November 2026, Sagara Logistics opened a new distribution hub in Malaysia."
+          }
+        ],
+        "category": "operations",
+        "proposed_event_on": "2026-11-06",
+        "event_date_quote": "On 6 November 2026",
+        "relevance_reason": "Entitas bernama serupa; bukan bukti perkembangan Sagara Insurance."
+      }
+    ],
+    "reviews": [
+      {
+        "candidate_id": "a0001",
+        "support": "supported",
+        "entity_match": "ambiguous",
+        "temporal_kind": "recent_development",
+        "event_on": "2026-11-05",
+        "date_quote": "5 November 2026",
+        "conflict_group": null,
+        "reasoning": "Source states Sagara Insurance announced the 200-agent portal pilot on this date, but target identity is not confirmed."
+      },
+      {
+        "candidate_id": "a0002",
+        "support": "supported",
+        "entity_match": "mismatched",
+        "temporal_kind": "recent_development",
+        "event_on": "2026-11-06",
+        "date_quote": "6 November 2026",
+        "conflict_group": null,
+        "reasoning": "Source supports the hub opening by Sagara Logistics, a different industry and entity from the insurance target."
+      }
+    ],
+    "requirement_candidates": [
+      {
+        "requirement_id": "r0001",
+        "summary": "Portal harus mendukung SSO.",
+        "quote": "Portal harus mendukung SSO",
+        "start": 0,
+        "end": 26,
+        "category": "identity",
+        "unspecified": [
+          "Metode atau protokol SSO tidak ditentukan."
+        ],
+        "offset_relocated": true
+      },
+      {
+        "requirement_id": "r0002",
+        "summary": "Portal harus terintegrasi dengan sistem yang sudah ada.",
+        "quote": "integrasi dengan sistem existing.",
+        "start": 31,
+        "end": 64,
+        "category": "integration",
+        "unspecified": [
+          "Sistem existing dan pola integrasi tidak ditentukan."
+        ],
+        "offset_relocated": true
+      }
+    ],
+    "requirement_reviews": [
+      {
+        "requirement_id": "r0001",
+        "support": "supported",
+        "reason": "The exact RFP quote requires the portal to support SSO."
+      },
+      {
+        "requirement_id": "r0002",
+        "support": "supported",
+        "reason": "The exact RFP quote requires integration with existing systems."
+      }
+    ],
+    "claims": [],
+    "requirements": [],
+    "rejections": [],
+    "warnings": [],
+    "window_start": "2026-10-13T10:00:00+07:00",
+    "window_end": "2026-11-08T03:00:00+00:00",
+    "knowledge_cutoff": "2026-11-08T03:00:00+00:00",
+    "research_mode": "frozen_research",
+    "metrics": {
+      "llm_input_tokens": 2990,
+      "llm_output_tokens": 815,
+      "tavily_credits_reported": null,
+      "usage_complete": true,
+      "model_usage_complete": true,
+      "tavily_usage_complete": true,
+      "estimated_model_cost_microusd": null,
+      "search_requests": 0,
+      "extract_requests": 0,
+      "extract_url_attempts": 0,
+      "llm_requests": 3,
+      "tavily_credits_reserved": 0
+    },
+    "research_queries": [
+      {
+        "kind": "official_news",
+        "query": "\"Sagara\" Indonesia Insurance news announcements portal integration identity"
+      },
+      {
+        "kind": "digital_platform",
+        "query": "\"Sagara\" Indonesia Insurance digital platform customer portal portal integration identity"
+      },
+      {
+        "kind": "business_updates",
+        "query": "\"Sagara\" Indonesia Insurance company business update portal integration identity"
+      },
+      {
+        "kind": "partnership",
+        "query": "\"Sagara\" Indonesia Insurance partnership distribution agreement portal integration identity"
+      },
+      {
+        "kind": "product_launch",
+        "query": "\"Sagara\" Indonesia Insurance product launch service launch portal integration identity"
+      },
+      {
+        "kind": "leadership",
+        "query": "\"Sagara\" Indonesia Insurance executive appointment leadership portal integration identity"
+      }
+    ],
+    "extraction_results": {
+      "results": [
+        {
+          "url": "https://news.sagara.example/2026/11/05/agent-portal-pilot",
+          "raw_content": "On 5 November 2026, Sagara Insurance announced an agent portal pilot for 200 agents."
+        },
+        {
+          "url": "https://sagara-logistics.example/news/new-hub",
+          "raw_content": "On 6 November 2026, Sagara Logistics opened a new distribution hub in Malaysia."
+        }
+      ],
+      "failed_results": []
+    },
+    "prompt_passages": [
+      {
+        "source_id": "s0001",
+        "prompt_truncated": false
+      },
+      {
+        "source_id": "s0002",
+        "prompt_truncated": false
+      }
+    ],
+    "entity": {
+      "status": "needs_input",
+      "candidate_companies": [
+        {
+          "name": "Sagara Insurance",
+          "domain": "news.sagara.example",
+          "source_ids": [
+            "s0001"
+          ]
+        },
+        {
+          "name": "Sagara Logistics",
+          "domain": "sagara-logistics.example",
+          "source_ids": [
+            "s0002"
+          ]
+        }
+      ],
+      "reason": "verifier_uncertain"
+    },
+    "status": "needs_input",
+    "brief": null
+  }
+}

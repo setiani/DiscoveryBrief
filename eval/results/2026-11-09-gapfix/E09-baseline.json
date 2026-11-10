@@ -1,0 +1,54 @@
+{
+  "case_id": "E09",
+  "system": "baseline",
+  "mode": "frozen_research",
+  "human_review": "pending",
+  "model": "gpt-6-luna",
+  "implementation_sha256": "a6aee3051661453c9b2558df438fa839a3cbaf0842eb47dd61d87f88d3dcccee",
+  "dataset_sha256": "5f76ff54f8716953c10f0906885751973a69edef8ee3d6b18f16ac7d90b9ded5",
+  "calls": [
+    {
+      "call_id": "call0001",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 501,
+        "output_tokens": 279
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "baseline",
+      "schema_version": "1.0",
+      "prompt_sha256": "e59372f37b34cf819d42fdc7ac44610667c98a4d1e220aee5de2afb63e734456",
+      "schema_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "duration_ms": 6984,
+      "status": "received"
+    }
+  ],
+  "elapsed_seconds": 7.0,
+  "usage": {
+    "llm_input_tokens": 501,
+    "llm_output_tokens": 279,
+    "tavily_credits_reported": null,
+    "usage_complete": true,
+    "model_usage_complete": true,
+    "tavily_usage_complete": true,
+    "estimated_model_cost_microusd": null
+  },
+  "result": {
+    "status": "completed",
+    "raw_output": "{\"findings\":[],\"requirements\":[\"Portal harus mendukung SSO.\",\"Portal harus terintegrasi dengan sistem existing.\"],\"questions\":[\"Apa cakupan pengguna, peran, dan fitur yang dibutuhkan pada portal agen?\",\"SSO harus menggunakan penyedia identitas atau protokol tertentu?\",\"Sistem existing apa saja yang perlu diintegrasikan, dan data atau alur apa yang terlibat?\",\"Apakah ada kebutuhan keamanan, lingkungan, atau kriteria penerimaan yang perlu dipenuhi untuk estimasi?\"]}",
+    "parsed": {
+      "findings": [],
+      "requirements": [
+        "Portal harus mendukung SSO.",
+        "Portal harus terintegrasi dengan sistem existing."
+      ],
+      "questions": [
+        "Apa cakupan pengguna, peran, dan fitur yang dibutuhkan pada portal agen?",
+        "SSO harus menggunakan penyedia identitas atau protokol tertentu?",
+        "Sistem existing apa saja yang perlu diintegrasikan, dan data atau alur apa yang terlibat?",
+        "Apakah ada kebutuhan keamanan, lingkungan, atau kriteria penerimaan yang perlu dipenuhi untuk estimasi?"
+      ]
+    }
+  }
+}

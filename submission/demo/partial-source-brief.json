@@ -1,0 +1,226 @@
+{
+  "brief": {
+    "schema_version": "1.0",
+    "run_id": "b53d6f17-99be-4c1a-a2ab-a2961b3157ba",
+    "language": "id",
+    "company_name": "Sagara Insurance",
+    "company_domain": "sagara.example",
+    "meeting_at": "2026-11-12T10:00:00+07:00",
+    "meeting_timezone": "Asia/Jakarta",
+    "knowledge_cutoff": "2026-11-08T03:00:00Z",
+    "window_start": "2026-10-13T10:00:00+07:00",
+    "window_end": "2026-11-08T03:00:00Z",
+    "quality": "limited",
+    "research_mode": "replay",
+    "finding_ids": [
+      "c0001"
+    ],
+    "requirement_ids": [
+      "r0001",
+      "r0002"
+    ],
+    "questions": [
+      {
+        "question_id": "q0001",
+        "text": "Bagaimana SSO harus bekerja di portal, dan apakah ada penyedia atau protokol tertentu yang perlu didukung?",
+        "grounding": {
+          "claim_ids": [
+            "c0001"
+          ],
+          "requirement_ids": [
+            "r0001"
+          ],
+          "context_fields": [
+            "meeting_goal"
+          ]
+        },
+        "priority": "high",
+        "origin": "model"
+      },
+      {
+        "question_id": "q0002",
+        "text": "Sistem existing mana yang perlu diintegrasikan dengan portal, dan data atau alur kerja apa yang perlu dipertukarkan?",
+        "grounding": {
+          "claim_ids": [
+            "c0001"
+          ],
+          "requirement_ids": [
+            "r0002"
+          ],
+          "context_fields": [
+            "meeting_goal"
+          ]
+        },
+        "priority": "high",
+        "origin": "model"
+      }
+    ],
+    "hypotheses": [],
+    "unknowns": [
+      {
+        "unknown_id": "u0001",
+        "text": "Penyedia dan protokol SSO yang dimaksud belum disebutkan.",
+        "related_claim_ids": [
+          "c0001"
+        ],
+        "related_requirement_ids": [
+          "r0001"
+        ]
+      },
+      {
+        "unknown_id": "u0002",
+        "text": "Sistem existing yang harus diintegrasikan belum diidentifikasi.",
+        "related_claim_ids": [
+          "c0001"
+        ],
+        "related_requirement_ids": [
+          "r0002"
+        ]
+      }
+    ],
+    "context_summary": [
+      {
+        "field": "meeting_goal",
+        "text": "Klarifikasi scope portal agen sebelum estimasi.",
+        "provenance": "user_provided"
+      },
+      {
+        "field": "participant",
+        "text": "Rina — Head of IT",
+        "provenance": "user_provided"
+      }
+    ],
+    "coverage_notes": [
+      "Riset hanya mencakup informasi yang tersedia hingga batas pengetahuan.",
+      "Cakupan terbatas; periksa bukti sebelum menggunakan brief."
+    ],
+    "overflow_note": null,
+    "source_ids": [
+      "s0001"
+    ],
+    "evidence_ids": [
+      "e0001"
+    ]
+  },
+  "claims": [
+    {
+      "claim_id": "c0001",
+      "candidate_id": "a0001",
+      "statement": "Pada 5 November 2026, Sagara Insurance mengumumkan pilot portal agen untuk 200 agen.",
+      "evidence_ids": [
+        "e0001"
+      ],
+      "source_ids": [
+        "s0001"
+      ],
+      "category": "launch",
+      "event_on": "2026-11-05",
+      "published_on": "2026-11-05",
+      "temporal_basis": "explicit_event",
+      "eligibility": "recent",
+      "event_cluster_id": "event0001",
+      "relevance": {
+        "topic_match": true,
+        "meeting_type_match": true,
+        "rfp_link": true
+      },
+      "rank_score": 10,
+      "date_precision": "day"
+    }
+  ],
+  "requirements": [
+    {
+      "requirement_id": "r0001",
+      "summary": "Portal harus mendukung SSO.",
+      "quote": "Portal harus mendukung SSO",
+      "start": 0,
+      "end": 26,
+      "category": "identity",
+      "unspecified": [
+        "Penyedia dan protokol SSO tidak disebutkan."
+      ],
+      "offset_relocated": true
+    },
+    {
+      "requirement_id": "r0002",
+      "summary": "Portal harus terintegrasi dengan sistem existing.",
+      "quote": "integrasi dengan sistem existing",
+      "start": 31,
+      "end": 63,
+      "category": "integration",
+      "unspecified": [
+        "Sistem existing yang dimaksud tidak disebutkan."
+      ],
+      "offset_relocated": true
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "s0001",
+      "original_url": "https://news.sagara.example/2026/11/05/agent-portal-pilot",
+      "canonical_url": "https://news.sagara.example/2026/11/05/agent-portal-pilot",
+      "host": "news.sagara.example",
+      "title": "Sagara Insurance agent portal pilot",
+      "text": "On 5 November 2026, Sagara Insurance announced an agent portal pilot for 200 agents.",
+      "text_origin": "extract",
+      "retrieved_at": "2026-11-08T03:00:00Z",
+      "published_on": "2026-11-05",
+      "event_on": null,
+      "date_basis": "provider_estimate",
+      "date_precision": "day",
+      "published_at": null,
+      "date_quote": null,
+      "raw_provider_date": "2026-11-05",
+      "source_kind": "official",
+      "entity_match": "unreviewed",
+      "extraction_status": "ok",
+      "extraction_error": null,
+      "truncated": false,
+      "content_sha256": "ed9344d57a1f2a789f2e65852f03b7ad198f02230b7c3c8fe132e20b2244e3da",
+      "duplicate_of_source_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "e0001",
+      "source_id": "s0001",
+      "quote": "On 5 November 2026, Sagara Insurance announced an agent portal pilot for 200 agents.",
+      "start": 0,
+      "end": 84,
+      "quote_sha256": "ed9344d57a1f2a789f2e65852f03b7ad198f02230b7c3c8fe132e20b2244e3da"
+    }
+  ],
+  "metrics": {
+    "duration_ms": 906,
+    "search_requests": 0,
+    "extract_requests": 0,
+    "extract_url_attempts": 0,
+    "llm_requests": 0,
+    "llm_input_tokens": null,
+    "llm_output_tokens": null,
+    "estimated_model_cost_microusd": null,
+    "tavily_credits_reported": null,
+    "tavily_credits_reserved": 0,
+    "usage_complete": false,
+    "model_usage_complete": false,
+    "tavily_usage_complete": false,
+    "fallbacks_observed": null
+  },
+  "warnings": [],
+  "synthetic": true,
+  "original_research_mode": "frozen_research",
+  "original_metrics": {
+    "llm_input_tokens": 4890,
+    "llm_output_tokens": 1193,
+    "tavily_credits_reported": null,
+    "usage_complete": true,
+    "model_usage_complete": true,
+    "tavily_usage_complete": true,
+    "estimated_model_cost_microusd": null,
+    "search_requests": 0,
+    "extract_requests": 0,
+    "extract_url_attempts": 0,
+    "llm_requests": 5,
+    "tavily_credits_reserved": 0
+  }
+}

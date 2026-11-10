@@ -1,0 +1,76 @@
+{
+  "case_id": "E06",
+  "system": "baseline",
+  "mode": "frozen_research",
+  "human_review": "pending",
+  "model": "gpt-6-luna",
+  "implementation_sha256": "a6aee3051661453c9b2558df438fa839a3cbaf0842eb47dd61d87f88d3dcccee",
+  "dataset_sha256": "5f76ff54f8716953c10f0906885751973a69edef8ee3d6b18f16ac7d90b9ded5",
+  "calls": [
+    {
+      "call_id": "call0001",
+      "kind": "model",
+      "usage": {
+        "input_tokens": 622,
+        "output_tokens": 430
+      },
+      "requested_model": "custom/gpt-6-luna",
+      "resolved_model": null,
+      "role": "baseline",
+      "schema_version": "1.0",
+      "prompt_sha256": "bfe278ba356dbe8ce9ca5ea054cd0751cb0aa8c72a06580e32cb223b5fb84068",
+      "schema_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "duration_ms": 10672,
+      "status": "received"
+    }
+  ],
+  "elapsed_seconds": 10.687,
+  "usage": {
+    "llm_input_tokens": 622,
+    "llm_output_tokens": 430,
+    "tavily_credits_reported": null,
+    "usage_complete": true,
+    "model_usage_complete": true,
+    "tavily_usage_complete": true,
+    "estimated_model_cost_microusd": null
+  },
+  "result": {
+    "status": "completed",
+    "raw_output": "{\n  \"findings\": [\n    {\n      \"text\": \"Sagara Insurance mengumumkan pilot portal agen untuk 200 agen pada 5 November 2026.\",\n      \"sources\": [\n        \"https://news.sagara.example/2026/11/05/agent-portal-pilot\",\n        \"https://business-news.example/sagara-agent-portal\"\n      ]\n    }\n  ],\n  \"requirements\": [\n    {\n      \"text\": \"Portal harus mendukung SSO.\",\n      \"source\": \"Teks RFP dalam konteks permintaan\"\n    },\n    {\n      \"text\": \"Portal harus terintegrasi dengan sistem existing; sistem dan cakupan integrasi belum dirinci.\",\n      \"source\": \"Teks RFP dalam konteks permintaan\"\n    }\n  ],\n  \"questions\": [\n    {\n      \"text\": \"Apakah scope RFP ini mencakup pilot portal yang diumumkan untuk 200 agen, dan apakah 200 agen menjadi basis estimasi?\"\n    },\n    {\n      \"text\": \"Identity provider dan protokol SSO apa yang digunakan, serta bagaimana kebutuhan provisioning dan deprovisioning agen?\"\n    },\n    {\n      \"text\": \"Sistem existing apa saja yang perlu diintegrasikan, dan untuk setiap integrasi apa data, arah pertukaran, serta metode integrasinya?\"\n    },\n    {\n      \"text\": \"Apa saja fitur, peran pengguna, dan alur kerja agen yang termasuk dalam scope portal?\"\n    }\n  ]\n}",
+    "parsed": {
+      "findings": [
+        {
+          "text": "Sagara Insurance mengumumkan pilot portal agen untuk 200 agen pada 5 November 2026.",
+          "sources": [
+            "https://news.sagara.example/2026/11/05/agent-portal-pilot",
+            "https://business-news.example/sagara-agent-portal"
+          ]
+        }
+      ],
+      "requirements": [
+        {
+          "text": "Portal harus mendukung SSO.",
+          "source": "Teks RFP dalam konteks permintaan"
+        },
+        {
+          "text": "Portal harus terintegrasi dengan sistem existing; sistem dan cakupan integrasi belum dirinci.",
+          "source": "Teks RFP dalam konteks permintaan"
+        }
+      ],
+      "questions": [
+        {
+          "text": "Apakah scope RFP ini mencakup pilot portal yang diumumkan untuk 200 agen, dan apakah 200 agen menjadi basis estimasi?"
+        },
+        {
+          "text": "Identity provider dan protokol SSO apa yang digunakan, serta bagaimana kebutuhan provisioning dan deprovisioning agen?"
+        },
+        {
+          "text": "Sistem existing apa saja yang perlu diintegrasikan, dan untuk setiap integrasi apa data, arah pertukaran, serta metode integrasinya?"
+        },
+        {
+          "text": "Apa saja fitur, peran pengguna, dan alur kerja agen yang termasuk dalam scope portal?"
+        }
+      ]
+    }
+  }
+}

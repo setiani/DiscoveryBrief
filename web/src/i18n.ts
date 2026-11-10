@@ -1,0 +1,32 @@
+export const dictionary = {
+  id: {
+    eyebrow:'PERSIAPAN MEETING YANG LEBIH TERARAH', title:'Mulai percakapan dengan konteks.', subtitle:'Hubungkan riset perusahaan dan kebutuhan pelanggan dengan pertanyaan discovery berbasis bukti.',
+    form:'Siapkan brief baru', company:'Nama perusahaan', domain:'Domain perusahaan · opsional', date:'Tanggal meeting', time:'Waktu meeting', timezone:'Zona waktu (IANA)', goal:'Tujuan meeting · opsional',
+    optional:'Tambahkan konteks dan RFP', rfp:'Potongan RFP · opsional, teks saja', notes:'Catatan · opsional', participants:'Peserta · satu per baris: nama | jabatan', country:'Negara · opsional', industry:'Industri · opsional', type:'Jenis meeting', reportLanguage:'Bahasa laporan',
+    disclosure:'RFP, catatan, dan peserta dapat diproses oleh penyedia model yang dikonfigurasi. Data ini tidak dimasukkan ke pencarian publik.',
+    submit:'Buat discovery brief', retry:'Coba kembali', newRun:'Brief baru', cancel:'Batalkan run', cancellation:'Permintaan eksternal yang sudah berjalan mungkin telah memakai kredit.',
+    unavailable:'Pembuatan brief live belum diaktifkan pada server ini.', demo:'Rekaman contoh; tidak menjalankan riset baru.',
+    sample:'Lihat contoh sintetis', runSample:'Jalankan contoh offline', replay:'Putar ulang contoh', synthetic:'CONTOH SINTETIS · perusahaan dan peristiwa fiktif',
+    loading:'Menyiapkan brief…', queued:'Dalam antrean', planning:'Merencanakan riset', researching:'Mencari sumber', analyzing:'Membaca bukti', verifying:'Memeriksa klaim', composing:'Menyusun pertanyaan', auditing:'Memeriksa asumsi', rendering:'Menyiapkan brief', finished:'Selesai',
+    findings:'Perkembangan terbaru', requirements:'Kebutuhan dari RFP', questions:'Pertanyaan prioritas', hypotheses:'Hipotesis untuk dikonfirmasi', unknowns:'Hal yang belum diketahui', context:'Konteks dari pengguna', empty:'Belum ada informasi yang dapat ditampilkan.',
+    evidence:'Periksa bukti', excluded:'Temuan yang tidak ditampilkan', usage:'Penggunaan dan jejak proses', quality:'Kualitas', mode:'Mode', cutoff:'Batas pengetahuan', window:'Jendela riset', published:'Diterbitkan', retrieved:'Diambil', event:'Tanggal peristiwa', basis:'Dasar tanggal', unknown:'Tidak diketahui',
+    ambiguity:'Identitas perusahaan belum jelas. Pilih atau masukkan domain lalu mulai brief baru.', failure:'Run tidak dapat diselesaikan. Input Anda tetap tersedia untuk dicoba kembali.', cancelled:'Run dibatalkan.', timeout:'Waktu tunggu habis. Periksa status run sebelum mencoba kembali.',
+    limit:'Pilih maksimal tiga topik dan masukkan maksimal enam peserta.', topics:'Topik riset publik · maksimal tiga', limited:'Cakupan terbatas; periksa bukti sebelum menggunakan brief.', noPdf:'PDF tidak tersedia; gunakan HTML atau Markdown.', fixed:'Bukti tetap, model live', elapsed:'Waktu berjalan', downloads:'Unduhan', userProvided:'Diberikan pengguna',
+  },
+  en: {
+    eyebrow:'PREPARE FOR A BETTER MEETING', title:'Start the conversation with context.', subtitle:'Connect company research and customer requirements to evidence-based discovery questions.',
+    form:'Prepare a new brief', company:'Company name', domain:'Company domain · optional', date:'Meeting date', time:'Meeting time', timezone:'Timezone (IANA)', goal:'Meeting goal · optional',
+    optional:'Add context and RFP', rfp:'RFP excerpt · optional, plain text', notes:'Notes · optional', participants:'Participants · one per line: name | role', country:'Country · optional', industry:'Industry · optional', type:'Meeting type', reportLanguage:'Report language',
+    disclosure:'RFP, notes and participants may be processed by the configured model provider. They are not included in public searches.',
+    submit:'Create discovery brief', retry:'Try again', newRun:'New brief', cancel:'Cancel run', cancellation:'An external request already in progress may have consumed credits.',
+    unavailable:'Live brief creation is not enabled on this server.', demo:'Recorded sample; no new research is performed.',
+    sample:'View synthetic example', runSample:'Run offline example', replay:'Replay example', synthetic:'SYNTHETIC EXAMPLE · fictional company and events',
+    loading:'Preparing brief…', queued:'Queued', planning:'Planning research', researching:'Finding sources', analyzing:'Reading evidence', verifying:'Checking claims', composing:'Preparing questions', auditing:'Checking premises', rendering:'Preparing brief', finished:'Finished',
+    findings:'Recent developments', requirements:'RFP requirements', questions:'Priority questions', hypotheses:'Hypotheses to confirm', unknowns:'Unknowns', context:'User-provided context', empty:'No information available.',
+    evidence:'Inspect evidence', excluded:'Excluded findings', usage:'Usage and operational trace', quality:'Quality', mode:'Mode', cutoff:'Knowledge cutoff', window:'Research window', published:'Published', retrieved:'Retrieved', event:'Event date', basis:'Date basis', unknown:'Unknown',
+    ambiguity:'The company identity is unclear. Select or enter a domain and start a new brief.', failure:'The run could not finish. Your input is still available to try again.', cancelled:'Run cancelled.', timeout:'Waiting timed out. Check the run status before retrying.',
+    limit:'Select at most three topics and enter at most six participants.', topics:'Public research topics · up to three', limited:'Coverage is limited; inspect the evidence before using this brief.', noPdf:'PDF is unavailable; use HTML or Markdown.', fixed:'Fixed evidence, live model', elapsed:'Elapsed time', downloads:'Downloads', userProvided:'User-provided',
+  },
+};
+export type Language = keyof typeof dictionary;
+export type Key = keyof typeof dictionary.id;

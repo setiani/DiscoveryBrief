@@ -1,0 +1,13 @@
+{
+  "case_id": "E03",
+  "purpose": "No sources; preserve the explicit RFP and questions.",
+  "required_fact_keys": [],
+  "forbidden_fact_keys": [
+    "invented_news"
+  ],
+  "label_status": "synthetic_predeclared",
+  "human_rating_required": true,
+  "source_evidence": [],
+  "question_rating_guidance": "Rate each displayed question 0–4 for relevance, specificity and unsupported premises; independent human judgment required.",
+  "required_atoms": []
+}
